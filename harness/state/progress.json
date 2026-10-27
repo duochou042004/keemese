@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-27",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "phase": "Phase 1: documentation and architecture planning",
+  "status": "r0_approved_pending_fresh_session_execution",
+  "repository": {
+    "root": "/home/kali/App_projects/keemese",
+    "branch": null,
+    "commit": null,
+    "working_tree_status": "unavailable_not_a_git_repository",
+    "note": "No .git in current unrestricted view; do not initialize without decision D08."
+  },
+  "approval": {
+    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request",
+    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push.",
+    "not_authorized": [
+      "product implementation",
+      "hooks or controller scripts",
+      "tool installation",
+      "global configuration edits",
+      "model/context setting changes",
+      "external writes or deployment",
+      "Git changes beyond approved R0 baseline; remote creation/push/merge"
+    ],
+    "next_gate": "Execute approved R0 in fresh conversation, then review before F0a implementation"
+  },
+  "completed": [
+    "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
+    "Recorded unavailable live model/context telemetry without relying on cached metadata",
+    "Documented conservative context policy, manual fallback, fresh-session protocol and proposed H0 validation",
+    "Mapped all 61 source sections to scope, modules and acceptance",
+    "Proposed domain/database/API/security/frontend/test/operations/delivery designs",
+    "Established concise AGENTS instructions and canonical state/learning records",
+    "H0 bounded interface pilot: installed schemas, current-chat metadata, two empty ephemeral thread starts, arithmetic/parser diagnostics and checkpoint",
+    "H0b: three tiny completed inference turns, sentinel recall/isolation, usage events and one immediate interrupt (30 ms); isolated process exited 0",
+    "Reviewed specification 35\u201336 and F0 prerequisites; proposed R0 repository baseline plus split F0a/F0b with explicit permissions and acceptance",
+    "User accepted ADR01/02 and R0; fresh-session approval handoff prepared"
+  ],
+  "incomplete": [
+    "Review remaining product ADRs and D01-D10 choices; H0 pilot is approved, numerical policy and automation guarantees remain subject to validation",
+    "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automation remains unimplemented",
+    "Git repository identity and branch/history establishment",
+    "All product implementation and runtime/visual verification"
+  ],
+  "changed_files": [
+    "AGENTS.md",
+    "docs/README.md",
+    "docs/agents/context-safety.md",
+    "docs/product/requirements.md",
+    "docs/architecture/design.md",
+    "docs/backend/api.md",
+    "docs/decisions/decisions.md",
+    "docs/frontend/design.md",
+    "docs/security/threat-model.md",
+    "docs/testing/strategy.md",
+    "docs/operations/runbook.md",
+    "docs/delivery/plan.md",
+    "harness/state/progress.json",
+    "harness/state/handoff.md",
+    "harness/logs/build-log.md",
+    "harness/learning/README.md",
+    "harness/learning/lessons.jsonl",
+    "harness/learning/retrospectives/phase-1.md"
+  ],
+  "preserved_source_files": [
+    "personal_english_tutor_teaching_workspace_spec.md",
+    "Codex_Project_Initialization_and_Agent_Governance.md",
+    "docs/agent-governance/research/Codex_Harness_Research_Notes_VI.md"
+  ],
+  "context": {
+    "active_model": null,
+    "active_context_tokens": null,
+    "nominal_context_limit": null,
+    "usable_context_limit": null,
+    "auto_compaction_threshold": null,
+    "telemetry_status": "h0_current_chat_model_A_N_U_C_unavailable_through_inspected_supported_interfaces",
+    "enforcement": "manual_bounded_packet_fallback_only",
+    "policy_owner": "docs/agents/context-safety.md",
+    "fresh_session_recommended_for_next_packet": true,
+    "current_thread_id": "01a17d43-531f-7163-956a-6d6cb1cd146a",
+    "fresh_session_evidence": "H0b coordinated in continuing chat by explicit user request. Two isolated ephemeral threads passed one same-thread recall/new-thread UNKNOWN sentinel test; not general ambient-history proof.",
+    "isolated_probe": "Live usage events observed: total cumulative across two turns; last latest-request counts; modelContextWindow 258400 has unverified usable-capacity semantics. Does not measure current desktop chat."
+  },
+  "verification": [
+    {
+      "check": "61 unique traceability rows P01-P61",
+      "status": "passed"
+    },
+    {
+      "check": "Original specifications/research/global config SHA-256 equality",
+      "status": "passed"
+    },
+    {
+      "check": "Documentation links, JSON/JSONL, fences, inventory and whitespace",
+      "status": "passed"
+    },
+    {
+      "check": "git status / log / diff --check",
+      "status": "blocked_no_git_repository"
+    },
+    {
+      "check": "Product build, tests and visual QA",
+      "status": "not_run_no_application"
+    },
+    {
+      "check": "Automatic context handoff",
+      "status": "not_implemented_not_tested"
+    },
+    {
+      "check": "H0 CLI 0.164.0 schema generation and empty ephemeral thread creation",
+      "status": "passed_bounded_interface_only"
+    },
+    {
+      "check": "H0 current-chat live model/A/N/U/C",
+      "status": "unavailable"
+    },
+    {
+      "check": "H0 arithmetic three cases and malformed JSON rejection",
+      "status": "passed_synthetic_only"
+    },
+    {
+      "check": "H0 live crossing/overshoot, interrupt, crash/reconnect, sentinel and ambient memory",
+      "status": "not_tested"
+    },
+    {
+      "check": "H0 final documentation and preservation validation",
+      "status": "passed_json_jsonl_links_fences_changed_file_whitespace_inventory_and_hashes"
+    },
+    {
+      "check": "H0b three inference completions, sentinel recall/isolation, immediate interrupt and clean process exit",
+      "status": "passed_bounded_single_trial"
+    },
+    {
+      "check": "H0b A/U/C semantics, ongoing-generation interruption, overshoot, recovery and desktop telemetry",
+      "status": "unverified_or_not_tested"
+    },
+    {
+      "check": "H0b final documentation validation and baseline/global-config hashes",
+      "status": "passed_except_git_unavailable"
+    },
+    {
+      "check": "F0 readiness review documentation and 16 unchanged baseline files",
+      "status": "passed_git_diff_blocked_no_repository"
+    }
+  ],
+  "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
+  "evidence": "harness/logs/build-log.md",
+  "next_single_task": {
+    "id": "R0",
+    "action": "In a genuinely fresh chat execute approved repository baseline packet from delivery plan; no repeated approval request. Inspect candidate files, initialize master, add minimal .gitignore, stage reviewed baseline, commit with existing identity, create develop and feature/f0-foundation. Preserve user work; no remote/push.",
+    "inputs": [
+      "AGENTS.md",
+      "harness/state/handoff.md",
+      "docs/delivery/plan.md",
+      "docs/decisions/decisions.md"
+    ],
+    "acceptance": "Verified baseline commit/branches and exact inventory; canonical checkpoint; stop before F0a or dependency installation."
+  },
+  "h0_changed_files": [
+    "docs/agents/context-safety.md",
+    "docs/delivery/plan.md",
+    "harness/state/progress.json",
+    "harness/state/handoff.md",
+    "harness/logs/build-log.md",
+    "harness/learning/lessons.jsonl"
+  ],
+  "h0b_changed_files": [
+    "docs/agents/context-safety.md",
+    "docs/delivery/plan.md",
+    "harness/state/progress.json",
+    "harness/state/handoff.md",
+    "harness/logs/build-log.md",
+    "harness/learning/lessons.jsonl"
+  ],
+  "review_changed_files": [
+    "docs/delivery/plan.md",
+    "docs/decisions/decisions.md",
+    "harness/state/progress.json",
+    "harness/state/handoff.md",
+    "harness/logs/build-log.md"
+  ]
+}
