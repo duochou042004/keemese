@@ -1,6 +1,6 @@
 # Product scope and acceptance
 
-Owner: product planning. Status: proposed decomposition; original [specification](../../personal_english_tutor_teaching_workspace_spec.md) is authoritative. IDs P01–P61 correspond exactly to its numbered sections. M = MVP, F = future/optional, G = guardrail or planning requirement. Suggested examples are not mandatory schemas or seeded curriculum.
+Owner: product planning. Status: proposed decomposition; original [specification](../spec/personal_english_tutor_teaching_workspace_spec.md) is authoritative. IDs P01–P61 correspond exactly to its numbered sections. M = MVP, F = future/optional, G = guardrail or planning requirement. Suggested examples are not mandatory schemas or seeded curriculum.
 
 ## Traceability
 

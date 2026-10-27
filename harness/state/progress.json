@@ -2,28 +2,26 @@
   "schema_version": 1,
   "updated_at": "2026-10-27",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "Phase 1: documentation and architecture planning",
-  "status": "r0_approved_pending_fresh_session_execution",
+  "phase": "F0a complete; stopped before F0b",
+  "status": "f0b_approved_publication_in_progress",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
-    "branch": null,
+    "branch": "feature/f0-foundation",
     "commit": null,
-    "working_tree_status": "unavailable_not_a_git_repository",
-    "note": "No .git in current unrestricted view; do not initialize without decision D08."
+    "working_tree_status": "unstaged_documentation_edits_source_relocations_and_untracked_f0a_implementation",
+    "note": "Publication checkpoint being committed; obtain exact current HEAD with git rev-parse HEAD. Original R0 baseline is f25b1cd0c48b3d1b99141cc697f6f63bc5396e5c."
   },
   "approval": {
-    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request",
-    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push.",
+    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request; user requested source-document organization and goal-mode readiness explanation; user: F0a approved\u2014let\u2019s get moving!; user requested README badge refresh and next-step discussion; user approved F0b in a fresh chat and directed public GitHub repository via installed CLI",
+    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push. Current follow-up authorizes source-document moves under docs and reference/checkpoint updates; goal-mode readiness explanation only. F0a local skeleton implementation and dependency downloads approved per delivery plan; proceed as one bounded goal in a fresh chat. README presentation and read-only next-step review authorized; explicit GitHub destination/publishing and F0b approvals requested, pending. Explicit F0b fresh-chat approval: pinned PostgreSQL image download, isolated rootless Podman container, synthetic round-trip/rollback tests and cleanup of test-owned resources. User response to publication scope directs public GitHub repository; use authenticated account duochou042004 and project name keemese, review/commit current work, create public remote and push existing branches.",
     "not_authorized": [
-      "product implementation",
+      "product implementation beyond F0b",
       "hooks or controller scripts",
-      "tool installation",
-      "global configuration edits",
-      "model/context setting changes",
-      "external writes or deployment",
-      "Git changes beyond approved R0 baseline; remote creation/push/merge"
+      "global installations/configuration/model changes",
+      "existing databases/volumes or persistent production migrations",
+      "deployment, access/secrets changes, Git merge or history rewrite"
     ],
-    "next_gate": "Execute approved R0 in fresh conversation, then review before F0a implementation"
+    "next_gate": "Publish reviewed F0a work to public GitHub repository and launch approved F0b as one fresh-chat bounded goal; stop after F0b."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -35,37 +33,59 @@
     "H0 bounded interface pilot: installed schemas, current-chat metadata, two empty ephemeral thread starts, arithmetic/parser diagnostics and checkpoint",
     "H0b: three tiny completed inference turns, sentinel recall/isolation, usage events and one immediate interrupt (30 ms); isolated process exited 0",
     "Reviewed specification 35\u201336 and F0 prerequisites; proposed R0 repository baseline plus split F0a/F0b with explicit permissions and acceptance",
-    "User accepted ADR01/02 and R0; fresh-session approval handoff prepared"
+    "User accepted ADR01/02 and R0; fresh-session approval handoff prepared",
+    "R0: initialized local master, committed exact 22-file baseline with existing identity, created develop and feature/f0-foundation; verified original hashes and no remote",
+    "Moved governance source to docs/agent-governance and product source to docs/spec byte-for-byte; updated active references and assessed bounded goal readiness.",
+    "F0a: exact pins/locks and reproducible setup; API liveness and three passing HTTP integration cases; React/Vite/Tailwind connection shell; clean locked restores/builds/typecheck and bounded API/browser smoke.",
+    "README presentation refresh: pinned stack badges, quick links, scope table and collapsible existing screenshot; GitHub/F0b next-step review."
   ],
   "incomplete": [
     "Review remaining product ADRs and D01-D10 choices; H0 pilot is approved, numerical policy and automation guarantees remain subject to validation",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automation remains unimplemented",
-    "Git repository identity and branch/history establishment",
-    "All product implementation and runtime/visual verification"
+    "F0b disposable PostgreSQL verification and all authentication/business features; broader final visual/accessibility/browser/OS verification."
   ],
   "changed_files": [
-    "AGENTS.md",
+    "Keemese.slnx",
+    "README.md",
+    "backend/Directory.Build.props",
+    "backend/Keemese.Api.Tests/Keemese.Api.Tests.csproj",
+    "backend/Keemese.Api.Tests/LivenessTests.cs",
+    "backend/Keemese.Api.Tests/packages.lock.json",
+    "backend/Keemese.Api/Keemese.Api.csproj",
+    "backend/Keemese.Api/Program.cs",
+    "backend/Keemese.Api/packages.lock.json",
+    "docs/agent-governance/Codex_Project_Initialization_and_Agent_Governance.md",
+    "docs/spec/personal_english_tutor_teaching_workspace_spec.md",
+    "docs/testing/evidence/f0a-shell.png",
+    "docs/testing/evidence/f0a.md",
+    "frontend/.npmrc",
+    "frontend/.nvmrc",
+    "frontend/index.html",
+    "frontend/package-lock.json",
+    "frontend/package.json",
+    "frontend/src/App.tsx",
+    "frontend/src/main.tsx",
+    "frontend/src/styles.css",
+    "frontend/tsconfig.json",
+    "frontend/vite.config.ts",
+    "global.json",
+    "Codex_Project_Initialization_and_Agent_Governance.md",
     "docs/README.md",
     "docs/agents/context-safety.md",
-    "docs/product/requirements.md",
-    "docs/architecture/design.md",
     "docs/backend/api.md",
-    "docs/decisions/decisions.md",
-    "docs/frontend/design.md",
-    "docs/security/threat-model.md",
-    "docs/testing/strategy.md",
-    "docs/operations/runbook.md",
     "docs/delivery/plan.md",
-    "harness/state/progress.json",
-    "harness/state/handoff.md",
+    "docs/frontend/design.md",
+    "docs/operations/runbook.md",
+    "docs/product/requirements.md",
+    "docs/testing/strategy.md",
     "harness/logs/build-log.md",
-    "harness/learning/README.md",
-    "harness/learning/lessons.jsonl",
-    "harness/learning/retrospectives/phase-1.md"
+    "harness/state/handoff.md",
+    "harness/state/progress.json",
+    "personal_english_tutor_teaching_workspace_spec.md"
   ],
   "preserved_source_files": [
-    "personal_english_tutor_teaching_workspace_spec.md",
-    "Codex_Project_Initialization_and_Agent_Governance.md",
+    "docs/spec/personal_english_tutor_teaching_workspace_spec.md",
+    "docs/agent-governance/Codex_Project_Initialization_and_Agent_Governance.md",
     "docs/agent-governance/research/Codex_Harness_Research_Notes_VI.md"
   ],
   "context": {
@@ -78,8 +98,8 @@
     "enforcement": "manual_bounded_packet_fallback_only",
     "policy_owner": "docs/agents/context-safety.md",
     "fresh_session_recommended_for_next_packet": true,
-    "current_thread_id": "01a17d43-531f-7163-956a-6d6cb1cd146a",
-    "fresh_session_evidence": "H0b coordinated in continuing chat by explicit user request. Two isolated ephemeral threads passed one same-thread recall/new-thread UNKNOWN sentinel test; not general ambient-history proof.",
+    "current_thread_id": "01a17db5-4cbb-7931-88e3-81322b9ba04e",
+    "fresh_session_evidence": "This F0a chat received a bounded launch prompt and read canonical records; no previous conversation imported. No independent runtime isolation or retained-context telemetry test performed.",
     "isolated_probe": "Live usage events observed: total cumulative across two turns; last latest-request counts; modelContextWindow 258400 has unverified usable-capacity semantics. Does not measure current desktop chat."
   },
   "verification": [
@@ -142,20 +162,61 @@
     {
       "check": "F0 readiness review documentation and 16 unchanged baseline files",
       "status": "passed_git_diff_blocked_no_repository"
+    },
+    {
+      "check": "R0 exact committed inventory (22 files), all 21 original SHA-256 hashes, one commit, three branch refs, no remote and clean tree before checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "R0 JSON/JSONL, local Markdown file targets and 61 unique traceability rows",
+      "status": "passed_after_correcting_checker_table_pattern"
+    },
+    {
+      "check": "R0 git diff --cached --check before commit",
+      "status": "failed_two_preexisting_markdown_hard_breaks_spec_lines_4_5_preserved"
+    },
+    {
+      "check": "R0 post-checkpoint git diff --check and canonical record validation",
+      "status": "passed_four_expected_unstaged_files_no_staged_or_untracked_files"
+    },
+    {
+      "check": "Source relocations, links, JSON/JSONL, traceability and diff whitespace",
+      "status": "passed_source_bytes_equal_HEAD_local_link_targets_json_jsonl_61_rows_diff_check_no_staged_changes"
+    },
+    {
+      "check": "F0a clean locked restores, backend build/3 HTTP cases, frontend typecheck/build",
+      "status": "passed"
+    },
+    {
+      "check": "F0a real HTTP and built-shell connection/outage/Enter retry recovery",
+      "status": "passed_bounded_in_app_browser"
+    },
+    {
+      "check": "F0a broader final visual/accessibility/OS/browser checks",
+      "status": "partially_checked_remaining_skipped_see_docs/testing/evidence/f0a.md"
+    },
+    {
+      "check": "F0a final JSON/JSONL, local Markdown targets, 61 traceability rows, source bytes, implementation whitespace, git diff --check, empty index and unchanged Git refs/no remote",
+      "status": "passed"
+    },
+    {
+      "check": "README badges and F0b runtime preflight",
+      "status": "versions_match_manifests_svg_fetch_blocked_http_403_podman_5.8.6_rootless_true_no_container_run"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "R0",
-    "action": "In a genuinely fresh chat execute approved repository baseline packet from delivery plan; no repeated approval request. Inspect candidate files, initialize master, add minimal .gitignore, stage reviewed baseline, commit with existing identity, create develop and feature/f0-foundation. Preserve user work; no remote/push.",
+    "id": "F0b",
+    "action": "Execute approved disposable PostgreSQL integration in a fresh chat with one bounded goal. Verify actual Git/files first.",
     "inputs": [
       "AGENTS.md",
       "harness/state/handoff.md",
+      "docs/README.md",
       "docs/delivery/plan.md",
-      "docs/decisions/decisions.md"
+      "README.md"
     ],
-    "acceptance": "Verified baseline commit/branches and exact inventory; canonical checkpoint; stop before F0a or dependency installation."
+    "acceptance": "Pinned real PostgreSQL isolated round-trip and rollback tests, deterministic cleanup, repeatable commands and canonical checkpoint; no business features/global installs/existing data."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -179,5 +240,11 @@
     "harness/state/progress.json",
     "harness/state/handoff.md",
     "harness/logs/build-log.md"
-  ]
+  ],
+  "f0a_side_effects": [
+    "SDK first-run output reported creating development HTTPS certificate; no trust or cleanup action performed.",
+    "Normal NuGet/npm caches populated; no global packages/settings deliberately changed."
+  ],
+  "running_processes": [],
+  "pending_user_input": []
 }

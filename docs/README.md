@@ -1,6 +1,8 @@
 # Planning baseline
 
-Status: Phase 1 proposal, 2026-10-27. Documentation approval does not authorize implementation. The original [product specification](../personal_english_tutor_teaching_workspace_spec.md) remains authoritative for product scope. The [bootstrap](../Codex_Project_Initialization_and_Agent_Governance.md) remains historical governance; the user's later context-safety amendment is recorded in [context safety](agents/context-safety.md) and takes precedence over its old token targets. Supporting [research](agent-governance/research/Codex_Harness_Research_Notes_VI.md) is preserved, not promoted to authority.
+Current execution: F0a skeleton is implemented and verified; F0b is unapproved. Use the [setup README](../README.md) for executable commands and the canonical checkpoint for current status. The planning documents below retain future proposals.
+
+Status: Phase 1 proposal, 2026-10-27. Documentation approval does not authorize implementation. The original [product specification](spec/personal_english_tutor_teaching_workspace_spec.md) remains authoritative for product scope. The [bootstrap](agent-governance/Codex_Project_Initialization_and_Agent_Governance.md) remains historical governance; the user's later context-safety amendment is recorded in [context safety](agents/context-safety.md) and takes precedence over its old token targets. Supporting [research](agent-governance/research/Codex_Harness_Research_Notes_VI.md) is preserved, not promoted to authority.
 
 | Read when | Canonical owner | Purpose |
 |---|---|---|

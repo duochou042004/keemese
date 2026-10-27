@@ -1,5 +1,7 @@
 # API contract proposal
 
+F0a implementation (2026-10-27): only `GET /api/v1/health/live` exists, returning HTTP 200 and `{"status":"ok"}` as JSON. It reports process liveness only. All business routes below remain proposals.
+
 Status: planning contract, not generated OpenAPI or implemented endpoints. Owner: backend. Base `/api/v1`, same-origin JSON, UUID resource IDs, UTC ISO timestamps plus explicit timezone where scheduling needs it. T=tutor, S=own student only. Every nested ID is independently authorized.
 
 | Route family | Methods/actions | Role and acceptance |

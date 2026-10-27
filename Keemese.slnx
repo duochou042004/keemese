@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="backend/Keemese.Api/Keemese.Api.csproj" />
+  <Project Path="backend/Keemese.Api.Tests/Keemese.Api.Tests.csproj" />
+</Solution>

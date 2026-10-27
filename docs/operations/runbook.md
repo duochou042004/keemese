@@ -1,5 +1,7 @@
 # Environment, delivery and recovery proposal
 
+F0a update (2026-10-27): local skeleton setup is implemented in the [root README](../../README.md), with exact SDK/package pins and locks. R0 repository baseline is complete; no remote exists. Database, hosting, migrations, containers and CI below remain proposals.
+
 Status: planning only. No runnable app, Compose file, deployment, migrations or production resources exist. Owner: operations. D04/D08 in the [decision register](../decisions/decisions.md) block final hosting/repository setup.
 
 ## Observed environment and version policy

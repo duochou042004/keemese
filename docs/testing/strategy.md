@@ -1,5 +1,7 @@
 # Verification strategy
 
+F0a update (2026-10-27): the minimal host now has three passing HTTP integration cases; locked restores, builds, typecheck and local API/browser smoke passed. See [setup commands](../../README.md) and [F0a evidence](evidence/f0a.md). The broader product/release strategy below remains proposed.
+
 Owner: verification. Status: planned; no product tests exist or have passed. Acceptance IDs are defined in [requirements](../product/requirements.md). Every implementation packet records exact commands, exit codes, evidence and skipped/blocked reasons.
 
 | Risk / acceptance | Required proof |

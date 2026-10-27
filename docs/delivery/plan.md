@@ -83,3 +83,19 @@ Acceptance: isolated real-DB round trip and rollback, deterministic cleanup of o
 ## R0 approval carried into fresh session — 2026-10-27
 
 User approved the stack and R0 scope above, then requested session closure and a fresh conversation. R0 is authorized but not executed. ADR01/02 are accepted. No remote/push, product implementation, package installation, hooks/controller or global changes are included. The successor should execute R0 without asking for the same approval again, verify actual state first, checkpoint afterward and stop before F0a. A project .codex directory is not a prerequisite to R0; create no placeholder configuration or skills merely to populate it.
+
+## R0 execution outcome — 2026-10-27
+
+R0 is complete; this outcome supersedes earlier pending-execution wording. Initialized local `master` and committed the reviewed 22-file baseline as `f25b1cd0c48b3d1b99141cc697f6f63bc5396e5c` using existing identity, then created `develop` and `feature/f0-foundation` at that commit. Current branch: `feature/f0-foundation`. All 21 original file hashes were preserved in the baseline; no remote. Four post-commit canonical checkpoint files remain unstaged by design. Baseline whitespace check flagged only two existing specification hard breaks, preserved unchanged. See [build log](../../harness/logs/build-log.md) and [progress](../../harness/state/progress.json) for validation. Stop before F0a; implementation/download approval is still required.
+
+## F0a approval — 2026-10-27
+
+User explicitly approved F0a execution, including local implementation and package downloads within the F0a scope above. Execute as one bounded goal in a fresh chat; no repeated approval needed. F0b and additional Git operations remain unapproved.
+
+## F0a outcome — 2026-10-27
+
+F0a completed under explicit local implementation/download approval. Exact pins and lockfiles, minimal API/liveness, three HTTP integration cases and React/TypeScript/Vite/Tailwind connection shell are implemented. Clean locked restores, backend build/tests, frontend typecheck/build, direct HTTP and built-shell browser connection/outage/recovery checks passed. See [setup](../../README.md), [QA evidence](../testing/evidence/f0a.md) and [checkpoint](../../harness/state/progress.json). Existing documentation edits and source relocations preserved; no staging/commit/push. Stop before F0b: disposable PostgreSQL runtime/lifecycle approval remains required, so F0 is not complete.
+
+## F0b approval — 2026-10-27
+
+User approved F0b in a fresh-chat bounded goal: pinned PostgreSQL image download, isolated rootless Podman container with synthetic data, real round-trip/rollback tests and deterministic cleanup of test-owned resources. Existing databases/volumes, global installations, production migrations and business features remain excluded. Rootless Podman 5.8.6 preflight succeeded; container execution remains to be verified. Do not repeat this approval request.

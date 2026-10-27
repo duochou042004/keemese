@@ -1,5 +1,7 @@
 # Frontend and UX acceptance design
 
+F0a implementation (2026-10-27): a development-only shell now shows checking/connected/unavailable API states and retry. No role navigation or teaching workflow exists. See [bounded QA evidence](../testing/evidence/f0a.md); this does not complete A10 or decide D06.
+
 Status: proposed design system and workflow blueprint, not rendered UI. P07/P26–29/P40–41/P48–50. Owner: frontend. The [decision register](../decisions/decisions.md) owns library, language and browser choices.
 
 ## Information architecture
