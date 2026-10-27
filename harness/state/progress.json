@@ -3,13 +3,17 @@
   "updated_at": "2026-10-27",
   "timezone": "Asia/Ho_Chi_Minh",
   "phase": "F0a complete; stopped before F0b",
-  "status": "f0b_approved_publication_in_progress",
+  "status": "f0b_approved_ready_for_fresh_chat",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
     "commit": null,
-    "working_tree_status": "unstaged_documentation_edits_source_relocations_and_untracked_f0a_implementation",
-    "note": "Publication checkpoint being committed; obtain exact current HEAD with git rev-parse HEAD. Original R0 baseline is f25b1cd0c48b3d1b99141cc697f6f63bc5396e5c."
+    "working_tree_status": "publication_checkpoint_pending_commit",
+    "note": "F0a implementation commit and all three branches pushed and verified. This publication checkpoint will be committed/pushed next; derive exact HEAD and clean status with Git. master/develop remain at R0 baseline; feature/f0-foundation contains F0a.",
+    "implementation_commit": "8dc6498e5be5df20025aa432dfbd84b8fdfb19d0",
+    "remote": "https://github.com/duochou042004/keemese.git",
+    "visibility": "public",
+    "default_branch": "develop"
   },
   "approval": {
     "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request; user requested source-document organization and goal-mode readiness explanation; user: F0a approved\u2014let\u2019s get moving!; user requested README badge refresh and next-step discussion; user approved F0b in a fresh chat and directed public GitHub repository via installed CLI",
@@ -21,7 +25,7 @@
       "existing databases/volumes or persistent production migrations",
       "deployment, access/secrets changes, Git merge or history rewrite"
     ],
-    "next_gate": "Publish reviewed F0a work to public GitHub repository and launch approved F0b as one fresh-chat bounded goal; stop after F0b."
+    "next_gate": "Launch approved F0b in a fresh bounded-goal chat. Current publication permission covers F0a and its checkpoint; do not infer permission to commit/push future F0b work."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -37,52 +41,15 @@
     "R0: initialized local master, committed exact 22-file baseline with existing identity, created develop and feature/f0-foundation; verified original hashes and no remote",
     "Moved governance source to docs/agent-governance and product source to docs/spec byte-for-byte; updated active references and assessed bounded goal readiness.",
     "F0a: exact pins/locks and reproducible setup; API liveness and three passing HTTP integration cases; React/Vite/Tailwind connection shell; clean locked restores/builds/typecheck and bounded API/browser smoke.",
-    "README presentation refresh: pinned stack badges, quick links, scope table and collapsible existing screenshot; GitHub/F0b next-step review."
+    "README presentation refresh: pinned stack badges, quick links, scope table and collapsible existing screenshot; GitHub/F0b next-step review.",
+    "Reviewed and committed F0a as 8dc6498; created public duochou042004/keemese and pushed master/develop/feature/f0-foundation; verified public visibility and remote refs."
   ],
   "incomplete": [
     "Review remaining product ADRs and D01-D10 choices; H0 pilot is approved, numerical policy and automation guarantees remain subject to validation",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automation remains unimplemented",
     "F0b disposable PostgreSQL verification and all authentication/business features; broader final visual/accessibility/browser/OS verification."
   ],
-  "changed_files": [
-    "Keemese.slnx",
-    "README.md",
-    "backend/Directory.Build.props",
-    "backend/Keemese.Api.Tests/Keemese.Api.Tests.csproj",
-    "backend/Keemese.Api.Tests/LivenessTests.cs",
-    "backend/Keemese.Api.Tests/packages.lock.json",
-    "backend/Keemese.Api/Keemese.Api.csproj",
-    "backend/Keemese.Api/Program.cs",
-    "backend/Keemese.Api/packages.lock.json",
-    "docs/agent-governance/Codex_Project_Initialization_and_Agent_Governance.md",
-    "docs/spec/personal_english_tutor_teaching_workspace_spec.md",
-    "docs/testing/evidence/f0a-shell.png",
-    "docs/testing/evidence/f0a.md",
-    "frontend/.npmrc",
-    "frontend/.nvmrc",
-    "frontend/index.html",
-    "frontend/package-lock.json",
-    "frontend/package.json",
-    "frontend/src/App.tsx",
-    "frontend/src/main.tsx",
-    "frontend/src/styles.css",
-    "frontend/tsconfig.json",
-    "frontend/vite.config.ts",
-    "global.json",
-    "Codex_Project_Initialization_and_Agent_Governance.md",
-    "docs/README.md",
-    "docs/agents/context-safety.md",
-    "docs/backend/api.md",
-    "docs/delivery/plan.md",
-    "docs/frontend/design.md",
-    "docs/operations/runbook.md",
-    "docs/product/requirements.md",
-    "docs/testing/strategy.md",
-    "harness/logs/build-log.md",
-    "harness/state/handoff.md",
-    "harness/state/progress.json",
-    "personal_english_tutor_teaching_workspace_spec.md"
-  ],
+  "changed_files": [],
   "preserved_source_files": [
     "docs/spec/personal_english_tutor_teaching_workspace_spec.md",
     "docs/agent-governance/Codex_Project_Initialization_and_Agent_Governance.md",
@@ -202,6 +169,10 @@
     {
       "check": "README badges and F0b runtime preflight",
       "status": "versions_match_manifests_svg_fetch_blocked_http_403_podman_5.8.6_rootless_true_no_container_run"
+    },
+    {
+      "check": "Public GitHub visibility, all three remote branch hashes and clean worktree after initial push",
+      "status": "passed"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",

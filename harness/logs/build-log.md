@@ -180,3 +180,7 @@ Read-only Git check confirms unchanged baseline/branches, no remote, and uncommi
 ## Public repository and F0b launch preparation — 2026-10-27
 
 User approved F0b in a fresh chat and requested public repository visibility, pointing out that gh was already installed. Verified gh 2.103.2 and authenticated login duochou042004; target duochou042004/keemese absent. Reviewed candidate inventory, changes and credential-pattern scan (no matches); generated output ignored, source relocations preserved. User's publication response authorizes proceeding with reviewed commit/public-create/remote/push scope. No merge/history rewrite. Checkpoint now carries explicit F0b approval; publication and launch are not yet claimed complete.
+
+## Public publication completed — 2026-10-27
+
+Committed reviewed F0a/docs as 8dc6498e5be5df20025aa432dfbd84b8fdfb19d0; both source moves detected as 100% renames. `gh repo create duochou042004/keemese --public --source=. --remote=origin` succeeded, then `git push -u origin master develop feature/f0-foundation` succeeded. `gh repo view` confirmed PUBLIC and default branch develop; `git ls-remote --heads origin` confirmed all three exact hashes. Worktree clean after push. master/develop remain baseline; no merge. Publication checkpoint prepared for its own commit/push before handing off the single writer. F0b approved for a fresh chat; no F0b image/container started here.
