@@ -9,10 +9,6 @@ from urllib.parse import unquote, urlencode
 from urllib.request import Request, urlopen
 
 
-def git(*args):
-    return subprocess.check_output(['git', *args], text=True).strip()
-
-
 def classify(changes):
     if not changes or any(status != 'M' and status != 'A' for status, _ in changes):
         return 'full'
@@ -20,9 +16,9 @@ def classify(changes):
     for _, path in changes:
         if path.endswith('.md') or (path.startswith('harness/') and path.endswith(('.json', '.jsonl'))):
             kinds.add('docs')
-        elif path.startswith('backend/') and '.Tests/' not in path and not path.endswith(('packages.lock.json', '.csproj', '.props')):
+        elif path.startswith('backend/') and path.endswith('.cs') and '.Tests/' not in path:
             kinds.add('backend')
-        elif path.startswith('frontend/src/') or path == 'frontend/index.html':
+        elif (path.startswith('frontend/src/') and path.endswith(('.ts', '.tsx', '.css'))) or path == 'frontend/index.html':
             kinds.add('frontend')
         else:
             return 'full'
@@ -35,7 +31,7 @@ def revision_changes(base, head):
     try:
         if not re.fullmatch(r'[0-9a-f]{40}', base):
             return []
-        git('cat-file', '-e', base + '^{commit}')
+        subprocess.run(['git', 'cat-file', '-e', base + '^{commit}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         raw = subprocess.check_output(['git', 'diff', '--name-status', '-z', '--no-renames', base, head]).decode()
         fields = raw.rstrip('\0').split('\0')
         return list(zip(fields[::2], fields[1::2])) if raw else []
@@ -91,9 +87,10 @@ if __name__ == '__main__':
     if args.command == 'validate':
         validate(Path.cwd())
     elif args.command == 'classify':
-        mode = classify(revision_changes(os.environ.get('BASE_SHA', ''), os.environ.get('HEAD_SHA', 'HEAD')))
+        changes = revision_changes(os.environ.get('BASE_SHA', ''), os.environ.get('HEAD_SHA', 'HEAD'))
+        mode = classify(changes)
         # PR events still validate the merge revision. Suppress only redundant branch pushes.
-        if os.environ.get('GITHUB_EVENT_NAME') == 'push':
+        if changes and os.environ.get('GITHUB_EVENT_NAME') == 'push':
             try:
                 repo = os.environ['GITHUB_REPOSITORY']
                 query = urlencode({'state': 'open', 'head': repo.split('/')[0] + ':' + os.environ['GITHUB_REF_NAME'], 'per_page': 100})

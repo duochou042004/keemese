@@ -1,4 +1,5 @@
 import unittest
+import os
 from check import classify, overall, revision_changes, validate, covered_push
 from pathlib import Path
 import subprocess
@@ -7,12 +8,34 @@ import tempfile
 
 class Checks(unittest.TestCase):
     def test_paths(self):
-        for path, mode in [('docs/testing/strategy.md', 'docs'), ('harness/state/progress.json', 'docs'), ('backend/Keemese.Api/Program.cs', 'backend'), ('frontend/src/App.tsx', 'frontend'), ('frontend/package-lock.json', 'full'), ('global.json', 'full'), ('.github/workflows/ci.yml', 'full'), ('tools/ci/check.py', 'full'), ('unknown', 'full'), ('harness/unexpected.py', 'full'), ('backend/Keemese.Api.Tests/A.cs', 'full')]:
+        for path, mode in [('docs/testing/strategy.md', 'docs'), ('harness/state/progress.json', 'docs'), ('backend/Keemese.Api/Program.cs', 'backend'), ('frontend/src/App.tsx', 'frontend'), ('frontend/package-lock.json', 'full'), ('global.json', 'full'), ('.github/workflows/ci.yml', 'full'), ('tools/ci/check.py', 'full'), ('unknown', 'full'), ('backend/unknown.bin', 'full'), ('frontend/src/unknown.bin', 'full'), ('harness/unexpected.py', 'full'), ('backend/Keemese.Api.Tests/A.cs', 'full')]:
             with self.subTest(path=path):
                 self.assertEqual(classify([('M', path)]), mode)
         for changes in [[], [('D', 'docs/README.md')], [('R100', 'docs/a.md')], [('M', 'backend/a.cs'), ('M', 'frontend/src/a.ts')]]:
             self.assertEqual(classify(changes), 'full')
         self.assertEqual(revision_changes('0' * 40, 'HEAD'), [])
+
+    def test_real_revision_diff_and_deletion(self):
+        with tempfile.TemporaryDirectory() as directory:
+            previous = Path.cwd()
+            try:
+                os.chdir(directory)
+                subprocess.run(['git', 'init', '-q'], check=True)
+                path = Path('space name.md')
+                path.write_text('first\n')
+                def commit():
+                    subprocess.run(['git', 'add', '-A'], check=True)
+                    subprocess.run(['git', '-c', 'user.name=CI fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-qm', 'fixture'], check=True)
+                    return subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+                base = commit()
+                path.write_text('second\n')
+                head = commit()
+                self.assertEqual(classify(revision_changes(base, head)), 'docs')
+                path.rename('renamed.md')
+                head = commit()
+                self.assertEqual(classify(revision_changes(base, head)), 'full')
+            finally:
+                os.chdir(previous)
 
     def test_push_deduplication(self):
         self.assertTrue(covered_push([{'base': {'ref': 'develop'}, 'head': {'sha': 'a'}}], 'a'))

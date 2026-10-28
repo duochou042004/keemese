@@ -50,3 +50,8 @@ CI proposal: Linux PR jobs, concurrency cancellation for superseded runs, lockfi
 ## CI1 approved next — 2026-10-28
 
 [CI1](../delivery/ci1.md) defines the next fresh-chat goal: selective/full checks, immutable action pins/read-only tokens, bounded cache/artifact usage, rootless real-DB and existing browser proof. No workflow/hosted result exists yet; 21 API/13 browser passes are local historical evidence. The standalone original database project's three tests must be run explicitly because it is not listed in the root solution. Hosted evidence must include a real run URL/SHA and docs-only/full path behavior; static YAML validation alone cannot close the packet.
+
+
+## CI1 execution record — 2026-10-28
+
+The [implemented workflow](../../.github/workflows/ci.yml) supersedes historical CI proposals above; [CI1 evidence](evidence/ci1.md) owns actual hosted/local outcomes and repairs. Lightweight helpers validate classifications, failure/cancellation handling, malformed JSON, missing/unversioned local links and requirement coverage. Conditional verification retains real PostgreSQL/browser tests; full mode includes the original standalone three-test DB project as well as the 21 API and 13 browser scenarios. No test can silently skip missing infrastructure. Bounded timeouts, exact restore/build pins, one browser worker, post-cleanup acknowledgement and independent inventories remain required. CI success proves the recorded Linux synthetic flows, not product-wide acceptance, visual-design approval, other OS/browsers or deployment readiness.

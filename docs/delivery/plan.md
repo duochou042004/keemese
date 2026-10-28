@@ -129,3 +129,7 @@ C1a is implemented and verified: 21 API tests and 13 browser scenarios pass; new
 ## Next priority: CI1 before C1b — 2026-10-28
 
 User requests a fresh conversation in goal mode and conditional CI implementation; assessment accepts CI as timely. Execute [CI1](ci1.md) next: small secure/path-aware GitHub Actions with real PostgreSQL/API/browser proof and publication. Existing 21 API/13 browser tests justify automation before adding more workflows. [Hosting direction](../operations/runbook.md#accepted-hosting-direction-and-ci-priority--2026-10-28) is recorded for later deployment/storage packets; CI1 needs no Render/R2/deployment credentials. C1b folders remains proposed after CI1, not currently authorized. This chat publishes the handoff before the approved successor starts, avoiding concurrent writers.
+
+## CI1 implementation outcome — 2026-10-28
+
+Secure selective GitHub Actions and dependency-free validation helpers are implemented. Real local and hosted rootless PostgreSQL/API/browser proof is recorded in [CI1 evidence](../testing/evidence/ci1.md); final revision/docs-only outcomes belong there. Product behavior, dependency locks and source specifications are preserved. Stop at CI1 after reviewed publication; C1b folder organization remains the next proposal requiring separate approval. No deployment/storage provisioning or full C1/A3 acceptance is inferred.

@@ -107,7 +107,9 @@ jobs:
           python3 - <<'PY'
           import json, os
           from pathlib import Path
-          Path('.ci-report/result.json').write_text(json.dumps({'mode': os.environ['MODE'], 'result': 'failed', 'details': 'See individual job steps; no raw test data retained.'}))
+          report = json.dumps({'mode': os.environ['MODE'], 'result': 'failed', 'details': 'See individual job steps; no raw test data retained.'})
+          assert len(report.encode()) <= 1024
+          Path('.ci-report/result.json').write_text(report)
           PY
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2, node24
         if: failure()
