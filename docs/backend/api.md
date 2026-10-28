@@ -1,8 +1,8 @@
 # API contract proposal
 
-F0a implementation (2026-10-27): only `GET /api/v1/health/live` exists, returning HTTP 200 and `{"status":"ok"}` as JSON. It reports process liveness only. All business routes below remain proposals.
+I1a implementation (2026-10-28): identity and student-account routes below are implemented and tested against disposable real PostgreSQL. `GET /api/v1/health/live` remains anonymous and DB-independent. Teaching/file routes in the original planning table remain proposals. See [evidence](../testing/evidence/i1a.md).
 
-Status: planning contract, not generated OpenAPI or implemented endpoints. Owner: backend. Base `/api/v1`, same-origin JSON, UUID resource IDs, UTC ISO timestamps plus explicit timezone where scheduling needs it. T=tutor, S=own student only. Every nested ID is independently authorized.
+Status: the original route-family planning table remains a proposal; the implemented I1a subset is specified separately below. No generated OpenAPI is claimed. Owner: backend. Base `/api/v1`, same-origin JSON, UUID resource IDs, UTC ISO timestamps plus explicit timezone where scheduling needs it. T=tutor, S=own student only. Every nested ID is independently authorized.
 
 | Route family | Methods/actions | Role and acceptance |
 |---|---|---|
@@ -33,3 +33,25 @@ Example completion request shape: `{version, attendance, privateNote, materialId
 Example attempt read: `{id,state,startedAt,expiresAt,serverNow,questions:[{snapshotId,type,prompt,options}],savedAnswers,version}`. Exclude correct answers/explanations until approved release policy. Server evaluates expiry and submission atomically; UI countdown never authorizes extra time.
 
 API integration checks must prove wrong-student access denial for each family, idempotent retry, concurrency conflict, invalid transition, and rollback of completion bundles. Final OpenAPI, exact payload field constraints and upload limits belong to the approved implementation packet; no endpoint is available now.
+
+## Implemented I1a contract
+
+Same-origin JSON under `/api/v1`; UUIDs; noncacheable private responses. All POSTs require an exact same-origin `Origin` header and the `X-CSRF-TOKEN` acquired from `GET /auth/csrf`. Refresh that token after login/logout/password changes because antiforgery binds it to identity. Every authenticated request checks active account and unrevoked/unexpired session in PostgreSQL; unavailable state returns safe 503, revoked/expired state 401. Errors are Problem Details with stable `code` and `traceId`, with a Vietnamese title and no exception/credential detail.
+
+| Operation | JSON input / response |
+|---|---|
+| `GET /auth/csrf` | `{token}`; anonymous, no-store |
+| `POST /auth/login` | `{username,password}` → `{id,role,mustChangePassword}`; generic 401 invalid/inactive/locked, 429 throttled |
+| `GET /auth/me` | `{id,role,mustChangePassword}` only |
+| `POST /auth/password` | `{currentPassword,newPassword}` → 204, revokes all sessions and clears cookie |
+| `POST /auth/logout` | Empty object/body → 204, revokes only current session and clears cookie |
+| `GET /students?page=1&pageSize=25` | Tutor only, `{items,nextPage}`; stable UUID order; page positive up to 1,000,000, size 1–100; unknown filters rejected |
+| `POST /students` | Tutor only, `{username,displayName,temporaryPassword}` → 201 tutor DTO; atomic account/profile/audit; duplicate 409 |
+| `GET /students/{id}` | Tutor DTO; unknown target 404; all student callers 403 |
+| `POST /students/{id}/credentials/reset` | Tutor only, `{temporaryPassword,version}` → updated tutor DTO; revokes all sessions, requires password change |
+| `POST /students/{id}/deactivate` | Tutor only, `{version}` → tutor DTO; revokes all sessions and retains history; repeated current-version inactive operation leaves version/audit unchanged |
+| `GET /me/profile` | Fully rotated student only, `{id,displayName,username}` derived from authenticated user; any query/body selector rejected |
+
+Tutor DTO: `{id,displayName,username,active,version}`. Student profiles never return account flags, password/hash, contacts, guardian data or private-note fields. Restricted sessions permit only CSRF, auth/me, password and logout; other routes return 403 `password_change_required`. Unknown fields and missing required fields in typed POST payloads return 400. Username trims to 3–64 ASCII letters/digits/dot/underscore/hyphen, normalized case-insensitively; display name trims to 1–200 characters. Passwords allow spaces/Unicode, 12–128 .NET string characters, no composition rule; change rejects the current password. Names/content are preserved after outer trimming. Reset/deactivate require the latest profile version; stale versions return 409 before changes.
+
+Cookies are HttpOnly, SameSite=Lax, nonpersistent, absolute eight hours, no sliding renewal. Secure is mandatory except explicitly isolated loopback Development HTTP. Login allows ten attempts in a rolling 60 seconds per peer IP in this process; five failures lock the account for 15 minutes. Framework Identity hashes/password verification and cookie/antiforgery protection are used; no public registration/setup/recovery route is mapped. Offline bootstrap/recovery are described in the [runbook](../operations/runbook.md#i1a-local-identity-operations).

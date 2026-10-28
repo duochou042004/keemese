@@ -1,31 +1,33 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27",
+  "updated_at": "2026-10-28",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "F0a complete; stopped before F0b",
-  "status": "f0b_approved_ready_for_fresh_chat",
+  "phase": "Bilingual UI approved for fresh goal-mode execution",
+  "status": "approved_preparing_publication_and_fresh_session",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": null,
-    "working_tree_status": "publication_checkpoint_pending_commit",
-    "note": "F0a implementation commit and all three branches pushed and verified. This publication checkpoint will be committed/pushed next; derive exact HEAD and clean status with Git. master/develop remain at R0 baseline; feature/f0-foundation contains F0a.",
+    "commit": "d932c3c62dd0942aff67977a4a65d7a9f83afe07",
+    "working_tree_status": "unstaged_f0b_i1a_i1b_and_documentation",
+    "note": "Verified original feature/f0-foundation/d932c3c and three branch refs; index empty. Existing F0b/I1a files preserved, I1b frontend/tests/evidence added unstaged. No Git publication.",
     "implementation_commit": "8dc6498e5be5df20025aa432dfbd84b8fdfb19d0",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
     "default_branch": "develop"
   },
   "approval": {
-    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request; user requested source-document organization and goal-mode readiness explanation; user: F0a approved\u2014let\u2019s get moving!; user requested README badge refresh and next-step discussion; user approved F0b in a fresh chat and directed public GitHub repository via installed CLI",
-    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push. Current follow-up authorizes source-document moves under docs and reference/checkpoint updates; goal-mode readiness explanation only. F0a local skeleton implementation and dependency downloads approved per delivery plan; proceed as one bounded goal in a fresh chat. README presentation and read-only next-step review authorized; explicit GitHub destination/publishing and F0b approvals requested, pending. Explicit F0b fresh-chat approval: pinned PostgreSQL image download, isolated rootless Podman container, synthetic round-trip/rollback tests and cleanup of test-owned resources. User response to publication scope directs public GitHub repository; use authenticated account duochou042004 and project name keemese, review/commit current work, create public remote and push existing branches.",
+    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request; user requested source-document organization and goal-mode readiness explanation; user: F0a approved—let’s get moving!; user requested README badge refresh and next-step discussion; user approved F0b in a fresh chat and directed public GitHub repository via installed CLI; user 2026-10-28 requested next task and fresh-conversation handoff using GPT 6.1 Sol with Medium effort; user: Alright, I approve your proposal—let’s go ahead with it. User 2026-10-28: proceed with next planned task right here; I approve. User rejected current visual design, requested UI screenshot PNG exclusions and a proper redesign next discussion using the label Astra Effort Light. User 2026-10-28 accepts bilingual proposal, requests fresh Sol Medium goal-mode execution and commit/push at every reporting checkpoint.",
+    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push. Current follow-up authorizes source-document moves under docs and reference/checkpoint updates; goal-mode readiness explanation only. F0a local skeleton implementation and dependency downloads approved per delivery plan; proceed as one bounded goal in a fresh chat. README presentation and read-only next-step review authorized; explicit GitHub destination/publishing and F0b approvals requested, pending. Explicit F0b fresh-chat approval: pinned PostgreSQL image download, isolated rootless Podman container, synthetic round-trip/rollback tests and cleanup of test-owned resources. User response to publication scope directs public GitHub repository; use authenticated account duochou042004 and project name keemese, review/commit current work, create public remote and push existing branches. Current I1-readiness packet: inspect canonical/files/Git and relevant requirements, prepare concrete proposal and checkpoint only. User explicitly approved the I1 readiness proposal and I1a execution on 2026-10-28: ADR03 identity subset, D05 settings and applicable D06 pilot scope; pinned local dependency restores and synthetic disposable PostgreSQL tests included. Execute I1a only in a fresh chat; I1b and Git publication remain separately gated. User now explicitly approves next planned I1b identity UI packet in the current session; this supersedes the earlier fresh-chat-only execution condition for I1b. Includes exact local Playwright dependency/browser download and synthetic disposable UI host/tests as defined in the proposal. CI and Git publication are not included. Current fresh-chat request explicitly authorizes existing I1b frontend redesign and necessary tests/evidence; no backend business changes or publication. Latest approval: execute docs/delivery/bilingual-ui.md in a fresh GPT-6.1 Sol Medium chat with create_goal; publish accumulated existing work and checkpoint records now and publish task changes at subsequent reporting checkpoints.",
     "not_authorized": [
-      "product implementation beyond F0b",
       "hooks or controller scripts",
       "global installations/configuration/model changes",
       "existing databases/volumes or persistent production migrations",
-      "deployment, access/secrets changes, Git merge or history rewrite"
+      "deployment, access/secrets changes, Git merge or history rewrite",
+      "CI implementation",
+      "Git merge or force-push",
+      "Product implementation beyond the approved bilingual UI packet"
     ],
-    "next_gate": "Launch approved F0b in a fresh bounded-goal chat. Current publication permission covers F0a and its checkpoint; do not infer permission to commit/push future F0b work."
+    "next_gate": "No further approval needed for the bounded bilingual packet, synthetic existing tests or normal branch commit/push; unrelated scope remains gated."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -36,20 +38,87 @@
     "Established concise AGENTS instructions and canonical state/learning records",
     "H0 bounded interface pilot: installed schemas, current-chat metadata, two empty ephemeral thread starts, arithmetic/parser diagnostics and checkpoint",
     "H0b: three tiny completed inference turns, sentinel recall/isolation, usage events and one immediate interrupt (30 ms); isolated process exited 0",
-    "Reviewed specification 35\u201336 and F0 prerequisites; proposed R0 repository baseline plus split F0a/F0b with explicit permissions and acceptance",
+    "Reviewed specification 35–36 and F0 prerequisites; proposed R0 repository baseline plus split F0a/F0b with explicit permissions and acceptance",
     "User accepted ADR01/02 and R0; fresh-session approval handoff prepared",
     "R0: initialized local master, committed exact 22-file baseline with existing identity, created develop and feature/f0-foundation; verified original hashes and no remote",
     "Moved governance source to docs/agent-governance and product source to docs/spec byte-for-byte; updated active references and assessed bounded goal readiness.",
     "F0a: exact pins/locks and reproducible setup; API liveness and three passing HTTP integration cases; React/Vite/Tailwind connection shell; clean locked restores/builds/typecheck and bounded API/browser smoke.",
     "README presentation refresh: pinned stack badges, quick links, scope table and collapsible existing screenshot; GitHub/F0b next-step review.",
-    "Reviewed and committed F0a as 8dc6498; created public duochou042004/keemese and pushed master/develop/feature/f0-foundation; verified public visibility and remote refs."
+    "Reviewed and committed F0a as 8dc6498; created public duochou042004/keemese and pushed master/develop/feature/f0-foundation; verified public visibility and remote refs.",
+    "F0b: digest-pinned PostgreSQL 18.6 under rootless Podman; locked EF Core/Npgsql test project; real Unicode round-trip, constraint-failure rollback and exception-path cleanup passed; no containers/volumes remain.",
+    "2026-10-28 F0b code/documentation review: no blocking finding; HEAD unchanged, whitespace check passed and container/volume inventories empty.",
+    "I1 readiness: verified foundation files/Git, consulted authoritative identity/isolation/UX sections and relevant guidance, proposed exact I1a/I1b paths/behavior/tests; user subsequently accepted identity/D05/applicable D06 and I1a.",
+    "I1a: framework Identity/EF password facilities, protected cookies/CSRF/origin, DB-backed per-request session validation, single-tutor bootstrap/recovery, atomic student create/reset/deactivate, restricted password change and own-profile isolation; real API/PostgreSQL/PTY acceptance passed with exact locks. No UI or persistent DB operation.",
+    "I1b: Vietnamese identity UI, tutor account management and student self-account; 6/6 built-asset Chromium real API/PostgreSQL E2E, 48 template/width cases, true 200% browser zoom, short-height/keyboard/computed contrast and 17/17 API regressions passed. Fixed outer test-process cleanup race and verified empty inventories.",
+    "Added scoped UI PNG screenshot ignore rules and removed README embed of an ignored preview; retained local PNG files. Historical tracked F0a PNG remains tracked; index/history untouched.",
+    "I1b redesign: white/navy, revised hierarchy/layout/forms/navigation; final 6/6 browser suite (25.8s), 48 viewport cases, actual 200% zoom and 17/17 API regressions passed; agent visual review complete, user acceptance pending.",
+    "2026-10-28 bounded bilingual discussion: inspected existing frontend and actual Git; proposed Vietnamese default, header selector, browser preference and typed UI dictionaries, including live error/validation translation. No product edits."
   ],
   "incomplete": [
-    "Review remaining product ADRs and D01-D10 choices; H0 pilot is approved, numerical policy and automation guarantees remain subject to validation",
-    "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automation remains unimplemented",
-    "F0b disposable PostgreSQL verification and all authentication/business features; broader final visual/accessibility/browser/OS verification."
+    "Review remaining ADRs and deferred D01-D10 portions; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
+    "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automatic controller remains unimplemented.",
+    "All content/material/question/goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. CI, persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending.",
+    "Approved English/Vietnamese UI implementation and verification pending in the fresh Sol Medium goal-mode chat."
   ],
-  "changed_files": [],
+  "changed_files": [
+    ".gitignore",
+    "README.md",
+    "backend/Keemese.Api.Tests/IdentityBoundaryTests.cs",
+    "backend/Keemese.Api.Tests/IdentityLifecycleTests.cs",
+    "backend/Keemese.Api.Tests/Keemese.Api.Tests.csproj",
+    "backend/Keemese.Api.Tests/LivenessTests.cs",
+    "backend/Keemese.Api.Tests/TestApplicationFactory.cs",
+    "backend/Keemese.Api.Tests/UiTestHost.cs",
+    "backend/Keemese.Api.Tests/packages.lock.json",
+    "backend/Keemese.Api/Identity/HttpIdentity.cs",
+    "backend/Keemese.Api/Identity/IdentityService.cs",
+    "backend/Keemese.Api/Identity/OperatorCommand.cs",
+    "backend/Keemese.Api/Keemese.Api.csproj",
+    "backend/Keemese.Api/Persistence/WorkspaceDb.cs",
+    "backend/Keemese.Api/Program.cs",
+    "backend/Keemese.Api/Students/StudentService.cs",
+    "backend/Keemese.Api/packages.lock.json",
+    "backend/Keemese.Database.Tests/DisposablePostgres.cs",
+    "backend/Keemese.Database.Tests/Keemese.Database.Tests.csproj",
+    "backend/Keemese.Database.Tests/PostgresTests.cs",
+    "backend/Keemese.Database.Tests/packages.lock.json",
+    "docs/README.md",
+    "docs/backend/api.md",
+    "docs/decisions/decisions.md",
+    "docs/delivery/i1-readiness.md",
+    "docs/delivery/plan.md",
+    "docs/frontend/design.md",
+    "docs/operations/runbook.md",
+    "docs/security/threat-model.md",
+    "docs/testing/evidence/f0b.md",
+    "docs/testing/evidence/i1a.md",
+    "docs/testing/evidence/i1b.md",
+    "docs/testing/strategy.md",
+    "frontend/e2e/artifacts/browser-zoom.json",
+    "frontend/e2e/artifacts/qa.json",
+    "frontend/e2e/artifacts/visual-review.json",
+    "frontend/e2e/identity.spec.ts",
+    "frontend/e2e/teardown.ts",
+    "frontend/e2e/zoom-extension/manifest.json",
+    "frontend/e2e/zoom-extension/zoom.js",
+    "frontend/package-lock.json",
+    "frontend/package.json",
+    "frontend/playwright.config.ts",
+    "frontend/src/App.tsx",
+    "frontend/src/api/client.ts",
+    "frontend/src/auth/AuthForms.tsx",
+    "frontend/src/components/forms.tsx",
+    "frontend/src/main.tsx",
+    "frontend/src/students/Students.tsx",
+    "frontend/src/styles.css",
+    "harness/learning/lessons.jsonl",
+    "harness/logs/build-log.md",
+    "harness/state/handoff.md",
+    "harness/state/progress.json",
+    "docs/testing/evidence/i1b-redesign.md",
+    "AGENTS.md",
+    "docs/delivery/bilingual-ui.md"
+  ],
   "preserved_source_files": [
     "docs/spec/personal_english_tutor_teaching_workspace_spec.md",
     "docs/agent-governance/Codex_Project_Initialization_and_Agent_Governance.md",
@@ -65,8 +134,8 @@
     "enforcement": "manual_bounded_packet_fallback_only",
     "policy_owner": "docs/agents/context-safety.md",
     "fresh_session_recommended_for_next_packet": true,
-    "current_thread_id": "01a17db5-4cbb-7931-88e3-81322b9ba04e",
-    "fresh_session_evidence": "This F0a chat received a bounded launch prompt and read canonical records; no previous conversation imported. No independent runtime isolation or retained-context telemetry test performed.",
+    "current_thread_id": null,
+    "fresh_session_evidence": "Bounded bilingual discussion used launch instructions and local canonical/files/Git only; no prior conversation import, fork, subagents or other-chat messaging.",
     "isolated_probe": "Live usage events observed: total cumulative across two turns; last latest-request counts; modelContextWindow 258400 has unverified usable-capacity semantics. Does not measure current desktop chat."
   },
   "verification": [
@@ -173,21 +242,126 @@
     {
       "check": "Public GitHub visibility, all three remote branch hashes and clean worktree after initial push",
       "status": "passed"
+    },
+    {
+      "check": "F0b clean build, locked restore and final 3 real PostgreSQL tests",
+      "status": "passed_zero_warnings_errors_3_of_3"
+    },
+    {
+      "check": "F0b container/volume inventory before and after runs",
+      "status": "passed_empty_no_owned_resources_remaining"
+    },
+    {
+      "check": "F0b crash/forced-kill/runtime-disconnection cleanup and other platforms",
+      "status": "not_tested_manual_recovery_documented"
+    },
+    {
+      "check": "F0b final JSON/JSONL, local Markdown targets, 61 requirement rows, whitespace, preserved source bytes and unchanged Git index/refs",
+      "status": "passed"
+    },
+    {
+      "check": "2026-10-28 F0b review, Git HEAD/diff whitespace and runtime resource inventory",
+      "status": "passed_no_blocking_review_finding_tests_not_rerun_unchanged_code"
+    },
+    {
+      "check": "I1 readiness Git/files/relevant specification and documentation review",
+      "status": "passed_documentation_only_no_application_tests_rerun"
+    },
+    {
+      "check": "I1 readiness final JSON/JSONL, local Markdown file targets, fences, 61 unique requirement rows, original source bytes, empty index, unchanged HEAD and diff whitespace",
+      "status": "passed"
+    },
+    {
+      "check": "I1a initial complete API/PostgreSQL/PTY suite",
+      "status": "passed_17_of_17_then_final_review_changes_pending_rerun"
+    },
+    {
+      "check": "I1a exact Identity/EF 10.0.14/Npgsql 10.0.3 locked restore, clean build",
+      "status": "passed_restore_exit_0_final_single_worker_build_zero_warnings_errors; earlier_MSBuild_child_node_failure_recorded"
+    },
+    {
+      "check": "I1a final real API/PostgreSQL/Linux PTY suite",
+      "status": "passed_17_of_17_no_skips_48_seconds_including_original_3_liveness_cases"
+    },
+    {
+      "check": "I1a exception-inclusive log capture and transport/DTO/CSRF safety targeted follow-up",
+      "status": "passed_3_of_3_no_skips_10_seconds"
+    },
+    {
+      "check": "Original unchanged F0b clean locked restore/build/real PostgreSQL tests",
+      "status": "passed_3_of_3_no_skips_12_seconds_zero_build_warnings_errors"
+    },
+    {
+      "check": "I1a final resource/Git/source/documentation validation",
+      "status": "passed_empty_containers_volumes_index_no_api_testhost_process_unchanged_branch_HEAD_refs_frontend_and_3_original_source_bytes_JSON_JSONL_links_fences_61_rows_whitespace"
+    },
+    {
+      "check": "I1a UI/browser/complete A1/A9/A10, persistent DB/release migration, crash cleanup and other OS",
+      "status": "not_run_outside_packet_no_claim"
+    },
+    {
+      "check": "I1a unintended Data Protection key startup side effect",
+      "status": "corrected_memory_only_provider_and_repository_exact_test_created_key_and_empty_parent_directories_removed"
+    },
+    {
+      "check": "I1b initial typecheck/frontend build and UI test host compile",
+      "status": "passed_zero_backend_warnings_errors"
+    },
+    {
+      "check": "I1b exact Playwright 1.64.1/local browser install, npm ci/typecheck/build and explicit test-config TypeScript check",
+      "status": "passed_Chromium_156.0.8078.4_revision_1248_Kali_Ubuntu24.04_fallback_warning_recorded"
+    },
+    {
+      "check": "I1b locked backend restore/build and retained API ownership regressions excluding opt-in host",
+      "status": "passed_zero_build_warnings_errors_17_of_17_no_skips_48_seconds"
+    },
+    {
+      "check": "I1b final built-asset real API/PostgreSQL browser suite",
+      "status": "passed_6_of_6_no_retries_skips_26.4_seconds_after_cleanup_acknowledgement_fix"
+    },
+    {
+      "check": "I1b visual/keyboard/computed contrast within identity pilot",
+      "status": "passed_6_templates_8_widths_48_cases_short_height_actual_200_percent_zoom_3px_focus_min_measured_text_contrast_4.98_to_1_screenshots_reviewed"
+    },
+    {
+      "check": "I1b independent resource check exposed browser orchestration race",
+      "status": "failed_initially_four_owned_containers_then_exact_owner_removal_and_post_cleanup_ack_fix_final_empty_inventories"
+    },
+    {
+      "check": "I1b final source/Git/document validation",
+      "status": "passed_JSON_JSONL_local_Markdown_targets_fences_61_rows_whitespace_3_original_sources_and_all_preexisting_backend_hashes_empty_index_unchanged_HEAD_refs_empty_runtime_inventories"
+    },
+    {
+      "check": "I1b CI/production/persistent DB/other browsers OS/full product A9 A10/crash cleanup",
+      "status": "not_run_not_in_packet_no_claim"
+    },
+    {
+      "check": "UI screenshot exclusion and feedback checkpoint",
+      "status": "passed_73_local_PNGs_ignored_text_QA_and_source_assets_not_ignored_historical_tracked_PNG_preserved_empty_index_HEAD_unchanged_JSON_valid_diff_check_passed"
+    },
+    {
+      "check": "I1b redesign build, explicit test TypeScript, API/browser lifecycle, 48 viewport cases, actual zoom, keyboard/short-height and expanded contrast",
+      "status": "passed_17_API_6_browser_48_width_cases_min_contrast_5.34_agent_review_complete_user_acceptance_pending"
+    },
+    {
+      "check": "Redesign final cleanup and canonical validation",
+      "status": "passed_empty_task_processes_containers_volumes_markers_profiles_JSON_JSONL_Markdown_targets_61_rows_preserved_3_sources_20_backend_files_empty_index_unchanged_HEAD_PNG_exclusions_diff_check"
+    },
+    {
+      "check": "Bilingual discussion checkpoint: JSON/JSONL, touched Markdown local file targets, product-file SHA256 preservation, diff whitespace, empty index and unchanged HEAD",
+      "status": "passed_documentation_only_application_tests_and_visual_QA_not_rerun"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "F0b",
-    "action": "Execute approved disposable PostgreSQL integration in a fresh chat with one bounded goal. Verify actual Git/files first.",
+    "id": "bilingual-ui-goal",
+    "action": "In a fresh GPT-6.1 Sol Medium chat activate create_goal and execute docs/delivery/bilingual-ui.md, verify, checkpoint, commit and push origin/feature/f0-foundation.",
     "inputs": [
-      "AGENTS.md",
-      "harness/state/handoff.md",
-      "docs/README.md",
-      "docs/delivery/plan.md",
-      "README.md"
+      "docs/delivery/bilingual-ui.md",
+      "docs/frontend/design.md"
     ],
-    "acceptance": "Pinned real PostgreSQL isolated round-trip and rollback tests, deterministic cleanup, repeatable commands and canonical checkpoint; no business features/global installs/existing data."
+    "acceptance": "Complete UI-only bilingual contract and evidence; verified normal branch push; no unrelated scope."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -217,5 +391,50 @@
     "Normal NuGet/npm caches populated; no global packages/settings deliberately changed."
   ],
   "running_processes": [],
-  "pending_user_input": []
+  "pending_user_input": [],
+  "f0b_side_effects": [
+    "Digest-pinned PostgreSQL image remains in rootless Podman cache.",
+    "Normal NuGet cache populated; all test containers removed, no volumes created."
+  ],
+  "i1a_side_effects": [
+    "Normal NuGet caches populated; existing digest-pinned image retained. All disposable test containers removed; no volumes or app/testhost processes remain.",
+    "First host startup accidentally created one Data Protection key in user-profile storage. Removed that exact test-created key and empty test-created directories; corrected both protection provider and key-manager XML repository to memory-only. Subsequent host tests/direct inspection found no remaining key file.",
+    "No staging/commit/push/merge, persistent DB/schema operation, frontend change, install/global configuration, CI/hooks/controller or other-chat messaging."
+  ],
+  "i1a_evidence": "docs/testing/evidence/i1a.md",
+  "i1b_evidence": "docs/testing/evidence/i1b.md",
+  "i1b_side_effects": [
+    "Exact local npm/Playwright restore, project-local ignored Chromium/FFmpeg cache, synthetic screenshots/measurement artifacts; no global or user-browser configuration.",
+    "Four browser-run-owned containers initially survived due outer process cleanup race; removed only exact verified owners. Fixed acknowledgement waits for helper cleanup before outer termination; final inventories empty.",
+    "All existing backend files match I1b-start SHA256; only allowed UiTestHost.cs added. No persistent DB operation, CI/hooks/controller, Git staging/commit/push/merge or new-chat/messaging action."
+  ],
+  "design_review": {
+    "date": "2026-10-28",
+    "status": "proceed_on_existing_design_authorized_for_bilingual_packet",
+    "feedback": "Cluttered, unclear, lacks visual harmony/polish; white base acceptable, green accents rejected in favor of deep blue or black. Rethink layout before new features.",
+    "next_discussion_model_label": "Astra Effort Light",
+    "model_setting_changed": false,
+    "implementation": "White/navy design, centered forms, divided roster, responsive settings rows, quieter navigation; agent screenshots reviewed.",
+    "note": "No separate aesthetic acceptance inferred; latest explicit proceed instruction removes the implementation blocker for this packet."
+  },
+  "i1b_redesign_evidence": "docs/testing/evidence/i1b-redesign.md",
+  "deferred_requirements": [
+    {
+      "id": "bilingual-interface",
+      "languages": [
+        "en",
+        "vi"
+      ],
+      "scope": "Application UI components",
+      "status": "approved_for_fresh_goal_execution",
+      "source_date": "2026-10-28",
+      "implementation_authorized": true
+    }
+  ],
+  "publication_policy": {
+    "authorized": "2026-10-28",
+    "branch": "feature/f0-foundation",
+    "remote": "origin",
+    "rule": "Review, commit and push task changes before stopping to report; verify remote hash; no empty commits, merge or force-push."
+  }
 }

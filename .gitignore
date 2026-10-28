@@ -13,3 +13,7 @@ dist/
 .vs/
 .DS_Store
 Thumbs.db
+
+# Local UI screenshots (retain source assets and text QA evidence)
+/frontend/e2e/artifacts/**/*.png
+/docs/testing/evidence/**/*.png

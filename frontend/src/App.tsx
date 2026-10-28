@@ -1,90 +1,77 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { ApiClient, ApiError, aborted, message } from './api/client';
+import type { Session, Student } from './api/client';
+import { ChangePassword, Login } from './auth/AuthForms';
+import { NavLink, Notice, PageHeading, navigate } from './components/forms';
+import { CreateStudent, OwnAccount, StudentDetail, StudentList } from './students/Students';
 
-type Connection = 'checking' | 'connected' | 'unavailable';
-
-const messages: Record<Connection, { title: string; detail: string }> = {
-  checking: { title: 'Checking connection…', detail: 'Contacting the local API.' },
-  connected: { title: 'API connected', detail: 'The API is responding to liveness checks.' },
-  unavailable: {
-    title: 'API unavailable',
-    detail: 'The API did not return a valid response. Check that it is running, then try again.',
-  },
-};
+function subscribe(listener: () => void) { window.addEventListener('popstate', listener); return () => window.removeEventListener('popstate', listener); }
+const home = (session: Session) => session.mustChangePassword ? '/auth/password' : session.role === 'Tutor' ? '/students' : '/me/account';
 
 export function App() {
-  const [connection, setConnection] = useState<Connection>('checking');
-  const [attempt, setAttempt] = useState(0);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    let active = true;
-    const timeout = window.setTimeout(() => controller.abort(), 5000);
-    setConnection('checking');
-
-    async function check() {
-      try {
-        const response = await fetch('/api/v1/health/live', {
-          signal: controller.signal,
-          cache: 'no-store',
-          credentials: 'omit',
-          headers: { Accept: 'application/json' },
-        });
-        if (!response.ok) throw new Error('Unsuccessful liveness response');
-        const body: unknown = await response.json();
-        if (typeof body !== 'object' || body === null || !('status' in body) || body.status !== 'ok') {
-          throw new Error('Invalid liveness response');
-        }
-        if (active) setConnection('connected');
-      } catch {
-        if (active) setConnection('unavailable');
-      } finally {
-        window.clearTimeout(timeout);
-      }
+  const path = useSyncExternalStore(subscribe, () => window.location.pathname);
+  const [session, setSession] = useState<Session | null>(null);
+  const [state, setState] = useState<'checking' | 'ready' | 'failed' | 'signing-out' | 'signout-failed'>('checking');
+  const [flash, setFlash] = useState('');
+  const [createdId, setCreatedId] = useState<string | null>(null);
+  const transition = useRef(false); const channel = useRef<BroadcastChannel | null>(null);
+  const api = useMemo(() => new ApiClient(() => {
+    setSession(null); setCreatedId(null); setState('ready'); setFlash('Phiên đăng nhập đã kết thúc. Vui lòng đăng nhập lại.'); navigate('/login', true);
+  }), []);
+  const verify = useCallback(async () => {
+    if (transition.current) return;
+    api.reset(); setSession(null); setCreatedId(null); setState('checking');
+    try {
+      const user = await api.request<Session>('/auth/me', undefined, false); setSession(user); setState('ready');
+      const current = window.location.pathname;
+      if (current === '/' || current === '/login' || user.mustChangePassword) navigate(home(user), true);
+    } catch (e) {
+      if (aborted(e)) return;
+      if (e instanceof ApiError && e.status === 401) { setSession(null); setState('ready'); navigate('/login', true); }
+      else { setSession(null); setState('failed'); }
     }
-    void check();
-    return () => {
-      active = false;
-      window.clearTimeout(timeout);
-      controller.abort();
-    };
-  }, [attempt]);
-
-  return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-5 sm:px-8">
-          <span className="text-xl font-semibold tracking-tight">Keemese</span>
-          <span className="text-sm font-medium text-slate-600">Development shell</span>
-        </div>
-      </header>
-      <main className="mx-auto max-w-6xl px-4 py-12 sm:px-8 sm:py-16">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-800">Foundation · F0a</p>
-        <h1 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">A foundation for teaching.</h1>
-        <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700">
-          This local preview checks the connection between the interface and API.
-          Accounts and teaching features are not available yet.
-        </p>
-        <section aria-labelledby="connection-heading" className="mt-10 max-w-2xl rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
-          <h2 id="connection-heading" className="text-lg font-semibold">API connection</h2>
-          <div role="status" aria-live="polite" aria-atomic="true" className="mt-5">
-            <p className={`font-semibold ${connection === 'unavailable' ? 'text-red-800' : 'text-teal-800'}`}>
-              {messages[connection].title}
-            </p>
-            <p className="mt-2 leading-6 text-slate-700">{messages[connection].detail}</p>
-          </div>
-          <button
-            type="button"
-            disabled={connection === 'checking'}
-            onClick={() => { setConnection('checking'); setAttempt((value) => value + 1); }}
-            className="mt-6 min-h-11 rounded-md bg-teal-800 px-5 py-3 font-medium text-white hover:bg-teal-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-800 disabled:cursor-wait disabled:opacity-60"
-          >
-            {connection === 'checking' ? 'Checking…' : 'Check again'}
-          </button>
-        </section>
-        <p className="mt-6 max-w-2xl text-sm leading-6 text-slate-600">
-          Development only. This shell has no access controls. Do not enter student information.
-        </p>
-      </main>
-    </div>
-  );
+  }, [api]);
+  useEffect(() => {
+    void verify();
+    const visible = () => { if (document.visibilityState === 'visible') void verify(); };
+    window.addEventListener('focus', visible); document.addEventListener('visibilitychange', visible);
+    window.addEventListener('pageshow', visible);
+    channel.current = new BroadcastChannel('keemese.auth'); channel.current.onmessage = visible;
+    return () => { api.reset(); window.removeEventListener('focus', visible); window.removeEventListener('pageshow', visible); document.removeEventListener('visibilitychange', visible); channel.current?.close(); };
+  }, [api, verify]);
+  useEffect(() => {
+    document.title = `${session?.role === 'Tutor' ? 'Học sinh' : session ? 'Tài khoản' : 'Đăng nhập'} · Keemese`;
+    const timer = window.setTimeout(() => document.querySelector<HTMLElement>('h1')?.focus(), 0);
+    return () => window.clearTimeout(timer);
+  }, [path, session?.id, state]);
+  const signedIn = (user: Session) => { api.reset(); setCreatedId(null); setSession(user); setState('ready'); setFlash(''); navigate(home(user), true); channel.current?.postMessage('changed'); };
+  const changed = () => { api.reset(); setSession(null); setCreatedId(null); setFlash('Đã đổi mật khẩu. Hãy đăng nhập bằng mật khẩu mới.'); navigate('/login', true); channel.current?.postMessage('changed'); };
+  async function logout() {
+    transition.current = true; api.reset(); setSession(null); setCreatedId(null); setFlash(''); setState('signing-out');
+    try {
+      await api.request('/auth/logout', {}, false); api.reset(); setState('ready'); setFlash('Đã đăng xuất an toàn.'); navigate('/login', true); channel.current?.postMessage('changed');
+    } catch (e) {
+      if (e instanceof ApiError && e.status === 401) { api.reset(); setState('ready'); navigate('/login', true); channel.current?.postMessage('changed'); }
+      else if (!aborted(e)) setState('signout-failed');
+    } finally { transition.current = false; }
+  }
+  function created(student: Student) { setCreatedId(student.id); navigate(`/students/${student.id}`, true); }
+  let content;
+  if (state === 'checking' || state === 'signing-out') content = <Notice>{state === 'checking' ? 'Đang kiểm tra phiên đăng nhập…' : 'Đang đăng xuất…'}</Notice>;
+  else if (state === 'signout-failed') content = <section className="form-panel"><PageHeading title="Chưa thể đăng xuất" /><Notice error>Không kết nối được máy chủ để kết thúc phiên đăng nhập. Hãy thử đăng xuất lại.</Notice><button className="primary" onClick={() => void logout()}>Thử đăng xuất lại</button></section>;
+  else if (state === 'failed') content = <section className="form-panel"><PageHeading title="Chưa thể kết nối" /><Notice error>{message(null)}</Notice><button className="primary" onClick={() => void verify()}>Thử lại</button></section>;
+  else if (!session) content = <Login api={api} signedIn={signedIn} flash={flash} />;
+  else if (session.mustChangePassword || path === '/auth/password') content = <ChangePassword api={api} mandatory={session.mustChangePassword} changed={changed} />;
+  else if (session.role === 'Tutor' && path === '/students') content = <StudentList api={api} />;
+  else if (session.role === 'Tutor' && path === '/students/new') content = <CreateStudent api={api} created={created} />;
+  else if (session.role === 'Tutor' && /^\/students\/[a-f0-9-]{36}$/i.test(path)) content = <StudentDetail api={api} id={path.split('/')[2]} flash={createdId === path.split('/')[2] ? 'Đã tạo tài khoản. Hãy trao mật khẩu tạm thời cho học sinh qua kênh riêng.' : ''} />;
+  else if (session.role === 'Student' && path === '/me/account') content = <OwnAccount api={api} />;
+  else content = <section className="form-panel"><PageHeading title="Không thể mở trang này" /><Notice error>Trang này không có sẵn cho tài khoản của bạn.</Notice><NavLink to={home(session)}>Quay về tài khoản</NavLink></section>;
+  return <><a className="skip-link" href="#main">Đến nội dung chính</a><header className="app-header"><div className="header-inner">
+    <NavLink to={session ? home(session) : '/login'} className="brand"><span aria-hidden="true" className="brand-mark">k</span>Keemese</NavLink>
+    {session && state === 'ready' ? <><nav aria-label="Tài khoản" className="top-nav">
+      {!session.mustChangePassword && <><NavLink to={home(session)}>{session.role === 'Tutor' ? 'Học sinh' : 'Tài khoản của tôi'}</NavLink><NavLink to="/auth/password">Đổi mật khẩu</NavLink></>}
+      </nav><button className="secondary logout-button" onClick={() => void logout()}>Đăng xuất</button></> : <span className="private-label">Không gian học tập riêng</span>}
+  </div></header><main id="main" tabIndex={-1} className={!session ? 'public-main' : ''}><div key={`${session?.id ?? 'public'}:${path}:${state}`}>{content}</div></main>
+    <footer>Keemese <span aria-hidden="true">·</span> Dành cho gia sư và học sinh của bạn</footer></>;
 }

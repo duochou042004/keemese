@@ -99,3 +99,23 @@ F0a completed under explicit local implementation/download approval. Exact pins 
 ## F0b approval — 2026-10-27
 
 User approved F0b in a fresh-chat bounded goal: pinned PostgreSQL image download, isolated rootless Podman container with synthetic data, real round-trip/rollback tests and deterministic cleanup of test-owned resources. Existing databases/volumes, global installations, production migrations and business features remain excluded. Rootless Podman 5.8.6 preflight succeeded; container execution remains to be verified. Do not repeat this approval request.
+
+## F0b outcome — 2026-10-27
+
+F0b completed under the explicit fresh-chat approval above, superseding historical pending/unapproved wording. The isolated test-only project uses digest-pinned PostgreSQL 18.6, EF Core/Relational 10.0.14 and Npgsql/provider 10.0.3. Real Unicode round-trip, failed-transaction rollback and exception-path cleanup passed with rootless Podman; locked restore/build passed. No containers or volumes remained after verification. See [F0b evidence](../testing/evidence/f0b.md) and [repeatable commands](../../README.md). F0a plus F0b satisfy the infrastructure foundation gate only. Stop here: no I1 work, staging, commit or push is authorized by F0b.
+
+## I1 readiness outcome — 2026-10-28
+
+Readiness review completed; [concrete I1 proposal](i1-readiness.md) owns exact paths, identity/UI decisions, API behavior and acceptance. Recommend I1a backend/real-DB proof first, then separately approved I1b UI/visual acceptance. ADR03 identity subset, D05 and applicable D06 remain pending user acceptance. This documentation review authorizes no implementation or F0b publication.
+
+## I1 acceptance — 2026-10-28
+
+User explicitly approved the I1 readiness proposal and I1a execution on 2026-10-28: ADR03 identity subset, D05 settings and applicable D06 pilot scope; pinned local dependency restores and synthetic disposable PostgreSQL tests included. Execute I1a only in a fresh chat; I1b and Git publication remain separately gated. This acceptance supersedes earlier pending labels for these choices only.
+
+## I1a outcome — 2026-10-28
+
+The approved backend identity/ownership packet is implemented. [I1a evidence](../testing/evidence/i1a.md) maps all seven backend acceptance groups to real PostgreSQL/API/terminal proof, records locked builds and original F0b regressions, and distinguishes local-pilot limits from deployment readiness. The frontend stays at F0; full A1 E2E and future A9/A10 remain incomplete. Test schema creation used disposable tmpfs databases only; no persistent database or migration was operated. All work remains unstaged on the original branch/HEAD. Stop here; next action is user review and separate authorization of a fresh I1b packet, or separately requested publication.
+
+## I1b approval/outcome — 2026-10-28
+
+User explicitly approved proceeding with next planned I1b here in the current session, superseding the prior fresh-chat-only condition for this packet. Vietnamese identity/account UI and synthetic full browser journeys are complete within the [I1 scope](i1-readiness.md). [Evidence](../testing/evidence/i1b.md) records 6/6 built-asset E2E, 17/17 API regressions, locked setup, responsive/keyboard/zoom/contrast review and final verified resource cleanup. Existing backend product/F0b files were preserved; only the allowed opt-in UI fixture was added. No persistent DB/schema operation, CI or Git publication. Stop at the I1b checkpoint; scope the next bounded packet with the user. Full future A9/A10 and deployment remain incomplete.

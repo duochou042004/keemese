@@ -1,10 +1,18 @@
-var builder = WebApplication.CreateBuilder(args);
+using Keemese.Api.Identity;
+
+var operatorMode = args.Length > 0 && args[0].StartsWith("identity-", StringComparison.Ordinal);
+var builder = WebApplication.CreateBuilder(operatorMode ? [] : args);
+builder.AddWorkspaceIdentity();
 var app = builder.Build();
-
-// Process liveness only: this does not assert database readiness or authorization.
+if (operatorMode)
+{
+    await using var scope = app.Services.CreateAsyncScope();
+    Environment.ExitCode = await OperatorCommand.RunAsync(args, scope.ServiceProvider.GetRequiredService<IdentityService>());
+    return;
+}
+app.UseWorkspaceIdentity();
+// Process liveness remains anonymous and DB-independent, including during outages.
 app.MapGet("/api/v1/health/live", () => Results.Ok(new { status = "ok" }));
-
+app.MapWorkspaceIdentity();
 app.Run();
-
-// Expose the actual entry point to WebApplicationFactory integration tests.
 public partial class Program { }

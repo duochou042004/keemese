@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-28",
+  "packet": "I1b redesign",
+  "status": "agent_review_complete_user_acceptance_pending",
+  "inspected": [
+    "six eight-width template sheets",
+    "state and actual zoom sheets",
+    "full-size desktop login/create/detail",
+    "320px detail/login",
+    "320x568 confirmation",
+    "200% root-text account"
+  ],
+  "findings": [
+    "White/navy system and consistent reading widths established",
+    "Detail separates summary from explanation/action settings rows",
+    "Removed background-only hover transition after intermediate contrast issue",
+    "Narrow header refined; enlarged text wraps without overlay",
+    "No observed clipping or hidden actions in inspected captures"
+  ],
+  "limitations": [
+    "Agent judgment is not user acceptance",
+    "Chromium/Linux synthetic data only"
+  ],
+  "build_sha256": {
+    "frontend/dist/index.html": "5f1b1523508d210d0caa6d83ba2e4900e91f74cc48dd17371878479193c0de13",
+    "frontend/dist/assets/index-BsRdn7S2.js": "d57ae066bd1c8a863fda51c98db860edd90eb73f091a3f3ad01963406b8a9c0a",
+    "frontend/dist/assets/index-BmIw1_zo.css": "7817af4e7a25d27d8f6eed83fac707f68caf32189bb424f735f68d629c73a8ae"
+  }
+}

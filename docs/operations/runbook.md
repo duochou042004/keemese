@@ -1,16 +1,18 @@
 # Environment, delivery and recovery proposal
 
-F0a update (2026-10-27): local skeleton setup is implemented in the [root README](../../README.md), with exact SDK/package pins and locks. R0 repository baseline is complete; no remote exists. Database, hosting, migrations, containers and CI below remain proposals.
+I1a status — 2026-10-28: backend identity/operator behavior is implemented with synthetic disposable PostgreSQL proof. No persistent DB/schema, deployment, startup migration, CI or secrets/access operation was performed. [I1a evidence](../testing/evidence/i1a.md) supersedes historical foundation-only claims for identity.
 
-Status: planning only. No runnable app, Compose file, deployment, migrations or production resources exist. Owner: operations. D04/D08 in the [decision register](../decisions/decisions.md) block final hosting/repository setup.
+F0 update (2026-10-27): local skeleton and disposable rootless PostgreSQL test setup are implemented in the [root README](../../README.md), with exact pins and locks. F0b passed on Linux x64/Podman 5.8.6; [evidence](../testing/evidence/f0b.md) records cleanup and limits. The public GitHub repository contains F0a; F0b remains uncommitted. Production database, hosting, migrations and CI below remain proposals.
+
+Status: future operations proposal beneath the F0 update above. No Compose file, deployment, migrations or production resources exist. Owner: operations. D04/D08 in the [decision register](../decisions/decisions.md) block final hosting/repository setup.
 
 ## Observed environment and version policy
 
-Phase 0 observed Linux/zsh, .NET SDK 10.0.403 with runtime/ASP.NET 10.0.14, Node 24.22.1, npm 11.19.1, Python 3.14.8, PostgreSQL client 18.6, Git 2.53.0, GitHub CLI 2.103.2. Docker/pnpm/Yarn/Bun/ripgrep were not on PATH. Podman and podman-compose are present; earlier Podman inspection failed under the then read-only runtime directory. Container execution and DB server readiness remain unverified after permission changes; no need to initialize services during planning.
+Phase 0 observed Linux/zsh, .NET SDK 10.0.403 with runtime/ASP.NET 10.0.14, Node 24.22.1, npm 11.19.1, Python 3.14.8, PostgreSQL client 18.6, Git 2.53.0, GitHub CLI 2.103.2. Docker/pnpm/Yarn/Bun/ripgrep were not on PATH. Podman and podman-compose are present; earlier Podman inspection failed under the then read-only runtime directory. F0b subsequently verified rootless container execution and PostgreSQL readiness with synthetic disposable data; this does not verify production hosting.
 
 Official checks on 2026-10-27: [.NET support](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) lists .NET10 LTS/10.0.14; [C#14](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14) uses .NET10; [Node releases](https://nodejs.org/en/about/previous-releases) lists Node24 LTS. [Vite requirements](https://vite.dev/guide/) currently specify Node20.19+/22.12+; installed Node24 satisfies the stated floor, but exact templates/dependencies still need validation. [Tailwind compatibility](https://tailwindcss.com/docs/compatibility) names Chrome111, Safari16.4 and Firefox128 as v4 core browser floors; approve actual supported browsers before UI implementation.
 
-Proposed reproducibility: pin SDK with global.json, exact dependencies/lockfiles, Node24 line and tested npm version; use npm already available unless evidence supports another package manager. Pin PostgreSQL/container versions after hosting choice. These files do not exist yet. Recheck current patches at the implementation gate instead of treating this dated snapshot as permanent truth.
+Proposed reproducibility: pin SDK with global.json, exact dependencies/lockfiles, Node24 line and tested npm version; use npm already available unless evidence supports another package manager. Pin PostgreSQL/container versions after hosting choice. F0 pins and locks now exist; production configuration remains future work. Recheck current patches at the implementation gate instead of treating this dated snapshot as permanent truth.
 
 ## Portable local setup design
 
@@ -48,4 +50,14 @@ Monitor health/readiness, API error rate/latency, failed logins, upload failures
 - Lost tutor access: approved out-of-band recovery, revoke compromised sessions, audit without revealing passwords.
 - Context/controller failure: stop old writer and follow [context recovery](../agents/context-safety.md); incomplete handoff is not permission to guess completion.
 
-Git convention proposed by user: master releases, develop integration, feature/fix branches from develop. Current directory has no Git repository; do not initialize, rename, stage, commit or connect a remote without resolving D08 and authorization. Merges and releases require explicit approval.
+Git convention proposed by user: master releases, develop integration, feature/fix branches from develop. R0 and F0a publication are complete; the current branch is feature/f0-foundation with an origin remote. F0b staging/commit/push need separate authorization. Merges and releases require explicit approval.
+
+## I1a local identity operations
+
+The [README](../../README.md#backend-identity-pilot-i1a) owns executable build/test and operator-mode syntax. Configuration uses `ConnectionStrings__Workspace` supplied to the process; do not put credentials in args, committed files or logs. Runtime never creates/migrates schema or bootstraps users. Tests alone call EF `EnsureCreatedAsync` on helper-owned tmpfs databases. A release migration and persistent setup/rehearsal remain later approved operations; `EnsureCreated` is not a migration strategy.
+
+`identity-bootstrap` accepts no extra args, prompts for username and hidden password, creates exactly one tutor transactionally, and refuses repeat invocation without changing credentials. PostgreSQL also enforces single tutor and normalized-username uniqueness. `identity-recover` requires typing `RECOVER`, prompts for a hidden new password, resets the existing tutor only, revokes all tutor sessions and writes minimal audit metadata. Both return nonzero on failure and do not start an HTTP listener. Redirected input is refused. Implementing these modes does not authorize operating a persistent database.
+
+Cookie tickets have an eight-hour absolute limit and require a valid DB session/active user on every request. Logout revokes current session; reset/change/deactivate/recovery revoke all applicable sessions atomically. Key protection and key-manager XML storage are memory-only: API restart invalidates cookies, and old session rows confer no access by themselves. Durable key storage, expired-session/audit retention, proxy trust, multiple API processes and deployment are deferred; the local rolling IP throttle is not a distributed control. No automated email/reset messages are sent.
+
+I1a test commands reuse the F0b helper unchanged; UUID ownership labels, loopback ports, tmpfs and `finally` cleanup apply. Tests additionally use the preinstalled Linux `script` utility to supply a PTY to real operator processes with echo disabled; no terminal tool was installed. Do not treat Linux proof as other-platform terminal compatibility. Interrupted-run recovery follows the existing exact-owner container procedure; no broad prune.

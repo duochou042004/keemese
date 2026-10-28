@@ -1,0 +1,25 @@
+# I1b visual redesign — 2026-10-28
+
+The user authorized a bounded redesign of existing identity screens in this new chat. Existing functionality and backend contracts are preserved. This is a concrete design for user review, **not user design acceptance**. No prior conversation was imported, no subagents used, and no model/global configuration changed. Context occupancy remains unmeasured; one bounded packet was completed manually.
+
+## Design and visual review
+
+White base, navy actions, neutral text/borders, restrained headings and consistent field spacing replace green surfaces and accents. Centered forms have a deliberate reading width; the list is divided into simple rows. Account detail now has a summary followed by explanation/action columns, which stack on small screens. Reset and deactivation no longer read as one continuous full-width form. Navigation has a current-page indicator and a compact mobile arrangement. Login removes the repeated eyebrow. No new product features or business logic.
+
+The agent inspected all six eight-width contact sheets, state and actual-zoom sheets, and full-size login/create/detail/narrow/detail/short-height/text-scale captures. Long names wrap; sections remain distinguishable; notices and destructive actions have clear hierarchy. A background-only hover transition exposed low contrast during its intermediate state; it was removed. Mobile navigation was refined to avoid an orphaned logout row at ordinary narrow widths. Enlarged text can naturally wrap the header into more rows; it does not overlay content. Desktop uses intentionally generous white space. User preference and acceptance remain outstanding.
+
+Current local-only screenshots (ignored PNGs): [login](../../../frontend/e2e/artifacts/login-1280.png), [roster](../../../frontend/e2e/artifacts/list-1280.png), [create](../../../frontend/e2e/artifacts/create-1280.png), [detail](../../../frontend/e2e/artifacts/detail-1280.png), [mobile detail](../../../frontend/e2e/artifacts/detail-320.png). The six `review-{template}.png` sheets, `review-states.png`, `review-zoom.png`, and raw captures remain under `frontend/e2e/artifacts`. Historical I1b screenshot paths now contain the replacement design.
+
+## Verification
+
+- `npm run build` includes TypeScript checking and built production assets: passed after each design refinement. First command was accidentally run at repository root (ENOENT); a subsequent tool invocation from frontend lacked npm on its login-shell PATH. Running `cd frontend` from the established root shell used the existing pinned runtime successfully. No installs or global changes.
+- Existing real API/disposable PostgreSQL/Chromium suite: Final 6/6 passed in 25.8 seconds, and 6/6 passed after each earlier rendered refinement, without retries or skips. Lifecycle, reset/deactivation revocation, cancellation, user switching, denied student roster access and failure recovery retained. No fixture/teardown changes; cleanup acknowledgement preserved.
+- `dotnet test Keemese.slnx --no-build --filter 'FullyQualifiedName!~UiTestHost' --logger 'console;verbosity=minimal'`: 17/17 passed, zero skips, 48 seconds. All 20 backend source/config/lock files matched the packet-start SHA-256 snapshot. No backend build was needed for unchanged binaries/source.
+- Explicit strict TypeScript check of E2E/config/teardown with local `tsc --ignoreConfig`: passed.
+- Six templates × 320/360/390/430/768/1024/1280/1440 CSS px: 48 cases passed, labeled controls >=44px, no body overflow. Keyboard login, 3px focus outline, alert/native-invalid focus and 320×568 keyboard confirmation cancel passed.
+- Actual browser 200% zoom: all six templates passed with DPR 2 and layout width 640; separate 200% root-text stress passed. Existing disposable extension/profile reused, never installed into the user's browser.
+- Expanded computed contrast sampling includes active badges, secondary/outlined-danger buttons and links. Minimum 5.34:1 across 11 sampled text roles (inactive badge); primary 10.87:1, muted 5.99:1, body 15.94:1. [QA data](../../../frontend/e2e/artifacts/qa.json), [browser zoom data](../../../frontend/e2e/artifacts/browser-zoom.json), [visual review](../../../frontend/e2e/artifacts/visual-review.json).
+
+Final inventories: no containers, volumes, API/testhost/Vite/Playwright browser processes, cleanup completion markers or temporary zoom profiles. Git branch/HEAD preserved (`feature/f0-foundation`, `d932c3c`), empty index, no publication. PNG exclusions and historical tracked F0a PNG preserved. JSON/JSONL, local Markdown targets, 61 requirement rows, source-document preservation and whitespace checked at checkpoint.
+
+Limits: Chromium/Linux synthetic pilot only. Other browsers/OS, screen-reader certification, forced-kill cleanup, production/persistent database operations and full product A9/A10 remain unverified or outside scope. Functional measurements and agent screenshot review do not establish user visual approval. Stop for design review before new features.

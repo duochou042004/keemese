@@ -46,3 +46,32 @@ ADR01/02 and D08 remain proposed. A concrete local repository baseline and two b
 ## Acceptance — 2026-10-27, session closure
 
 User explicitly approved the recommended stack (ADR01/02) and R0 execution: local Git initialization on master, reviewed documentation baseline staging/commit, then develop and feature/f0-foundation; no remote or push. Execution is deferred to a fresh conversation at user request. F0a/F0b implementation and dependency downloads remain unapproved. This acceptance supersedes the earlier proposed labels for ADR01/02 and D08 only.
+
+## I1 decision package — 2026-10-28
+
+The [I1 readiness proposal](../delivery/i1-readiness.md#decisions-requiring-user-acceptance) makes ADR03's identity subset, D05 bootstrap/recovery/first-login/session choices and D06 language/browser pilot scope concrete. All remain **proposed**, pending user response. ADR03 file/snapshot choices and D06 scheduling/timezone choices remain deferred. Separate design acceptance from I1a implementation approval; I1b and Git publication need their own gates.
+
+## I1 acceptance — 2026-10-28
+
+User explicitly approved the I1 readiness proposal and I1a execution on 2026-10-28: ADR03 identity subset, D05 settings and applicable D06 pilot scope; pinned local dependency restores and synthetic disposable PostgreSQL tests included. Execute I1a only in a fresh chat; I1b and Git publication remain separately gated. This acceptance supersedes earlier pending labels for these choices only.
+
+## I1a implementation boundary — 2026-10-28
+
+Accepted ADR03 identity subset/D05 settings are implemented with [I1a evidence](../testing/evidence/i1a.md). For the isolated pilot, both framework protection provider and key-management repository stay in memory, so restart invalidates browser tickets and writes no persistent keys. PostgreSQL transactions/advisory locking serialize identity writes; the login throttle uses a rolling 60-second in-process window. Durable deployment key storage, distributed controls, versioned release migration/retention and hosting remain deferred, alongside ADR03 files/snapshots and D06 scheduling. D06 language/browser scope acceptance does not claim I1b UI verification; that packet remains separately gated.
+
+## I1b execution decision — 2026-10-28
+
+User authorized the next planned I1b task here in the same session, overriding only that packet's earlier fresh-chat start condition. Vietnamese-first identity UI and available Chromium/Linux pilot were implemented/tested. Native history navigation and local React state keep this small route set dependency-light; Playwright 1.64.1 is exact/locked. Its browser/zoom extension run only in test-owned local caches/profiles; no global browser configuration. CI remains a separate approval, alongside Git publication, deployment, remaining ADR03 scope and D06 scheduling. See [I1b evidence](../testing/evidence/i1b.md).
+
+
+## Deferred bilingual interface requirement — 2026-10-28
+
+User requests English/Vietnamese switching across application UI components and explicitly defers discussion and implementation. Earlier D06/I1 pilot guidance specified Vietnamese-first labels/errors; that was not a complete bilingual interface decision. The new requirement supersedes any assumption that Vietnamese-only is the final interface. Default language, switch placement, preference persistence and translation coverage will be discussed later. Do not infer translation of tutor-authored learning content from UI localization. No implementation is authorized by this checkpoint.
+
+## Bilingual interface proposal — 2026-10-28
+
+The requested fresh discussion is complete. Recommend Vietnamese default, shared-header native selector, browser-only non-sensitive language persistence, two typed dictionaries and a small React provider. Full interface coverage includes errors/validation/accessibility/document metadata; authored content is unchanged. [Frontend proposal](../frontend/design.md#bilingual-interface-proposal--2026-10-28) owns mechanics, edit surface and verification. These routine choices are proposed for the bounded implementation packet; no product edits are authorized yet. Redesign visual acceptance remains pending.
+
+## Bilingual execution and publication approval — 2026-10-28
+
+User accepts the bilingual proposal and explicitly directs execution in a new Sol Medium goal-mode session. This supersedes the earlier implementation deferral and permits the bilingual packet on the existing white/navy design without another visual-acceptance gate; do not claim a separate aesthetic review occurred. The user also requires task changes to be committed and pushed to the corresponding existing GitHub branch at reporting checkpoints. Current destination is `origin/feature/f0-foundation`; this includes the accumulated F0b/I1a/I1b/redesign work and preparation records. No merge, force-push, deployment or persistent data operation is authorized. [Execution packet](../delivery/bilingual-ui.md) owns the goal contract.

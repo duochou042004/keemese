@@ -1,8 +1,12 @@
 # Verification strategy
 
-F0a update (2026-10-27): the minimal host now has three passing HTTP integration cases; locked restores, builds, typecheck and local API/browser smoke passed. See [setup commands](../../README.md) and [F0a evidence](evidence/f0a.md). The broader product/release strategy below remains proposed.
+I1b status — 2026-10-28: six production-asset Chromium E2E scenarios and the 48-case identity responsive matrix pass with real API/disposable PostgreSQL, plus actual 200% browser zoom, keyboard/focus and computed contrast measurements. API ownership regressions remain 17/17 passing. [I1b evidence](evidence/i1b.md) records an orchestration cleanup defect, its fix and final empty inventories. Broader product/release verification below remains planned; no CI exists yet.
 
-Owner: verification. Status: planned; no product tests exist or have passed. Acceptance IDs are defined in [requirements](../product/requirements.md). Every implementation packet records exact commands, exit codes, evidence and skipped/blocked reasons.
+I1a status — 2026-10-28: meaningful API/real PostgreSQL and Linux PTY operator tests now exist in `Keemese.Api.Tests`; rootless Podman and the existing digest-pinned image are required. Tests use controlled time, real cookies/antiforgery, actual DB uniqueness/rollback and synthetic terminal interactions. [I1a evidence](evidence/i1a.md) owns exact results, scope and limits. Health-only tests remain DB-independent; UI/full A1/A9/A10 and production readiness are unverified.
+
+F0 update (2026-10-27): the minimal host now has three passing HTTP integration cases; locked restores, builds, typecheck and local API/browser smoke passed. See [setup commands](../../README.md) and [F0a evidence](evidence/f0a.md). F0b adds three passing real PostgreSQL tests for persistence, rollback and exception-path cleanup; see [F0b evidence](evidence/f0b.md). The broader product/release strategy below remains proposed.
+
+Owner: verification. Status: broader product verification planned; only F0 infrastructure checks have passed. Acceptance IDs are defined in [requirements](../product/requirements.md). Every implementation packet records exact commands, exit codes, evidence and skipped/blocked reasons.
 
 | Risk / acceptance | Required proof |
 |---|---|

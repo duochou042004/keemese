@@ -1,6 +1,6 @@
 # Planning baseline
 
-Current execution: F0a skeleton is implemented and verified; F0b is unapproved. Use the [setup README](../README.md) for executable commands and the canonical checkpoint for current status. The planning documents below retain future proposals.
+Current execution: F0a and F0b foundation acceptance passed. PostgreSQL proof is isolated in a test-only project; teaching workflows are not authorized. Use the [setup README](../README.md) for executable commands and the canonical checkpoint for current status. The planning documents below retain future proposals.
 
 Status: Phase 1 proposal, 2026-10-27. Documentation approval does not authorize implementation. The original [product specification](spec/personal_english_tutor_teaching_workspace_spec.md) remains authoritative for product scope. The [bootstrap](agent-governance/Codex_Project_Initialization_and_Agent_Governance.md) remains historical governance; the user's later context-safety amendment is recorded in [context safety](agents/context-safety.md) and takes precedence over its old token targets. Supporting [research](agent-governance/research/Codex_Harness_Research_Notes_VI.md) is preserved, not promoted to authority.
 
@@ -13,7 +13,7 @@ Status: Phase 1 proposal, 2026-10-27. Documentation approval does not authorize 
 | UI work | [frontend](frontend/design.md) | Journeys, tokens, page/component contracts |
 | Identity/data/file work | [security](security/threat-model.md) | Threats and controls |
 | Verification | [testing](testing/strategy.md) | Risk-based proof and release gates |
-| Planning an increment | [delivery](delivery/plan.md) | Dependencies and task packets |
+| Planning an increment | [delivery](delivery/plan.md), [I1 readiness](delivery/i1-readiness.md), [approved bilingual packet](delivery/bilingual-ui.md) | Dependencies, concrete identity proposal and pending approval |
 | Setup/release/recovery | [operations](operations/runbook.md) | Portable environment and operational proposals |
 | Context or harness work | [context safety](agents/context-safety.md) | Runtime evidence, trigger and fresh-session design |
 | Learning from an incident | [learning](../harness/learning/README.md) | Schema, retrieval, promotion |

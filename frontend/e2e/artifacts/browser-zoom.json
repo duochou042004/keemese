@@ -1,0 +1,57 @@
+{
+  "mechanism": "chrome.tabs.setZoom(2) in a test-only disposable browser profile",
+  "physicalViewport": [
+    1280,
+    900
+  ],
+  "rows": [
+    {
+      "template": "login",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    }
+  ]
+}

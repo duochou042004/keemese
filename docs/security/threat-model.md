@@ -1,5 +1,7 @@
 # Security and privacy design
 
+I1a status — 2026-10-28: approved identity subset is implemented; [real API/PostgreSQL/terminal evidence](../testing/evidence/i1a.md) covers two-student account isolation, strict request DTOs, cookie/CSRF/origin checks, immediate server-session revocation, lockout/throttling and safe failures. Only identity/profile routes are proven; future private notes/files/teaching routes remain unimplemented. Memory-only protection keys and single-process throttling are deliberate local-pilot limits, requiring deployment review. No real student data or persistent DB operation was used.
+
 Status: proposed controls; no audit or compliance certification. Owner: backend/security. Assets: student profiles/contact/guardian data, learning records, submissions/audio, assessment answer keys, credentials, private tutor notes and backups. Actors: tutor, legitimate student, another student, anonymous attacker; consider accidental tutor disclosure as well as hostile requests.
 
 Trust boundaries: browser ↔ API; API ↔ relational DB; API ↔ private file store; deployment operator ↔ secrets/backups. No external AI or analytics ingestion of student content. Legal retention/consent duties require jurisdiction, ages and hosting answers in D04; do not infer compliance.

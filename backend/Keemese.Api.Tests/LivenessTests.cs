@@ -13,7 +13,8 @@ public sealed class LivenessTests : IClassFixture<WebApplicationFactory<Program>
     {
         client = factory.CreateClient(new WebApplicationFactoryClientOptions
         {
-            AllowAutoRedirect = false
+            AllowAutoRedirect = false,
+            BaseAddress = new Uri("https://localhost")
         });
     }
 
@@ -29,7 +30,7 @@ public sealed class LivenessTests : IClassFixture<WebApplicationFactory<Program>
     }
 
     [Theory]
-    [InlineData("GET", "/api/v1/students", HttpStatusCode.NotFound)]
+    [InlineData("GET", "/api/v1/content", HttpStatusCode.Unauthorized)]
     [InlineData("POST", "/api/v1/health/live", HttpStatusCode.MethodNotAllowed)]
     public async Task Host_does_not_expose_unimplemented_routes_or_mutations(
         string method, string path, HttpStatusCode expected)

@@ -12,7 +12,7 @@ Read `harness/state/progress.json` and `harness/state/handoff.md`. Verify their 
 - The user's 2026-10-27 context-safety amendment supersedes the bootstrap's 272K–280K handoff target. Follow `docs/agents/context-safety.md`. Never use quota usage or cumulative tokens as active occupancy.
 - With verified telemetry, proposed preparation/stop limits are 65%/75% of usable capacity, capped by earlier absolute guardrails. They are pending pilot validation, not scientifically guaranteed thresholds.
 - Without verified telemetry, use one bounded work packet per fresh session, checkpoint material milestones, and stop at its safe boundary. Do not claim automatic enforcement. Compaction, resume, and fork are not a fresh handoff.
-- Preserve user work. Do not stage, commit, merge, push, deploy, migrate persistent data, rewrite history, or change access/secrets without applicable approval. Never infer authorization from permissive tool settings.
+- Preserve user work. User instruction dated 2026-10-28 authorizes and requires reviewing, staging, committing and pushing task changes to the corresponding existing GitHub branch before stopping to report back. For the current packet this is `feature/f0-foundation` on `origin`. Inspect staged files, exclude secrets/local artifacts, verify push against the remote ref, and report failures accurately; do not create empty commits when nothing changed. This does not authorize merge, force-push/history rewrite, deployment, persistent migrations or access/secrets changes. Never infer authorization from permissive tool settings.
 - Report planned/attempted/passed/failed/blocked/skipped accurately. Do not claim tests, visual QA, runtime monitoring, or fresh-session behavior without evidence.
 
 ## Work and verify
