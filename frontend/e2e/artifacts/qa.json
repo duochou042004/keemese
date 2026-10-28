@@ -3,11 +3,12 @@
   "rows": [
     {
       "template": "login",
+      "language": "en",
       "route": "/login",
       "width": 320,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/login-320.png",
+      "file": "e2e/artifacts/login-en-320.png",
       "metrics": {
         "viewport": 320,
         "content": 320,
@@ -18,11 +19,12 @@
     },
     {
       "template": "login",
+      "language": "en",
       "route": "/login",
       "width": 360,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/login-360.png",
+      "file": "e2e/artifacts/login-en-360.png",
       "metrics": {
         "viewport": 360,
         "content": 360,
@@ -33,11 +35,12 @@
     },
     {
       "template": "login",
+      "language": "en",
       "route": "/login",
       "width": 390,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/login-390.png",
+      "file": "e2e/artifacts/login-en-390.png",
       "metrics": {
         "viewport": 390,
         "content": 390,
@@ -48,11 +51,12 @@
     },
     {
       "template": "login",
+      "language": "en",
       "route": "/login",
       "width": 430,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/login-430.png",
+      "file": "e2e/artifacts/login-en-430.png",
       "metrics": {
         "viewport": 430,
         "content": 430,
@@ -63,11 +67,12 @@
     },
     {
       "template": "login",
+      "language": "en",
       "route": "/login",
       "width": 768,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/login-768.png",
+      "file": "e2e/artifacts/login-en-768.png",
       "metrics": {
         "viewport": 768,
         "content": 768,
@@ -78,11 +83,12 @@
     },
     {
       "template": "login",
+      "language": "en",
       "route": "/login",
       "width": 1024,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/login-1024.png",
+      "file": "e2e/artifacts/login-en-1024.png",
       "metrics": {
         "viewport": 1024,
         "content": 1024,
@@ -93,11 +99,12 @@
     },
     {
       "template": "login",
+      "language": "en",
       "route": "/login",
       "width": 1280,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/login-1280.png",
+      "file": "e2e/artifacts/login-en-1280.png",
       "metrics": {
         "viewport": 1280,
         "content": 1280,
@@ -108,11 +115,140 @@
     },
     {
       "template": "login",
+      "language": "en",
       "route": "/login",
       "width": 1440,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/login-1440.png",
+      "file": "e2e/artifacts/login-en-1440.png",
+      "metrics": {
+        "viewport": 1440,
+        "content": 1440,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
+      "route": "/login",
+      "width": 320,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/login-vi-320.png",
+      "metrics": {
+        "viewport": 320,
+        "content": 320,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
+      "route": "/login",
+      "width": 360,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/login-vi-360.png",
+      "metrics": {
+        "viewport": 360,
+        "content": 360,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
+      "route": "/login",
+      "width": 390,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/login-vi-390.png",
+      "metrics": {
+        "viewport": 390,
+        "content": 390,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
+      "route": "/login",
+      "width": 430,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/login-vi-430.png",
+      "metrics": {
+        "viewport": 430,
+        "content": 430,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
+      "route": "/login",
+      "width": 768,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/login-vi-768.png",
+      "metrics": {
+        "viewport": 768,
+        "content": 768,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
+      "route": "/login",
+      "width": 1024,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/login-vi-1024.png",
+      "metrics": {
+        "viewport": 1024,
+        "content": 1024,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
+      "route": "/login",
+      "width": 1280,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/login-vi-1280.png",
+      "metrics": {
+        "viewport": 1280,
+        "content": 1280,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
+      "route": "/login",
+      "width": 1440,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/login-vi-1440.png",
       "metrics": {
         "viewport": 1440,
         "content": 1440,
@@ -123,11 +259,12 @@
     },
     {
       "template": "list",
+      "language": "en",
       "route": "/students",
       "width": 320,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/list-320.png",
+      "file": "e2e/artifacts/list-en-320.png",
       "metrics": {
         "viewport": 320,
         "content": 320,
@@ -138,11 +275,12 @@
     },
     {
       "template": "list",
+      "language": "en",
       "route": "/students",
       "width": 360,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/list-360.png",
+      "file": "e2e/artifacts/list-en-360.png",
       "metrics": {
         "viewport": 360,
         "content": 360,
@@ -153,11 +291,12 @@
     },
     {
       "template": "list",
+      "language": "en",
       "route": "/students",
       "width": 390,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/list-390.png",
+      "file": "e2e/artifacts/list-en-390.png",
       "metrics": {
         "viewport": 390,
         "content": 390,
@@ -168,11 +307,12 @@
     },
     {
       "template": "list",
+      "language": "en",
       "route": "/students",
       "width": 430,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/list-430.png",
+      "file": "e2e/artifacts/list-en-430.png",
       "metrics": {
         "viewport": 430,
         "content": 430,
@@ -183,11 +323,12 @@
     },
     {
       "template": "list",
+      "language": "en",
       "route": "/students",
       "width": 768,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/list-768.png",
+      "file": "e2e/artifacts/list-en-768.png",
       "metrics": {
         "viewport": 768,
         "content": 768,
@@ -198,11 +339,12 @@
     },
     {
       "template": "list",
+      "language": "en",
       "route": "/students",
       "width": 1024,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/list-1024.png",
+      "file": "e2e/artifacts/list-en-1024.png",
       "metrics": {
         "viewport": 1024,
         "content": 1024,
@@ -213,11 +355,12 @@
     },
     {
       "template": "list",
+      "language": "en",
       "route": "/students",
       "width": 1280,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/list-1280.png",
+      "file": "e2e/artifacts/list-en-1280.png",
       "metrics": {
         "viewport": 1280,
         "content": 1280,
@@ -228,11 +371,140 @@
     },
     {
       "template": "list",
+      "language": "en",
       "route": "/students",
       "width": 1440,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/list-1440.png",
+      "file": "e2e/artifacts/list-en-1440.png",
+      "metrics": {
+        "viewport": 1440,
+        "content": 1440,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
+      "route": "/students",
+      "width": 320,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/list-vi-320.png",
+      "metrics": {
+        "viewport": 320,
+        "content": 320,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
+      "route": "/students",
+      "width": 360,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/list-vi-360.png",
+      "metrics": {
+        "viewport": 360,
+        "content": 360,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
+      "route": "/students",
+      "width": 390,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/list-vi-390.png",
+      "metrics": {
+        "viewport": 390,
+        "content": 390,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
+      "route": "/students",
+      "width": 430,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/list-vi-430.png",
+      "metrics": {
+        "viewport": 430,
+        "content": 430,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
+      "route": "/students",
+      "width": 768,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/list-vi-768.png",
+      "metrics": {
+        "viewport": 768,
+        "content": 768,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
+      "route": "/students",
+      "width": 1024,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/list-vi-1024.png",
+      "metrics": {
+        "viewport": 1024,
+        "content": 1024,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
+      "route": "/students",
+      "width": 1280,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/list-vi-1280.png",
+      "metrics": {
+        "viewport": 1280,
+        "content": 1280,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
+      "route": "/students",
+      "width": 1440,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/list-vi-1440.png",
       "metrics": {
         "viewport": 1440,
         "content": 1440,
@@ -243,11 +515,12 @@
     },
     {
       "template": "create",
+      "language": "en",
       "route": "/students/new",
       "width": 320,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/create-320.png",
+      "file": "e2e/artifacts/create-en-320.png",
       "metrics": {
         "viewport": 320,
         "content": 320,
@@ -258,11 +531,12 @@
     },
     {
       "template": "create",
+      "language": "en",
       "route": "/students/new",
       "width": 360,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/create-360.png",
+      "file": "e2e/artifacts/create-en-360.png",
       "metrics": {
         "viewport": 360,
         "content": 360,
@@ -273,11 +547,12 @@
     },
     {
       "template": "create",
+      "language": "en",
       "route": "/students/new",
       "width": 390,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/create-390.png",
+      "file": "e2e/artifacts/create-en-390.png",
       "metrics": {
         "viewport": 390,
         "content": 390,
@@ -288,11 +563,12 @@
     },
     {
       "template": "create",
+      "language": "en",
       "route": "/students/new",
       "width": 430,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/create-430.png",
+      "file": "e2e/artifacts/create-en-430.png",
       "metrics": {
         "viewport": 430,
         "content": 430,
@@ -303,11 +579,12 @@
     },
     {
       "template": "create",
+      "language": "en",
       "route": "/students/new",
       "width": 768,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/create-768.png",
+      "file": "e2e/artifacts/create-en-768.png",
       "metrics": {
         "viewport": 768,
         "content": 768,
@@ -318,11 +595,12 @@
     },
     {
       "template": "create",
+      "language": "en",
       "route": "/students/new",
       "width": 1024,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/create-1024.png",
+      "file": "e2e/artifacts/create-en-1024.png",
       "metrics": {
         "viewport": 1024,
         "content": 1024,
@@ -333,11 +611,12 @@
     },
     {
       "template": "create",
+      "language": "en",
       "route": "/students/new",
       "width": 1280,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/create-1280.png",
+      "file": "e2e/artifacts/create-en-1280.png",
       "metrics": {
         "viewport": 1280,
         "content": 1280,
@@ -348,11 +627,140 @@
     },
     {
       "template": "create",
+      "language": "en",
       "route": "/students/new",
       "width": 1440,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/create-1440.png",
+      "file": "e2e/artifacts/create-en-1440.png",
+      "metrics": {
+        "viewport": 1440,
+        "content": 1440,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
+      "route": "/students/new",
+      "width": 320,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/create-vi-320.png",
+      "metrics": {
+        "viewport": 320,
+        "content": 320,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
+      "route": "/students/new",
+      "width": 360,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/create-vi-360.png",
+      "metrics": {
+        "viewport": 360,
+        "content": 360,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
+      "route": "/students/new",
+      "width": 390,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/create-vi-390.png",
+      "metrics": {
+        "viewport": 390,
+        "content": 390,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
+      "route": "/students/new",
+      "width": 430,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/create-vi-430.png",
+      "metrics": {
+        "viewport": 430,
+        "content": 430,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
+      "route": "/students/new",
+      "width": 768,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/create-vi-768.png",
+      "metrics": {
+        "viewport": 768,
+        "content": 768,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
+      "route": "/students/new",
+      "width": 1024,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/create-vi-1024.png",
+      "metrics": {
+        "viewport": 1024,
+        "content": 1024,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
+      "route": "/students/new",
+      "width": 1280,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/create-vi-1280.png",
+      "metrics": {
+        "viewport": 1280,
+        "content": 1280,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
+      "route": "/students/new",
+      "width": 1440,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/create-vi-1440.png",
       "metrics": {
         "viewport": 1440,
         "content": 1440,
@@ -363,11 +771,12 @@
     },
     {
       "template": "detail",
-      "route": "/students/7c03fea2-bd1d-437b-8014-86157e749f78",
+      "language": "en",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
       "width": 320,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/detail-320.png",
+      "file": "e2e/artifacts/detail-en-320.png",
       "metrics": {
         "viewport": 320,
         "content": 320,
@@ -378,11 +787,12 @@
     },
     {
       "template": "detail",
-      "route": "/students/7c03fea2-bd1d-437b-8014-86157e749f78",
+      "language": "en",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
       "width": 360,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/detail-360.png",
+      "file": "e2e/artifacts/detail-en-360.png",
       "metrics": {
         "viewport": 360,
         "content": 360,
@@ -393,11 +803,12 @@
     },
     {
       "template": "detail",
-      "route": "/students/7c03fea2-bd1d-437b-8014-86157e749f78",
+      "language": "en",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
       "width": 390,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/detail-390.png",
+      "file": "e2e/artifacts/detail-en-390.png",
       "metrics": {
         "viewport": 390,
         "content": 390,
@@ -408,11 +819,12 @@
     },
     {
       "template": "detail",
-      "route": "/students/7c03fea2-bd1d-437b-8014-86157e749f78",
+      "language": "en",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
       "width": 430,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/detail-430.png",
+      "file": "e2e/artifacts/detail-en-430.png",
       "metrics": {
         "viewport": 430,
         "content": 430,
@@ -423,11 +835,12 @@
     },
     {
       "template": "detail",
-      "route": "/students/7c03fea2-bd1d-437b-8014-86157e749f78",
+      "language": "en",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
       "width": 768,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/detail-768.png",
+      "file": "e2e/artifacts/detail-en-768.png",
       "metrics": {
         "viewport": 768,
         "content": 768,
@@ -438,11 +851,12 @@
     },
     {
       "template": "detail",
-      "route": "/students/7c03fea2-bd1d-437b-8014-86157e749f78",
+      "language": "en",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
       "width": 1024,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/detail-1024.png",
+      "file": "e2e/artifacts/detail-en-1024.png",
       "metrics": {
         "viewport": 1024,
         "content": 1024,
@@ -453,11 +867,12 @@
     },
     {
       "template": "detail",
-      "route": "/students/7c03fea2-bd1d-437b-8014-86157e749f78",
+      "language": "en",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
       "width": 1280,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/detail-1280.png",
+      "file": "e2e/artifacts/detail-en-1280.png",
       "metrics": {
         "viewport": 1280,
         "content": 1280,
@@ -468,11 +883,140 @@
     },
     {
       "template": "detail",
-      "route": "/students/7c03fea2-bd1d-437b-8014-86157e749f78",
+      "language": "en",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
       "width": 1440,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/detail-1440.png",
+      "file": "e2e/artifacts/detail-en-1440.png",
+      "metrics": {
+        "viewport": 1440,
+        "content": 1440,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
+      "width": 320,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/detail-vi-320.png",
+      "metrics": {
+        "viewport": 320,
+        "content": 320,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
+      "width": 360,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/detail-vi-360.png",
+      "metrics": {
+        "viewport": 360,
+        "content": 360,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
+      "width": 390,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/detail-vi-390.png",
+      "metrics": {
+        "viewport": 390,
+        "content": 390,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
+      "width": 430,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/detail-vi-430.png",
+      "metrics": {
+        "viewport": 430,
+        "content": 430,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
+      "width": 768,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/detail-vi-768.png",
+      "metrics": {
+        "viewport": 768,
+        "content": 768,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
+      "width": 1024,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/detail-vi-1024.png",
+      "metrics": {
+        "viewport": 1024,
+        "content": 1024,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
+      "width": 1280,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/detail-vi-1280.png",
+      "metrics": {
+        "viewport": 1280,
+        "content": 1280,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
+      "route": "/students/3f81c32e-6642-4796-9178-65a46ba97143",
+      "width": 1440,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/detail-vi-1440.png",
       "metrics": {
         "viewport": 1440,
         "content": 1440,
@@ -483,11 +1027,12 @@
     },
     {
       "template": "password",
+      "language": "en",
       "route": "/auth/password",
       "width": 320,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/password-320.png",
+      "file": "e2e/artifacts/password-en-320.png",
       "metrics": {
         "viewport": 320,
         "content": 320,
@@ -498,11 +1043,12 @@
     },
     {
       "template": "password",
+      "language": "en",
       "route": "/auth/password",
       "width": 360,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/password-360.png",
+      "file": "e2e/artifacts/password-en-360.png",
       "metrics": {
         "viewport": 360,
         "content": 360,
@@ -513,11 +1059,12 @@
     },
     {
       "template": "password",
+      "language": "en",
       "route": "/auth/password",
       "width": 390,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/password-390.png",
+      "file": "e2e/artifacts/password-en-390.png",
       "metrics": {
         "viewport": 390,
         "content": 390,
@@ -528,11 +1075,12 @@
     },
     {
       "template": "password",
+      "language": "en",
       "route": "/auth/password",
       "width": 430,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/password-430.png",
+      "file": "e2e/artifacts/password-en-430.png",
       "metrics": {
         "viewport": 430,
         "content": 430,
@@ -543,11 +1091,12 @@
     },
     {
       "template": "password",
+      "language": "en",
       "route": "/auth/password",
       "width": 768,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/password-768.png",
+      "file": "e2e/artifacts/password-en-768.png",
       "metrics": {
         "viewport": 768,
         "content": 768,
@@ -558,11 +1107,12 @@
     },
     {
       "template": "password",
+      "language": "en",
       "route": "/auth/password",
       "width": 1024,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/password-1024.png",
+      "file": "e2e/artifacts/password-en-1024.png",
       "metrics": {
         "viewport": 1024,
         "content": 1024,
@@ -573,11 +1123,12 @@
     },
     {
       "template": "password",
+      "language": "en",
       "route": "/auth/password",
       "width": 1280,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/password-1280.png",
+      "file": "e2e/artifacts/password-en-1280.png",
       "metrics": {
         "viewport": 1280,
         "content": 1280,
@@ -588,11 +1139,140 @@
     },
     {
       "template": "password",
+      "language": "en",
       "route": "/auth/password",
       "width": 1440,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/password-1440.png",
+      "file": "e2e/artifacts/password-en-1440.png",
+      "metrics": {
+        "viewport": 1440,
+        "content": 1440,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
+      "route": "/auth/password",
+      "width": 320,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/password-vi-320.png",
+      "metrics": {
+        "viewport": 320,
+        "content": 320,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
+      "route": "/auth/password",
+      "width": 360,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/password-vi-360.png",
+      "metrics": {
+        "viewport": 360,
+        "content": 360,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
+      "route": "/auth/password",
+      "width": 390,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/password-vi-390.png",
+      "metrics": {
+        "viewport": 390,
+        "content": 390,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
+      "route": "/auth/password",
+      "width": 430,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/password-vi-430.png",
+      "metrics": {
+        "viewport": 430,
+        "content": 430,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
+      "route": "/auth/password",
+      "width": 768,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/password-vi-768.png",
+      "metrics": {
+        "viewport": 768,
+        "content": 768,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
+      "route": "/auth/password",
+      "width": 1024,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/password-vi-1024.png",
+      "metrics": {
+        "viewport": 1024,
+        "content": 1024,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
+      "route": "/auth/password",
+      "width": 1280,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/password-vi-1280.png",
+      "metrics": {
+        "viewport": 1280,
+        "content": 1280,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
+      "route": "/auth/password",
+      "width": 1440,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/password-vi-1440.png",
       "metrics": {
         "viewport": 1440,
         "content": 1440,
@@ -603,11 +1283,12 @@
     },
     {
       "template": "account",
+      "language": "en",
       "route": "/me/account",
       "width": 320,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/account-320.png",
+      "file": "e2e/artifacts/account-en-320.png",
       "metrics": {
         "viewport": 320,
         "content": 320,
@@ -618,11 +1299,12 @@
     },
     {
       "template": "account",
+      "language": "en",
       "route": "/me/account",
       "width": 360,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/account-360.png",
+      "file": "e2e/artifacts/account-en-360.png",
       "metrics": {
         "viewport": 360,
         "content": 360,
@@ -633,11 +1315,12 @@
     },
     {
       "template": "account",
+      "language": "en",
       "route": "/me/account",
       "width": 390,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/account-390.png",
+      "file": "e2e/artifacts/account-en-390.png",
       "metrics": {
         "viewport": 390,
         "content": 390,
@@ -648,11 +1331,12 @@
     },
     {
       "template": "account",
+      "language": "en",
       "route": "/me/account",
       "width": 430,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/account-430.png",
+      "file": "e2e/artifacts/account-en-430.png",
       "metrics": {
         "viewport": 430,
         "content": 430,
@@ -663,11 +1347,12 @@
     },
     {
       "template": "account",
+      "language": "en",
       "route": "/me/account",
       "width": 768,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/account-768.png",
+      "file": "e2e/artifacts/account-en-768.png",
       "metrics": {
         "viewport": 768,
         "content": 768,
@@ -678,11 +1363,12 @@
     },
     {
       "template": "account",
+      "language": "en",
       "route": "/me/account",
       "width": 1024,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/account-1024.png",
+      "file": "e2e/artifacts/account-en-1024.png",
       "metrics": {
         "viewport": 1024,
         "content": 1024,
@@ -693,11 +1379,12 @@
     },
     {
       "template": "account",
+      "language": "en",
       "route": "/me/account",
       "width": 1280,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/account-1280.png",
+      "file": "e2e/artifacts/account-en-1280.png",
       "metrics": {
         "viewport": 1280,
         "content": 1280,
@@ -708,11 +1395,140 @@
     },
     {
       "template": "account",
+      "language": "en",
       "route": "/me/account",
       "width": 1440,
       "height": 900,
       "scenario": "synthetic long Vietnamese names; secret fields empty",
-      "file": "e2e/artifacts/account-1440.png",
+      "file": "e2e/artifacts/account-en-1440.png",
+      "metrics": {
+        "viewport": 1440,
+        "content": 1440,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
+      "route": "/me/account",
+      "width": 320,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/account-vi-320.png",
+      "metrics": {
+        "viewport": 320,
+        "content": 320,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
+      "route": "/me/account",
+      "width": 360,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/account-vi-360.png",
+      "metrics": {
+        "viewport": 360,
+        "content": 360,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
+      "route": "/me/account",
+      "width": 390,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/account-vi-390.png",
+      "metrics": {
+        "viewport": 390,
+        "content": 390,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
+      "route": "/me/account",
+      "width": 430,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/account-vi-430.png",
+      "metrics": {
+        "viewport": 430,
+        "content": 430,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
+      "route": "/me/account",
+      "width": 768,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/account-vi-768.png",
+      "metrics": {
+        "viewport": 768,
+        "content": 768,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
+      "route": "/me/account",
+      "width": 1024,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/account-vi-1024.png",
+      "metrics": {
+        "viewport": 1024,
+        "content": 1024,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
+      "route": "/me/account",
+      "width": 1280,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/account-vi-1280.png",
+      "metrics": {
+        "viewport": 1280,
+        "content": 1280,
+        "smallControls": [],
+        "unlabeledInputs": 0
+      },
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
+      "route": "/me/account",
+      "width": 1440,
+      "height": 900,
+      "scenario": "synthetic long Vietnamese names; secret fields empty",
+      "file": "e2e/artifacts/account-vi-1440.png",
       "metrics": {
         "viewport": 1440,
         "content": 1440,

@@ -1,32 +1,33 @@
+import type { MessageKey } from '../i18n/messages';
 export type Session = { id: string; role: 'Tutor' | 'Student'; mustChangePassword: boolean };
 export type Student = { id: string; displayName: string; username: string; active: boolean; version: number };
 export type Profile = Pick<Student, 'id' | 'displayName' | 'username'>;
 
-const messages: Record<string, string> = {
-  invalid_credentials: 'Tên đăng nhập hoặc mật khẩu không đúng, hoặc tài khoản chưa thể truy cập.',
-  login_throttled: 'Bạn đã thử đăng nhập nhiều lần. Vui lòng chờ một phút rồi thử lại.',
-  invalid_username: 'Tên đăng nhập cần 3–64 ký tự: chữ không dấu, số, dấu chấm, gạch dưới hoặc gạch ngang.',
-  invalid_display_name: 'Họ và tên cần từ 1 đến 200 ký tự.',
-  invalid_password: 'Mật khẩu cần từ 12 đến 128 ký tự; có thể dùng dấu cách và tiếng Việt.',
-  invalid_current_password: 'Mật khẩu hiện tại không đúng.',
-  password_unchanged: 'Hãy chọn mật khẩu khác mật khẩu hiện tại.',
-  username_exists: 'Tên đăng nhập đã được sử dụng. Hãy chọn tên khác.',
-  stale_version: 'Thông tin đã thay đổi. Hãy tải lại hồ sơ trước khi thử lại.',
-  student_inactive: 'Tài khoản này đã ngừng hoạt động.',
-  student_missing: 'Không tìm thấy học sinh này.',
-  forbidden: 'Bạn không có quyền thực hiện thao tác này.',
-  password_change_required: 'Bạn cần đổi mật khẩu trước khi xem thông tin tài khoản.',
-  invalid_csrf: 'Phiên xác nhận đã thay đổi. Hãy thử lại thao tác.',
-  unauthenticated: 'Phiên đăng nhập đã kết thúc. Vui lòng đăng nhập lại.',
+const messages: Partial<Record<string, MessageKey>> = {
+  invalid_credentials: "The username or password is incorrect, or this account is unavailable.",
+  login_throttled: "Too many sign-in attempts. Please wait a minute and try again.",
+  invalid_username: "Use 3–64 characters for the username: unaccented letters, numbers, periods, underscores or hyphens.",
+  invalid_display_name: "The full name must contain 1–200 characters.",
+  invalid_password: "The password must contain 12–128 characters; spaces and Vietnamese are supported.",
+  invalid_current_password: "The current password is incorrect.",
+  password_unchanged: "Choose a password different from your current password.",
+  username_exists: "This username is already in use. Choose another.",
+  stale_version: "The information has changed. Reload the profile before trying again.",
+  student_inactive: "This account is inactive.",
+  student_missing: "This student could not be found.",
+  forbidden: "You do not have permission to perform this action.",
+  password_change_required: "Change your password before viewing your account information.",
+  invalid_csrf: "The verification session has changed. Please try the action again.",
+  unauthenticated: "Your session has ended. Please sign in again.",
 };
 
 export class ApiError extends Error {
   constructor(public status: number, public code: string) {
-    super(messages[code] ?? 'Chưa thể hoàn tất yêu cầu. Vui lòng thử lại.');
+    super(code);
   }
 }
 export const aborted = (error: unknown) => error instanceof DOMException && error.name === 'AbortError';
-export const message = (error: unknown) => error instanceof ApiError ? error.message : 'Không kết nối được máy chủ. Hãy kiểm tra kết nối rồi thử lại.';
+export const message = (error: unknown): MessageKey => error instanceof ApiError ? (messages[error.code] ?? "Unable to complete the request. Please try again.") : "Cannot reach the server. Check your connection and try again.";
 
 // CSRF and response state live only in memory. An epoch rejects late bytes after a user transition.
 export class ApiClient {

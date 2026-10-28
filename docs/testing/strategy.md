@@ -1,5 +1,7 @@
 # Verification strategy
 
+Bilingual update — 2026-10-28: 10/10 built-asset Chromium scenarios, 96 template/width/language cases, 12 actual 200% zoom cases and 17/17 API regressions passed. [Bilingual evidence](evidence/bilingual-ui.md) records live switching, storage fallback, focus/validation, request preservation and screenshot review.
+
 I1b status — 2026-10-28: six production-asset Chromium E2E scenarios and the 48-case identity responsive matrix pass with real API/disposable PostgreSQL, plus actual 200% browser zoom, keyboard/focus and computed contrast measurements. API ownership regressions remain 17/17 passing. [I1b evidence](evidence/i1b.md) records an orchestration cleanup defect, its fix and final empty inventories. Broader product/release verification below remains planned; no CI exists yet.
 
 I1a status — 2026-10-28: meaningful API/real PostgreSQL and Linux PTY operator tests now exist in `Keemese.Api.Tests`; rootless Podman and the existing digest-pinned image are required. Tests use controlled time, real cookies/antiforgery, actual DB uniqueness/rollback and synthetic terminal interactions. [I1a evidence](evidence/i1a.md) owns exact results, scope and limits. Health-only tests remain DB-independent; UI/full A1/A9/A10 and production readiness are unverified.

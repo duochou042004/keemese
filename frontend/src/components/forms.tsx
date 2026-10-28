@@ -1,20 +1,31 @@
-import { useEffect, useRef } from 'react';
+import { useLanguage } from '../i18n/Language';
+import { useCallback, useEffect, useRef } from 'react';
 import type { InputHTMLAttributes, ReactNode } from 'react';
 
 export function Notice({ children, error = false }: { children: ReactNode; error?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => { if (error) ref.current?.focus(); }, [children, error]);
+  // Translation changes must not steal focus from the language selector.
+  useEffect(() => { if (error) ref.current?.focus(); }, [error]);
   return <div ref={ref} tabIndex={error ? -1 : undefined} role={error ? 'alert' : 'status'} className={`notice ${error ? 'error' : ''}`}>{children}</div>;
 }
 export function Field({ label, hint, ...props }: InputHTMLAttributes<HTMLInputElement> & { label: string; hint?: string }) {
+  const { t, language } = useLanguage();
+  const ref = useRef<HTMLInputElement>(null);
+  const validation = useCallback((input: HTMLInputElement) => {
+    input.setCustomValidity('');
+    if (input.validity.valid) return;
+    input.setCustomValidity(input.validity.valueMissing ? t('Please enter {label}.', { label: label.toLocaleLowerCase(language) })
+      : input.validity.tooShort ? t('Please enter at least {count} characters.', { count: input.minLength })
+      : t('Invalid information. Check the instructions for this field.'));
+  }, [t, label, language]);
+  useEffect(() => {
+    if (ref.current?.validity.customError) validation(ref.current);
+  }, [validation]);
   return <div className="field"><label htmlFor={props.id}>{label}</label>
-    <input {...props} onInvalid={event => {
-      const input = event.currentTarget;
-      input.setCustomValidity(input.validity.valueMissing ? `Vui lòng nhập ${label.toLocaleLowerCase('vi')}.` : input.validity.tooShort ? `Vui lòng nhập ít nhất ${input.minLength} ký tự.` : 'Thông tin chưa hợp lệ. Hãy kiểm tra hướng dẫn của trường này.');
-    }} onInput={event => event.currentTarget.setCustomValidity('')} aria-describedby={hint ? `${props.id}-hint` : undefined} />
+    <input {...props} ref={ref} onInvalid={event => validation(event.currentTarget)}
+      onInput={event => event.currentTarget.setCustomValidity('')} aria-describedby={hint ? `${props.id}-hint` : undefined} />
     {hint && <p className="hint" id={`${props.id}-hint`}>{hint}</p>}</div>;
 }
-export const passwordHint = '12–128 ký tự. Có thể dùng dấu cách và tiếng Việt.';
 export function PageHeading({ eyebrow, title, children }: { eyebrow?: string; title: string; children?: ReactNode }) {
   return <div className="page-heading">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1 tabIndex={-1}>{title}</h1>{children && <p className="intro">{children}</p>}</div>;
 }

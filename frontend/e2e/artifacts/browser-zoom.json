@@ -7,6 +7,16 @@
   "rows": [
     {
       "template": "login",
+      "language": "en",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "login",
+      "language": "vi",
       "innerWidth": 640,
       "dpr": 2,
       "rootText": "16px",
@@ -15,6 +25,16 @@
     },
     {
       "template": "list",
+      "language": "en",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "list",
+      "language": "vi",
       "innerWidth": 640,
       "dpr": 2,
       "rootText": "16px",
@@ -23,6 +43,16 @@
     },
     {
       "template": "create",
+      "language": "en",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "create",
+      "language": "vi",
       "innerWidth": 640,
       "dpr": 2,
       "rootText": "16px",
@@ -31,6 +61,16 @@
     },
     {
       "template": "detail",
+      "language": "en",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "detail",
+      "language": "vi",
       "innerWidth": 640,
       "dpr": 2,
       "rootText": "16px",
@@ -39,6 +79,16 @@
     },
     {
       "template": "password",
+      "language": "en",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "password",
+      "language": "vi",
       "innerWidth": 640,
       "dpr": 2,
       "rootText": "16px",
@@ -47,6 +97,16 @@
     },
     {
       "template": "account",
+      "language": "en",
+      "innerWidth": 640,
+      "dpr": 2,
+      "rootText": "16px",
+      "content": 640,
+      "result": "passed"
+    },
+    {
+      "template": "account",
+      "language": "vi",
       "innerWidth": 640,
       "dpr": 2,
       "rootText": "16px",

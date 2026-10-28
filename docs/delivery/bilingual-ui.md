@@ -1,5 +1,7 @@
 # Approved bilingual UI execution packet
 
+Execution completed and verified 2026-10-28; [actual evidence](../testing/evidence/bilingual-ui.md) records scope, checks and limitations. The instructions below describe the approved packet.
+
 Approved 2026-10-28. Execute in a new local project chat using GPT-6.1 Sol (`gpt-6.1-sol`), Medium reasoning. User explicitly requests goal mode. Do not fork/import prior conversation. Read AGENTS, progress and handoff first, verify actual Git/files, then [frontend contract](../frontend/design.md#bilingual-interface-proposal--2026-10-28), relevant tests and L004/L005 lessons. Avoid broad historical document loading.
 
 ## Goal and finish condition

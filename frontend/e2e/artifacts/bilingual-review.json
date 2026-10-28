@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-28",
+  "packet": "Bilingual identity UI",
+  "status": "agent_review_complete_user_acceptance_separate",
+  "matrix_cases": 96,
+  "actual_zoom_cases": 12,
+  "inspected": [
+    "six bilingual eight-width contact sheets",
+    "bilingual actual-zoom and short-height sheet",
+    "full-size English desktop login",
+    "full-size English 320px detail",
+    "full-size English short-height confirmation"
+  ],
+  "findings": [
+    "Existing white/navy hierarchy preserved",
+    "Language selector wraps without clipping or overlay",
+    "Long Vietnamese names remain intact in English UI",
+    "Confirmation and reset actions remain reachable"
+  ],
+  "limitations": [
+    "Chromium/Linux synthetic pilot",
+    "Agent judgment is not user aesthetic acceptance"
+  ],
+  "build_sha256": {
+    "frontend/dist/index.html": "763f8057cd81b66a2329081fa8ff975c89407334ba65104dff36756c0fcd1efd",
+    "frontend/dist/assets/index-DICGze7E.js": "da8e76b13469747f9d88076383f6491b4978db68ba40a57e982c2c1e5c15bea9",
+    "frontend/dist/assets/index-Bm6iGSBR.css": "f756c4fd64c1c23178c97f9ab179d6ce78cc35f34bef864c97dc2f35ec8cb39e"
+  }
+}

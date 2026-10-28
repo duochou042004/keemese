@@ -168,7 +168,7 @@ test('user switch cancels late private bytes and clears storage; cross-tab switc
   await logout(page); await login(page, 'switch-b', temporary); await rotate(page); await page.unroute('**/api/v1/me/profile');
   await login(page, 'switch-b', changed); await expect(page.getByText('Học sinh switch-b', { exact: true })).toBeVisible();
   release(); await expect(page.getByText('Học sinh switch-a', { exact: true })).toHaveCount(0);
-  expect(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length }))).toEqual({ local: 0, session: 0 });
+  expect(await page.evaluate(() => ({ local: Object.keys(localStorage).filter(key => key !== 'keemese.uiLanguage').length, session: sessionStorage.length }))).toEqual({ local: 0, session: 0 });
   const tab = await context.newPage(); await tab.goto('/me/account'); await expect(tab.getByText('Học sinh switch-b', { exact: true })).toBeVisible();
   await logout(page); await expect(tab.getByRole('heading', { name: 'Đăng nhập', exact: true })).toBeVisible();
 });
@@ -180,22 +180,25 @@ test('eight-width visual, keyboard, contrast, short-height and 200-percent text 
   const rows: object[] = [];
   const widths = [320, 360, 390, 430, 768, 1024, 1280, 1440];
   async function snapshot(template: string) {
+    for (const language of ['en', 'vi'] as const) {
+      await page.locator('#ui-language').selectOption(language);
     for (const width of widths) {
       await page.setViewportSize({ width, height: 900 });
       await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
       const metrics = await page.evaluate(() => {
-        const controls = [...document.querySelectorAll<HTMLElement>('input,button')].filter(e => e.getBoundingClientRect().width > 0);
+        const controls = [...document.querySelectorAll<HTMLElement>('input,button,select')].filter(e => e.getBoundingClientRect().width > 0);
         return { viewport: innerWidth, content: document.documentElement.scrollWidth,
           smallControls: controls.filter(e => e.getBoundingClientRect().height < 44).map(e => e.tagName),
-          unlabeledInputs: [...document.querySelectorAll('input')].filter(e => !e.labels?.length).length };
+          unlabeledInputs: [...document.querySelectorAll<HTMLInputElement | HTMLSelectElement>('input,select')].filter(e => !e.labels?.length).length };
       });
       expect(metrics.content).toBeLessThanOrEqual(metrics.viewport); expect(metrics.smallControls).toEqual([]); expect(metrics.unlabeledInputs).toBe(0);
-      const file = `${artifact}/${template}-${width}.png`; await page.screenshot({ path: file, fullPage: true });
-      rows.push({ template, route: new URL(page.url()).pathname, width, height: 900, scenario: 'synthetic long Vietnamese names; secret fields empty', file, metrics, result: 'passed' });
+      const file = `${artifact}/${template}-${language}-${width}.png`; await page.screenshot({ path: file, fullPage: true });
+      rows.push({ template, language, route: new URL(page.url()).pathname, width, height: 900, scenario: 'synthetic long Vietnamese names; secret fields empty', file, metrics, result: 'passed' });
+    }
     }
   }
   await page.goto('/'); await snapshot('login');
-  await page.keyboard.press('Tab'); await expect(page.getByLabel('Tên đăng nhập', { exact: true })).toBeFocused();
+  await page.locator('#ui-language').focus(); await page.keyboard.press('Tab'); await expect(page.getByLabel('Tên đăng nhập', { exact: true })).toBeFocused();
   const focus = await page.getByLabel('Tên đăng nhập', { exact: true }).evaluate(e => ({ style: getComputedStyle(e).outlineStyle, width: getComputedStyle(e).outlineWidth }));
   expect(focus).toEqual({ style: 'solid', width: '3px' });
   await page.screenshot({ path: `${artifact}/keyboard-focus.png`, fullPage: true });
@@ -211,6 +214,11 @@ test('eight-width visual, keyboard, contrast, short-height and 200-percent text 
   await page.setViewportSize({ width: 320, height: 568 });
   await page.getByRole('button', { name: 'Ngừng hoạt động', exact: true }).click();
   const cancel = page.getByRole('button', { name: 'Hủy', exact: true }); await cancel.focus(); await expect(cancel).toBeInViewport();
+  await page.locator('#ui-language').selectOption('en');
+  await page.getByRole('button', { name: 'Cancel', exact: true }).focus();
+  await expect(page.getByRole('button', { name: 'Cancel', exact: true })).toBeInViewport();
+  await page.screenshot({ path: `${artifact}/short-height-confirmation-en.png`, fullPage: true });
+  await page.locator('#ui-language').selectOption('vi'); await cancel.focus();
   await page.screenshot({ path: `${artifact}/short-height-confirmation.png`, fullPage: true }); await page.keyboard.press('Enter');
   await expect(page.getByRole('button', { name: 'Xác nhận ngừng hoạt động' })).toHaveCount(0);
   await logout(page); await login(page, 'visual', temporary); await snapshot('password');
@@ -263,6 +271,8 @@ test('actual Chromium browser zoom at 200 percent preserves all identity templat
       await chrome.tabs.setZoom(tab.id, 2);
     })()`);
     async function snap(template: string) {
+      for (const language of ['en', 'vi'] as const) {
+      await page.locator('#ui-language').selectOption(language);
       const metrics = await page.evaluate(() => ({ innerWidth, dpr: devicePixelRatio, rootText: getComputedStyle(document.documentElement).fontSize, content: document.documentElement.scrollWidth }));
       expect(metrics.dpr).toBe(2); expect(metrics.innerWidth).toBe(640); expect(metrics.content).toBeLessThanOrEqual(metrics.innerWidth);
       // Playwright's CSS-size screenshot clip is cropped under actual browser zoom.
@@ -270,8 +280,9 @@ test('actual Chromium browser zoom at 200 percent preserves all identity templat
       const layout = await cdp.send('Page.getLayoutMetrics');
       const screenshot = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true,
         clip: { x: 0, y: 0, width: Math.ceil(layout.cssContentSize.width * metrics.dpr), height: Math.ceil(layout.cssContentSize.height * metrics.dpr), scale: 1 } });
-      await writeFile(`${artifact}/browser-zoom-${template}-200.png`, Buffer.from(screenshot.data, 'base64'));
-      rows.push({ template, ...metrics, result: 'passed' });
+      await writeFile(`${artifact}/browser-zoom-${template}-${language}-200.png`, Buffer.from(screenshot.data, 'base64'));
+      rows.push({ template, language, ...metrics, result: 'passed' });
+      }
     }
     await snap('login'); await login(page); await expect(page.getByRole('heading', { name: 'Học sinh', exact: true })).toBeVisible(); await snap('list');
     await page.getByRole('link', { name: 'Thêm học sinh', exact: true }).click(); await snap('create');
@@ -282,4 +293,108 @@ test('actual Chromium browser zoom at 200 percent preserves all identity templat
     await rotate(page); await login(page, 'zoom', changed); await expect(page.getByText(longName, { exact: true })).toBeVisible(); await snap('account');
     await writeFile(`${artifact}/browser-zoom.json`, JSON.stringify({ mechanism: 'chrome.tabs.setZoom(2) in a test-only disposable browser profile', physicalViewport: [1280, 900], rows }, null, 2));
   } finally { await context.close(); await rm(directory, { recursive: true }); }
+});
+
+test('typed dictionaries have identical complete keys and template parameters', async () => {
+  const { en, vi } = await import('../src/i18n/messages');
+  expect(Object.keys(en).sort()).toEqual(Object.keys(vi).sort());
+  for (const key of Object.keys(vi) as (keyof typeof vi)[]) {
+    expect(en[key].trim()).not.toBe(''); expect(vi[key].trim()).not.toBe('');
+    expect(en[key].match(/\{\w+\}/g)).toEqual(vi[key].match(/\{\w+\}/g));
+  }
+});
+
+async function switchLanguage(page: Page, language: 'vi' | 'en') {
+  const selector = page.locator('#ui-language');
+  await selector.focus(); await selector.selectOption(language);
+  await expect(selector).toBeFocused(); await expect(page.locator('html')).toHaveAttribute('lang', language);
+}
+
+test('live language switching preserves forms, validation, error focus, pending requests and preference', async ({ page, context }) => {
+  await page.goto('/');
+  await expect(page).toHaveTitle('Đăng nhập · Keemese');
+  await page.getByLabel('Tên đăng nhập', { exact: true }).fill('tutor');
+  await page.getByLabel('Mật khẩu', { exact: true }).fill('preserved secret');
+  const requests: string[] = []; page.on('request', r => { if (r.url().includes('/api/')) requests.push(r.method() + new URL(r.url()).pathname); });
+  await switchLanguage(page, 'en');
+  await expect(page.getByLabel('Username', { exact: true })).toHaveValue('tutor');
+  await expect(page.getByLabel('Password', { exact: true })).toHaveValue('preserved secret');
+  await expect(page.getByRole('link', { name: 'Skip to main content' })).toHaveAttribute('href', '#main');
+  await expect(page).toHaveTitle('Sign in · Keemese'); expect(requests).toEqual([]);
+  // Existing native custom validity changes in place, without reportValidity/focus movement.
+  await page.getByLabel('Password', { exact: true }).fill('');
+  await page.getByRole('button', { name: 'Sign in', exact: true }).click();
+  expect(await page.locator('#password').evaluate((e: HTMLInputElement) => e.validationMessage)).toBe('Please enter password.');
+  await switchLanguage(page, 'vi');
+  expect(await page.locator('#password').evaluate((e: HTMLInputElement) => e.validationMessage)).toBe('Vui lòng nhập mật khẩu.');
+  await login(page, 'tutor', 'incorrect'); await expect(page.getByRole('alert')).toBeFocused();
+  const count = requests.length;
+  await switchLanguage(page, 'en'); await expect(page.getByRole('alert')).toContainText('incorrect'); expect(requests).toHaveLength(count);
+  await switchLanguage(page, 'vi'); await expect(page.getByRole('alert')).toContainText('không đúng');
+  // Hold the real login response while switching: one mutation, no revalidation, current-language result.
+  let release!: () => void; let seen!: () => void;
+  const gate = new Promise<void>(resolve => { release = resolve; }); const intercepted = new Promise<void>(resolve => { seen = resolve; });
+  await page.route('**/api/v1/auth/login', async route => { const response = await route.fetch(); seen(); await gate; await route.fulfill({ response }); });
+  await page.getByLabel('Mật khẩu', { exact: true }).fill(tutorPassword);
+  await page.getByRole('button', { name: 'Đăng nhập', exact: true }).click(); await intercepted;
+  const pendingCount = requests.length;
+  await switchLanguage(page, 'en'); await expect(page.getByRole('button', { name: 'Signing in…' })).toBeDisabled(); expect(requests).toHaveLength(pendingCount);
+  release(); await page.unrouteAll({ behavior: 'wait' });
+  await expect(page.getByRole('heading', { name: 'Students', exact: true })).toBeVisible();
+  expect(requests.filter(x => x === 'POST/api/v1/auth/login')).toHaveLength(2);
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await expect(page.getByRole('status')).toContainText('signed out safely');
+  await switchLanguage(page, 'vi'); await expect(page.getByRole('status')).toContainText('Đã đăng xuất');
+  await switchLanguage(page, 'en'); await page.reload(); await expect(page.getByRole('heading', { name: 'Sign in', exact: true })).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('keemese.uiLanguage'))).toBe('en');
+  const other = await context.newPage(); await other.goto('/'); await expect(other.locator('html')).toHaveAttribute('lang', 'en'); await other.close();
+  await page.evaluate(() => localStorage.setItem('keemese.uiLanguage', 'invalid')); await page.reload(); await expect(page.locator('#ui-language')).toHaveValue('vi');
+});
+
+test('unavailable browser storage keeps an in-memory language and error-state selector', async ({ page }) => {
+  await page.addInitScript(() => {
+    Storage.prototype.getItem = () => { throw new DOMException('Blocked', 'SecurityError'); };
+    Storage.prototype.setItem = () => { throw new DOMException('Blocked', 'SecurityError'); };
+  });
+  await page.route('**/api/v1/auth/me', route => route.abort());
+  await page.goto('/'); await expect(page.getByRole('heading', { name: 'Chưa thể kết nối' })).toBeVisible();
+  await switchLanguage(page, 'en'); await expect(page.getByRole('heading', { name: 'Unable to connect' })).toBeVisible();
+  await expect(page.getByRole('alert')).toContainText('Cannot reach the server');
+  await page.reload(); await expect(page.locator('#ui-language')).toHaveValue('vi');
+});
+
+test('English tutor and student journey preserves names, typed forms, success notices and confirmation', async ({ page }) => {
+  await page.goto('/'); await switchLanguage(page, 'en');
+  async function englishLogin(username: string, password: string) {
+    await page.getByLabel('Username', { exact: true }).fill(username); await page.getByLabel('Password', { exact: true }).fill(password);
+    await page.getByRole('button', { name: 'Sign in', exact: true }).click();
+  }
+  await englishLogin('tutor', tutorPassword); await page.getByRole('link', { name: 'Add student', exact: true }).click();
+  await page.getByLabel('Full name', { exact: true }).fill(longName); await page.getByLabel('Username', { exact: true }).fill('bilingual');
+  await page.getByLabel('Temporary password', { exact: true }).fill(temporary);
+  const requests: string[] = []; page.on('request', r => { if (r.url().includes('/api/')) requests.push(r.url()); });
+  await switchLanguage(page, 'vi'); await expect(page.getByLabel('Họ và tên')).toHaveValue(longName); await expect(page.getByLabel('Mật khẩu tạm thời', { exact: true })).toHaveValue(temporary);
+  await switchLanguage(page, 'en'); expect(requests).toEqual([]);
+  await page.getByRole('button', { name: 'Create account' }).click();
+  await expect(page.getByRole('heading', { name: longName, exact: true })).toBeVisible();
+  await expect(page.getByRole('status')).toContainText('Account created');
+  const n = requests.length; await switchLanguage(page, 'vi'); await expect(page.getByRole('status')).toContainText('Đã tạo tài khoản'); await switchLanguage(page, 'en'); expect(requests).toHaveLength(n);
+  await page.getByRole('button', { name: 'Deactivate', exact: true }).click();
+  await switchLanguage(page, 'vi'); await expect(page.locator('#deactivate-question')).toHaveText(`Ngừng hoạt động tài khoản của ${longName}?`);
+  await switchLanguage(page, 'en'); await expect(page.locator('#deactivate-question')).toHaveText(`Deactivate the account for ${longName}?`);
+  await page.getByRole('button', { name: 'Cancel', exact: true }).click();
+  await page.getByLabel('New temporary password').fill(reset); await page.getByRole('button', { name: 'Reset password', exact: true }).click();
+  await expect(page.getByRole('status')).toContainText('Password reset'); await switchLanguage(page, 'vi'); await expect(page.getByRole('status')).toContainText('Đã đặt lại'); await switchLanguage(page, 'en');
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click(); await englishLogin('bilingual', reset);
+  await expect(page.getByRole('heading', { name: 'Change password', exact: true })).toBeVisible(); await expect(page).toHaveTitle('Change password · Keemese');
+  await page.getByLabel('Current password', { exact: true }).fill(reset); await page.getByLabel('New password', { exact: true }).fill(changed); await page.getByLabel('Confirm new password', { exact: true }).fill(temporary);
+  await switchLanguage(page, 'vi'); await expect(page.getByLabel('Mật khẩu hiện tại')).toHaveValue(reset); await switchLanguage(page, 'en');
+  await page.getByRole('button', { name: 'Save new password' }).click(); await expect(page.getByRole('alert')).toContainText('do not match');
+  await switchLanguage(page, 'vi'); await expect(page.getByRole('alert')).toContainText('chưa khớp'); await switchLanguage(page, 'en');
+  await page.getByLabel('Current password', { exact: true }).fill(reset); await page.getByLabel('New password', { exact: true }).fill(changed); await page.getByLabel('Confirm new password', { exact: true }).fill(changed);
+  await page.getByRole('button', { name: 'Save new password' }).click(); await expect(page.getByRole('status')).toContainText('Password changed');
+  await englishLogin('bilingual', changed); await expect(page.getByRole('heading', { name: 'My account' })).toBeVisible();
+  await expect(page.getByText(longName, { exact: true })).toBeVisible(); await expect(page.getByText('bilingual', { exact: true })).toBeVisible();
+  await page.goto('/students'); await expect(page.getByRole('heading', { name: 'Unable to open this page' })).toBeVisible();
+  await switchLanguage(page, 'vi'); await expect(page.getByRole('heading', { name: 'Không thể mở trang này' })).toBeVisible();
 });

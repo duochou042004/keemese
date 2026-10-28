@@ -2,14 +2,14 @@
   "schema_version": 1,
   "updated_at": "2026-10-28",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "Bilingual UI approved for fresh goal-mode execution",
-  "status": "published_ready_for_fresh_bilingual_goal",
+  "phase": "Bilingual identity UI implemented and verified",
+  "status": "bilingual_verified_publication_pending",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "0771e35e5d4f693f921266bcd9aa67d43d5d4b8d",
-    "working_tree_status": "publication_verified_before_final_handoff_record",
-    "note": "0771e35 published accumulated F0b/I1a/I1b/redesign and approved handoff; remote exact hash and clean worktree verified. This final record is a subsequent documentation commit; resolve actual HEAD via Git.",
+    "commit": "4d49f49cecc399ad33f708802924de40bcdddadb",
+    "working_tree_status": "bilingual_task_changes_reviewed_before_commit",
+    "note": "Packet baseline verified equal to origin. Implementation/publication commit will be recorded after normal push; resolve current HEAD through Git.",
     "implementation_commit": "0771e35e5d4f693f921266bcd9aa67d43d5d4b8d",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
@@ -53,72 +53,40 @@
     "Added scoped UI PNG screenshot ignore rules and removed README embed of an ignored preview; retained local PNG files. Historical tracked F0a PNG remains tracked; index/history untouched.",
     "I1b redesign: white/navy, revised hierarchy/layout/forms/navigation; final 6/6 browser suite (25.8s), 48 viewport cases, actual 200% zoom and 17/17 API regressions passed; agent visual review complete, user acceptance pending.",
     "2026-10-28 bounded bilingual discussion: inspected existing frontend and actual Git; proposed Vietnamese default, header selector, browser preference and typed UI dictionaries, including live error/validation translation. No product edits.",
-    "Published accumulated identity foundation/redesign and approved bilingual handoff as 0771e35; exact remote hash and clean worktree verified."
+    "Published accumulated identity foundation/redesign and approved bilingual handoff as 0771e35; exact remote hash and clean worktree verified.",
+    "Bilingual identity UI: Vietnamese default, browser-only preference with storage fallback, typed complete dictionaries/provider, live labels/errors/validation/notices/metadata, preserved input/focus/pending requests; 10/10 browser scenarios, 96 width/language and 12 actual zoom cases, 17/17 API regressions passed; agent screenshot review complete."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automatic controller remains unimplemented.",
     "All content/material/question/goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. CI, persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending.",
-    "Approved English/Vietnamese UI implementation and verification pending in the fresh Sol Medium goal-mode chat."
+    "Normal commit/push and exact remote publication verification for bilingual packet pending at this prepublication checkpoint."
   ],
   "changed_files": [
-    ".gitignore",
     "README.md",
-    "backend/Keemese.Api.Tests/IdentityBoundaryTests.cs",
-    "backend/Keemese.Api.Tests/IdentityLifecycleTests.cs",
-    "backend/Keemese.Api.Tests/Keemese.Api.Tests.csproj",
-    "backend/Keemese.Api.Tests/LivenessTests.cs",
-    "backend/Keemese.Api.Tests/TestApplicationFactory.cs",
-    "backend/Keemese.Api.Tests/UiTestHost.cs",
-    "backend/Keemese.Api.Tests/packages.lock.json",
-    "backend/Keemese.Api/Identity/HttpIdentity.cs",
-    "backend/Keemese.Api/Identity/IdentityService.cs",
-    "backend/Keemese.Api/Identity/OperatorCommand.cs",
-    "backend/Keemese.Api/Keemese.Api.csproj",
-    "backend/Keemese.Api/Persistence/WorkspaceDb.cs",
-    "backend/Keemese.Api/Program.cs",
-    "backend/Keemese.Api/Students/StudentService.cs",
-    "backend/Keemese.Api/packages.lock.json",
-    "backend/Keemese.Database.Tests/DisposablePostgres.cs",
-    "backend/Keemese.Database.Tests/Keemese.Database.Tests.csproj",
-    "backend/Keemese.Database.Tests/PostgresTests.cs",
-    "backend/Keemese.Database.Tests/packages.lock.json",
     "docs/README.md",
-    "docs/backend/api.md",
-    "docs/decisions/decisions.md",
-    "docs/delivery/i1-readiness.md",
-    "docs/delivery/plan.md",
+    "docs/delivery/bilingual-ui.md",
     "docs/frontend/design.md",
-    "docs/operations/runbook.md",
-    "docs/security/threat-model.md",
-    "docs/testing/evidence/f0b.md",
-    "docs/testing/evidence/i1a.md",
-    "docs/testing/evidence/i1b.md",
+    "docs/testing/evidence/bilingual-ui.md",
     "docs/testing/strategy.md",
+    "frontend/e2e/artifacts/bilingual-review.json",
     "frontend/e2e/artifacts/browser-zoom.json",
     "frontend/e2e/artifacts/qa.json",
-    "frontend/e2e/artifacts/visual-review.json",
     "frontend/e2e/identity.spec.ts",
-    "frontend/e2e/teardown.ts",
-    "frontend/e2e/zoom-extension/manifest.json",
-    "frontend/e2e/zoom-extension/zoom.js",
-    "frontend/package-lock.json",
-    "frontend/package.json",
-    "frontend/playwright.config.ts",
+    "frontend/index.html",
     "frontend/src/App.tsx",
     "frontend/src/api/client.ts",
     "frontend/src/auth/AuthForms.tsx",
     "frontend/src/components/forms.tsx",
+    "frontend/src/i18n/Language.tsx",
+    "frontend/src/i18n/messages.ts",
     "frontend/src/main.tsx",
     "frontend/src/students/Students.tsx",
     "frontend/src/styles.css",
     "harness/learning/lessons.jsonl",
     "harness/logs/build-log.md",
     "harness/state/handoff.md",
-    "harness/state/progress.json",
-    "docs/testing/evidence/i1b-redesign.md",
-    "AGENTS.md",
-    "docs/delivery/bilingual-ui.md"
+    "harness/state/progress.json"
   ],
   "preserved_source_files": [
     "docs/spec/personal_english_tutor_teaching_workspace_spec.md",
@@ -136,7 +104,7 @@
     "policy_owner": "docs/agents/context-safety.md",
     "fresh_session_recommended_for_next_packet": true,
     "current_thread_id": null,
-    "fresh_session_evidence": "Bounded bilingual discussion used launch instructions and local canonical/files/Git only; no prior conversation import, fork, subagents or other-chat messaging.",
+    "fresh_session_evidence": "Used launch instructions and local canonical/files/Git only; no prior-chat retrieval/import, fork, subagents or messaging. Goal activated before product edits. Manual one-packet boundary; occupancy unknown.",
     "isolated_probe": "Live usage events observed: total cumulative across two turns; last latest-request counts; modelContextWindow 258400 has unverified usable-capacity semantics. Does not measure current desktop chat."
   },
   "verification": [
@@ -355,18 +323,25 @@
     {
       "check": "Publication preparation JSON/JSONL, local Markdown file targets, common credential-signature scan, staged whitespace and inventory; normal push 0771e35 and remote exact hash",
       "status": "passed_application_tests_not_rerun_unchanged_code"
+    },
+    {
+      "check": "Bilingual final build/strict test TypeScript, real API/PostgreSQL browser lifecycle, 96 width/language cases, 12 actual zoom cases, live switch/storage/focus/validation/metadata, unchanged authored values and retained API regressions",
+      "status": "passed_10_browser_32.9_seconds_17_API_48_seconds_no_skips_retries_agent_screenshot_review_complete"
+    },
+    {
+      "check": "Bilingual checkpoint JSON/JSONL, local Markdown file targets, requirements, preservation, cleanup and staged publication review",
+      "status": "passed_13_JSON_1_JSONL_28_Markdown_142_targets_61_requirement_ids_23_backend_original_source_files_equal_baseline_24_safe_staged_paths_no_new_PNGs_common_credential_signatures_or_whitespace_errors_empty_runtime_inventories"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "bilingual-ui-goal",
-    "action": "In a fresh GPT-6.1 Sol Medium chat activate create_goal and execute docs/delivery/bilingual-ui.md, verify, checkpoint, commit and push origin/feature/f0-foundation.",
+    "id": "bilingual-publication",
+    "action": "Review staged task changes, commit/push origin/feature/f0-foundation, verify exact remote hash and clean worktree, then finish this bounded goal.",
     "inputs": [
-      "docs/delivery/bilingual-ui.md",
-      "docs/frontend/design.md"
+      "docs/testing/evidence/bilingual-ui.md"
     ],
-    "acceptance": "Complete UI-only bilingual contract and evidence; verified normal branch push; no unrelated scope."
+    "acceptance": "Verified publication and truthful final report; no new feature packet."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -431,7 +406,7 @@
         "vi"
       ],
       "scope": "Application UI components",
-      "status": "approved_for_fresh_goal_execution",
+      "status": "implemented_verified",
       "source_date": "2026-10-28",
       "implementation_authorized": true
     }
@@ -441,5 +416,6 @@
     "branch": "feature/f0-foundation",
     "remote": "origin",
     "rule": "Review, commit and push task changes before stopping to report; verify remote hash; no empty commits, merge or force-push."
-  }
+  },
+  "bilingual_evidence": "docs/testing/evidence/bilingual-ui.md"
 }
