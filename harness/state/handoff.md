@@ -13,3 +13,5 @@ The [frontend contract](../../docs/frontend/design.md#bilingual-interface-propos
 Preparation began at feature/f0-foundation/d932c3c with unstaged F0b/I1a/I1b/redesign work. User now requires publication of these changes and this handoff. Inspect current HEAD and remote instead of trusting a self-referential checkpoint hash. Prior redesign results: 17 API tests, six browser scenarios and 48 viewport cases passed; these are historical results, not rerun in the preparation chat. User requested quota-conscious preparation; product implementation/tests belong in the successor.
 
 Follow the one-packet manual context policy. Goal continuation is not fresh-session rollover or occupancy measurement. No previous conversation import or fork. Stop after the approved packet, with truthful verification/publication evidence.
+
+Publication verified: `0771e35e5d4f693f921266bcd9aa67d43d5d4b8d` is on origin/feature/f0-foundation and the worktree was clean before this final documentation record. JSON/JSONL, local Markdown targets, staged whitespace/inventory and common credential-signature checks passed. This record is committed subsequently; read actual HEAD from Git.

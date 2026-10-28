@@ -3,14 +3,14 @@
   "updated_at": "2026-10-28",
   "timezone": "Asia/Ho_Chi_Minh",
   "phase": "Bilingual UI approved for fresh goal-mode execution",
-  "status": "approved_preparing_publication_and_fresh_session",
+  "status": "published_ready_for_fresh_bilingual_goal",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "d932c3c62dd0942aff67977a4a65d7a9f83afe07",
-    "working_tree_status": "unstaged_f0b_i1a_i1b_and_documentation",
-    "note": "Verified original feature/f0-foundation/d932c3c and three branch refs; index empty. Existing F0b/I1a files preserved, I1b frontend/tests/evidence added unstaged. No Git publication.",
-    "implementation_commit": "8dc6498e5be5df20025aa432dfbd84b8fdfb19d0",
+    "commit": "0771e35e5d4f693f921266bcd9aa67d43d5d4b8d",
+    "working_tree_status": "publication_verified_before_final_handoff_record",
+    "note": "0771e35 published accumulated F0b/I1a/I1b/redesign and approved handoff; remote exact hash and clean worktree verified. This final record is a subsequent documentation commit; resolve actual HEAD via Git.",
+    "implementation_commit": "0771e35e5d4f693f921266bcd9aa67d43d5d4b8d",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
     "default_branch": "develop"
@@ -52,7 +52,8 @@
     "I1b: Vietnamese identity UI, tutor account management and student self-account; 6/6 built-asset Chromium real API/PostgreSQL E2E, 48 template/width cases, true 200% browser zoom, short-height/keyboard/computed contrast and 17/17 API regressions passed. Fixed outer test-process cleanup race and verified empty inventories.",
     "Added scoped UI PNG screenshot ignore rules and removed README embed of an ignored preview; retained local PNG files. Historical tracked F0a PNG remains tracked; index/history untouched.",
     "I1b redesign: white/navy, revised hierarchy/layout/forms/navigation; final 6/6 browser suite (25.8s), 48 viewport cases, actual 200% zoom and 17/17 API regressions passed; agent visual review complete, user acceptance pending.",
-    "2026-10-28 bounded bilingual discussion: inspected existing frontend and actual Git; proposed Vietnamese default, header selector, browser preference and typed UI dictionaries, including live error/validation translation. No product edits."
+    "2026-10-28 bounded bilingual discussion: inspected existing frontend and actual Git; proposed Vietnamese default, header selector, browser preference and typed UI dictionaries, including live error/validation translation. No product edits.",
+    "Published accumulated identity foundation/redesign and approved bilingual handoff as 0771e35; exact remote hash and clean worktree verified."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
@@ -350,6 +351,10 @@
     {
       "check": "Bilingual discussion checkpoint: JSON/JSONL, touched Markdown local file targets, product-file SHA256 preservation, diff whitespace, empty index and unchanged HEAD",
       "status": "passed_documentation_only_application_tests_and_visual_QA_not_rerun"
+    },
+    {
+      "check": "Publication preparation JSON/JSONL, local Markdown file targets, common credential-signature scan, staged whitespace and inventory; normal push 0771e35 and remote exact hash",
+      "status": "passed_application_tests_not_rerun_unchanged_code"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
