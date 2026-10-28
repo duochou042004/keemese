@@ -3,13 +3,13 @@
   "updated_at": "2026-10-28",
   "timezone": "Asia/Ho_Chi_Minh",
   "phase": "CI1 implementation and verification",
-  "status": "ci1_hosted_full_passed_final_hardening_pending",
+  "status": "ci1_final_hosted_full_passed_docs_path_pending",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "23dc172e117965095425d1d6df3d2453f91ea141",
-    "working_tree_status": "ci1_changes_pending_review",
-    "note": "Initial hosted full pass obtained; final classifier/artifact hardening and operations/evidence records are pending reviewed publication.",
+    "commit": "9bd3888faf2e69da3868c19be6ad44e8c5460f51",
+    "working_tree_status": "clean_verified_before_evidence_only_checkpoint",
+    "note": "Final CI implementation equals origin; hosted full run 40729703478 passed. Evidence/canonical-only records follow; resolve actual HEAD via Git.",
     "implementation_commit": "a5a0c1c08a201bb2c738e8cc867d49d62710b0c0",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
@@ -92,8 +92,8 @@
     "enforcement": "manual_bounded_packet_fallback_only",
     "policy_owner": "docs/agents/context-safety.md",
     "fresh_session_recommended_for_next_packet": true,
-    "current_thread_id": null,
-    "fresh_session_evidence": "Approved fresh local project chat is launched only after final checkpoint publication; no fork/history import or concurrent writer. New chat must independently verify its start; no measured occupancy or automatic rollover claim.",
+    "current_thread_id": "01a18361-1d61-7330-9236-a935284f078d",
+    "fresh_session_evidence": "Approved new local chat goal creation confirmed this thread ID; no prior-chat retrieval, fork, subagents or messaging. This does not measure retained occupancy or establish general lifecycle isolation.",
     "isolated_probe": "Live usage events observed: total cumulative across two turns; last latest-request counts; modelContextWindow 258400 has unverified usable-capacity semantics. Does not measure current desktop chat."
   },
   "verification": [
@@ -356,6 +356,10 @@
     {
       "check": "CI1 real local API/standalone DB/browser plus hosted run 40728940993",
       "status": "passed_local_21_3_13_hosted_21_3_13_no_skips_empty_cleanup_final_hardening_and_docs_only_pending"
+    },
+    {
+      "check": "CI1 final workflow/helper full hosted run 40729703478",
+      "status": "passed_5_helper_methods_21_API_3_DB_13_browser_no_skips_primary_NuGet_npm_cache_hits_empty_cleanup_docs_path_pending"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
@@ -473,5 +477,6 @@
     ]
   },
   "ci1_packet": "docs/delivery/ci1.md",
-  "ci1_evidence": "docs/testing/evidence/ci1.md"
+  "ci1_evidence": "docs/testing/evidence/ci1.md",
+  "ci1_implementation_commit": "9bd3888faf2e69da3868c19be6ad44e8c5460f51"
 }
