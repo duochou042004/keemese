@@ -2,32 +2,32 @@
   "schema_version": 1,
   "updated_at": "2026-10-28",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "C1a tutor-only reusable text library implemented and verified",
-  "status": "c1a_complete_published",
+  "phase": "CI1 approved for fresh goal-mode execution; hosting direction recorded",
+  "status": "ci1_handoff_prepared_publication_pending",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "a5a0c1c08a201bb2c738e8cc867d49d62710b0c0",
-    "working_tree_status": "c1a_published_clean_before_final_record",
-    "note": "C1a implementation/evidence commit verified equal to origin with clean worktree. This final documentation record is committed subsequently; resolve latest HEAD through Git.",
+    "commit": "8c56d8cd77c98a68bb7fdd5bf8562dfd33d79c4c",
+    "working_tree_status": "CI1_handoff_documentation_changes_before_publication",
+    "note": "Verified clean local/remote 8c56d8c at start. Current packet is hosting/CI research and handoff documentation only; resolve actual HEAD via Git.",
     "implementation_commit": "a5a0c1c08a201bb2c738e8cc867d49d62710b0c0",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
     "default_branch": "develop"
   },
   "approval": {
-    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request; user requested source-document organization and goal-mode readiness explanation; user: F0a approved—let’s get moving!; user requested README badge refresh and next-step discussion; user approved F0b in a fresh chat and directed public GitHub repository via installed CLI; user 2026-10-28 requested next task and fresh-conversation handoff using GPT 6.1 Sol with Medium effort; user: Alright, I approve your proposal—let’s go ahead with it. User 2026-10-28: proceed with next planned task right here; I approve. User rejected current visual design, requested UI screenshot PNG exclusions and a proper redesign next discussion using the label Astra Effort Light. User 2026-10-28 accepts bilingual proposal, requests fresh Sol Medium goal-mode execution and commit/push at every reporting checkpoint. User 2026-10-28 asks what is next and explicitly approves implementation right within this session.",
-    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push. Current follow-up authorizes source-document moves under docs and reference/checkpoint updates; goal-mode readiness explanation only. F0a local skeleton implementation and dependency downloads approved per delivery plan; proceed as one bounded goal in a fresh chat. README presentation and read-only next-step review authorized; explicit GitHub destination/publishing and F0b approvals requested, pending. Explicit F0b fresh-chat approval: pinned PostgreSQL image download, isolated rootless Podman container, synthetic round-trip/rollback tests and cleanup of test-owned resources. User response to publication scope directs public GitHub repository; use authenticated account duochou042004 and project name keemese, review/commit current work, create public remote and push existing branches. Current I1-readiness packet: inspect canonical/files/Git and relevant requirements, prepare concrete proposal and checkpoint only. User explicitly approved the I1 readiness proposal and I1a execution on 2026-10-28: ADR03 identity subset, D05 settings and applicable D06 pilot scope; pinned local dependency restores and synthetic disposable PostgreSQL tests included. Execute I1a only in a fresh chat; I1b and Git publication remain separately gated. User now explicitly approves next planned I1b identity UI packet in the current session; this supersedes the earlier fresh-chat-only execution condition for I1b. Includes exact local Playwright dependency/browser download and synthetic disposable UI host/tests as defined in the proposal. CI and Git publication are not included. Current fresh-chat request explicitly authorizes existing I1b frontend redesign and necessary tests/evidence; no backend business changes or publication. Latest approval: execute docs/delivery/bilingual-ui.md in a fresh GPT-6.1 Sol Medium chat with create_goal; publish accumulated existing work and checkpoint records now and publish task changes at subsequent reporting checkpoints. Latest instruction authorizes next bounded C1a reusable tutor-only plain-text library in this session, with existing synthetic verification and reviewed normal branch publication; see docs/delivery/c1a-text-library.md. Supersedes fresh-chat-only start for this packet.",
+    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request; user requested source-document organization and goal-mode readiness explanation; user: F0a approved—let’s get moving!; user requested README badge refresh and next-step discussion; user approved F0b in a fresh chat and directed public GitHub repository via installed CLI; user 2026-10-28 requested next task and fresh-conversation handoff using GPT 6.1 Sol with Medium effort; user: Alright, I approve your proposal—let’s go ahead with it. User 2026-10-28: proceed with next planned task right here; I approve. User rejected current visual design, requested UI screenshot PNG exclusions and a proper redesign next discussion using the label Astra Effort Light. User 2026-10-28 accepts bilingual proposal, requests fresh Sol Medium goal-mode execution and commit/push at every reporting checkpoint. User 2026-10-28 asks what is next and explicitly approves implementation right within this session. User 2026-10-28 approves new conversation/goal-mode transition, selects Render paid backend/PostgreSQL and R2 storage with frontend candidates/$40–$100 budget, and requests smart CI implementation if timely.",
+    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push. Current follow-up authorizes source-document moves under docs and reference/checkpoint updates; goal-mode readiness explanation only. F0a local skeleton implementation and dependency downloads approved per delivery plan; proceed as one bounded goal in a fresh chat. README presentation and read-only next-step review authorized; explicit GitHub destination/publishing and F0b approvals requested, pending. Explicit F0b fresh-chat approval: pinned PostgreSQL image download, isolated rootless Podman container, synthetic round-trip/rollback tests and cleanup of test-owned resources. User response to publication scope directs public GitHub repository; use authenticated account duochou042004 and project name keemese, review/commit current work, create public remote and push existing branches. Current I1-readiness packet: inspect canonical/files/Git and relevant requirements, prepare concrete proposal and checkpoint only. User explicitly approved the I1 readiness proposal and I1a execution on 2026-10-28: ADR03 identity subset, D05 settings and applicable D06 pilot scope; pinned local dependency restores and synthetic disposable PostgreSQL tests included. Execute I1a only in a fresh chat; I1b and Git publication remain separately gated. User now explicitly approves next planned I1b identity UI packet in the current session; this supersedes the earlier fresh-chat-only execution condition for I1b. Includes exact local Playwright dependency/browser download and synthetic disposable UI host/tests as defined in the proposal. CI and Git publication are not included. Current fresh-chat request explicitly authorizes existing I1b frontend redesign and necessary tests/evidence; no backend business changes or publication. Latest approval: execute docs/delivery/bilingual-ui.md in a fresh GPT-6.1 Sol Medium chat with create_goal; publish accumulated existing work and checkpoint records now and publish task changes at subsequent reporting checkpoints. Latest instruction authorizes next bounded C1a reusable tutor-only plain-text library in this session, with existing synthetic verification and reviewed normal branch publication; see docs/delivery/c1a-text-library.md. Supersedes fresh-chat-only start for this packet. Latest request authorizes current documentation/research/handoff publication and creation of a fresh local project chat with create_goal. CI is assessed timely: successor may execute docs/delivery/ci1.md, including secure workflow/helper implementation, ephemeral hosted-runner setup/downloads, real synthetic tests, bounded hosted iteration and reviewed normal branch publication. Supersedes earlier CI deferral within CI1 only; no repeat approval required.",
     "not_authorized": [
       "hooks or controller scripts",
       "global installations/configuration/model changes",
       "existing databases/volumes or persistent production migrations",
       "deployment, access/secrets changes, Git merge or history rewrite",
-      "CI implementation",
       "Git merge or force-push",
-      "Product work beyond C1a text library; files, questions, grants/assignments and remaining C1 decisions are deferred."
+      "Product work beyond C1a text library; files, questions, grants/assignments and remaining C1 decisions are deferred.",
+      "Hosting/storage provisioning or purchases, deployment credentials/admin settings and product scope beyond the bounded CI1 packet; C1b remains proposed."
     ],
-    "next_gate": "C1a complete and published. Next bounded proposal/implementation requires applicable user approval; no further scope inferred."
+    "next_gate": "Publish this handoff, create a fresh local chat, and execute CI1 there in goal mode; no further CI1 approval required. Deployment/storage/product packets remain separate."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -57,42 +57,21 @@
     "Bilingual identity UI: Vietnamese default, browser-only preference with storage fallback, typed complete dictionaries/provider, live labels/errors/validation/notices/metadata, preserved input/focus/pending requests; 10/10 browser scenarios, 96 width/language and 12 actual zoom cases, 17/17 API regressions passed; agent screenshot review complete.",
     "Published bilingual UI/evidence as 1a04c7a1cb9384c381df5fc0ea00b0f638a29120 to origin/feature/f0-foundation; exact remote hash and clean worktree verified before this final documentation record.",
     "C1a: tutor-only reusable text create/list/edit/archive/restore, optimistic concurrency/atomic audit, bilingual draft/stale/pending-save handling; 21 API and 13 browser scenarios pass, 160 total width/language and 20 actual zoom cases, agent screenshot review complete.",
-    "Published C1a implementation/evidence as a5a0c1c08a201bb2c738e8cc867d49d62710b0c0 to origin/feature/f0-foundation; exact remote match and clean worktree verified before final record."
+    "Published C1a implementation/evidence as a5a0c1c08a201bb2c738e8cc867d49d62710b0c0 to origin/feature/f0-foundation; exact remote match and clean worktree verified before final record.",
+    "Recorded user hosting direction (paid Render API/PostgreSQL, R2, frontend candidates/fallback, $40–$100 budget); researched official CI/security/runner and provider constraints. Assessed CI timely and prepared an approved fresh goal-mode CI1 packet; no workflow/product/runtime changes in preparation."
   ],
   "incomplete": [
-    "Review remaining ADRs and deferred D01-D10 portions; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
+    "Review remaining ADRs and deferred D01-D10 portions; D04 provider direction accepted but sizes/region/retention/RPO/RTO/frontend topology unresolved; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automatic controller remains unimplemented.",
     "Remaining content folders/tags/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. CI, persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending."
   ],
   "changed_files": [
-    "README.md",
-    "backend/Keemese.Api.Tests/ContentLibraryTests.cs",
-    "backend/Keemese.Api/Content/TextLibrary.cs",
-    "backend/Keemese.Api/Identity/HttpIdentity.cs",
-    "backend/Keemese.Api/Persistence/WorkspaceDb.cs",
-    "backend/Keemese.Api/Program.cs",
     "docs/README.md",
-    "docs/backend/api.md",
     "docs/decisions/decisions.md",
-    "docs/delivery/c1a-text-library.md",
+    "docs/delivery/ci1.md",
     "docs/delivery/plan.md",
-    "docs/frontend/design.md",
     "docs/operations/runbook.md",
-    "docs/security/threat-model.md",
-    "docs/testing/evidence/c1a-text-library.md",
     "docs/testing/strategy.md",
-    "frontend/e2e/artifacts/c1a-review.json",
-    "frontend/e2e/artifacts/content-qa.json",
-    "frontend/e2e/artifacts/content-zoom.json",
-    "frontend/e2e/artifacts/qa.json",
-    "frontend/e2e/library.spec.ts",
-    "frontend/src/App.tsx",
-    "frontend/src/api/client.ts",
-    "frontend/src/components/forms.tsx",
-    "frontend/src/content/Library.tsx",
-    "frontend/src/i18n/messages.ts",
-    "frontend/src/styles.css",
-    "harness/learning/lessons.jsonl",
     "harness/logs/build-log.md",
     "harness/state/handoff.md",
     "harness/state/progress.json"
@@ -113,7 +92,7 @@
     "policy_owner": "docs/agents/context-safety.md",
     "fresh_session_recommended_for_next_packet": true,
     "current_thread_id": null,
-    "fresh_session_evidence": "Used launch instructions and local canonical/files/Git only; no prior-chat retrieval/import, fork, subagents or messaging. Goal activated before product edits. Manual one-packet boundary; occupancy unknown.",
+    "fresh_session_evidence": "User authorizes creation of a new local project thread; not fork/import/resume. Creation pending after publication; no fresh-session validation or automatic context enforcement claimed.",
     "isolated_probe": "Live usage events observed: total cumulative across two turns; last latest-request counts; modelContextWindow 258400 has unverified usable-capacity semantics. Does not measure current desktop chat."
   },
   "verification": [
@@ -356,18 +335,26 @@
     {
       "check": "C1a reviewed normal branch publication",
       "status": "passed_a5a0c1c08a201bb2c738e8cc867d49d62710b0c0_remote_equals_local_clean_worktree_before_final_record"
+    },
+    {
+      "check": "CI/hosting handoff baseline and official research",
+      "status": "passed_clean_8c56d8c_equals_origin_public_repository_no_workflow_existing_official_Actions_billing_security_ubuntu24_Podman_and_provider_constraints_checked_no_application_tests_rerun"
+    },
+    {
+      "check": "CI1 handoff documentation/publication preparation",
+      "status": "passed_16_JSON_1_JSONL_31_Markdown_169_targets_61_requirement_ids_56_product_original_files_equal_8c56d8c_whitespace_no_application_or_hosted_CI_runs"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "c1b-folder-proposal",
-    "action": "At the next packet boundary, review/propose folder organization for existing reusable text. Keep file/storage/question/snapshot policies deferred; do not execute further scope without applicable approval.",
+    "id": "ci1-efficient-github-actions",
+    "action": "In a fresh local project chat activate create_goal without an invented budget and execute docs/delivery/ci1.md; verify actual hosted/local outcomes, checkpoint, commit/push and report.",
     "inputs": [
-      "docs/delivery/plan.md",
-      "docs/testing/evidence/c1a-text-library.md"
+      "docs/delivery/ci1.md",
+      "docs/operations/runbook.md"
     ],
-    "acceptance": "Concrete bounded proposal and approval, then verified implementation in the chosen session."
+    "acceptance": "Secure efficient selective/full CI with real DB/browser and hosted evidence; verified normal branch publication; no deployment/product expansion."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -444,5 +431,33 @@
     "rule": "Review, commit and push task changes before stopping to report; verify remote hash; no empty commits, merge or force-push."
   },
   "bilingual_evidence": "docs/testing/evidence/bilingual-ui.md",
-  "c1a_evidence": "docs/testing/evidence/c1a-text-library.md"
+  "c1a_evidence": "docs/testing/evidence/c1a-text-library.md",
+  "hosting_direction": {
+    "source_date": "2026-10-28",
+    "backend": "Render paid compute",
+    "database": "Render paid managed PostgreSQL",
+    "storage": "Cloudflare R2 private object storage",
+    "frontend_candidates": [
+      "Vercel free tier if eligible",
+      "Netlify free tier if suitable",
+      "Cloudflare Pages free tier if suitable"
+    ],
+    "frontend_fallback": "Render container",
+    "budget": {
+      "minimum": 40,
+      "maximum": 100,
+      "currency": "USD assumed from dollar symbol",
+      "period": "monthly planning assumption; confirm before provisioning"
+    },
+    "status": "provider_direction_accepted_no_resources_provisioned",
+    "unresolved": [
+      "region",
+      "compute/database/workspace sizing and version",
+      "frontend final choice and same-origin API topology",
+      "retention/deletion and backup RPO/RTO",
+      "file/type/size limits",
+      "durable keys/proxy trust/secrets and retained-data migrations"
+    ]
+  },
+  "ci1_packet": "docs/delivery/ci1.md"
 }

@@ -13,7 +13,7 @@ Status: Phase 1 proposal, 2026-10-27. Documentation approval does not authorize 
 | UI work | [frontend](frontend/design.md) | Journeys, tokens, page/component contracts |
 | Identity/data/file work | [security](security/threat-model.md) | Threats and controls |
 | Verification | [testing](testing/strategy.md) | Risk-based proof and release gates |
-| Planning an increment | [delivery](delivery/plan.md), [I1 readiness](delivery/i1-readiness.md), [bilingual packet](delivery/bilingual-ui.md), [C1a text library](delivery/c1a-text-library.md) | Dependencies, concrete identity proposal and approved packet |
+| Planning an increment | [delivery](delivery/plan.md), [I1 readiness](delivery/i1-readiness.md), [bilingual packet](delivery/bilingual-ui.md), [C1a text library](delivery/c1a-text-library.md), [CI1](delivery/ci1.md) | Dependencies, concrete identity proposal and approved packet |
 | Setup/release/recovery | [operations](operations/runbook.md) | Portable environment and operational proposals |
 | Context or harness work | [context safety](agents/context-safety.md) | Runtime evidence, trigger and fresh-session design |
 | Learning from an incident | [learning](../harness/learning/README.md) | Schema, retrieval, promotion |

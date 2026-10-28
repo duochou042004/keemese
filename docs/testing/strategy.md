@@ -46,3 +46,7 @@ Proposed implementation commands once projects exist: `dotnet restore --locked-m
 Visual matrix and exact inspection procedure are owned by [frontend design](../frontend/design.md), not duplicated here. No browser tests can be run before an app exists. Accessibility and screenshots require human-readable evidence in addition to automated checks.
 
 CI proposal: Linux PR jobs, concurrency cancellation for superseded runs, lockfile-keyed selective NuGet/npm caches, least-privilege read token, no production secrets on untrusted contributions. Failure-only heavy traces/screenshots; ordinary artifacts retained five days. Windows/macOS on manual/scheduled gates when portability risk warrants it. Current GitHub Free allowances and maintained action versions must be rechecked before workflow implementation; see [operations](../operations/runbook.md). No workflows created in Phase 1.
+
+## CI1 approved next — 2026-10-28
+
+[CI1](../delivery/ci1.md) defines the next fresh-chat goal: selective/full checks, immutable action pins/read-only tokens, bounded cache/artifact usage, rootless real-DB and existing browser proof. No workflow/hosted result exists yet; 21 API/13 browser passes are local historical evidence. The standalone original database project's three tests must be run explicitly because it is not listed in the root solution. Hosted evidence must include a real run URL/SHA and docs-only/full path behavior; static YAML validation alone cannot close the packet.
