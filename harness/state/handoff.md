@@ -1,4 +1,4 @@
-# Current checkpoint — bilingual implementation verified
+# Current checkpoint — bilingual packet complete and published
 
 Updated 2026-10-28, Asia/Ho_Chi_Minh. Read AGENTS and [progress](progress.json), verify actual Git/files, then [bilingual evidence](../../docs/testing/evidence/bilingual-ui.md). The approved bounded UI packet is implemented; no new feature scope is authorized by this checkpoint.
 
@@ -8,8 +8,8 @@ Vietnamese default, native header English/Vietnamese selector, browser-only pref
 
 Build/typecheck and strict E2E/config TypeScript passed. API 17/17 passed (48s); final real API/disposable PostgreSQL/Chromium suite 10/10 passed (32.9s), including existing identity isolation/revocation/cancellation regressions and new bilingual behavior. Matrix 96 width/language cases; actual 200% zoom 12 cases; keyboard, short-height, focus and contrast passed. Agent inspected actual screenshots; this does not imply user aesthetic acceptance. No task runtime resources remain; caches and ignored synthetic PNGs remain.
 
-## Publication finish
+## Verified publication
 
-Baseline local/remote was `4d49f49cecc399ad33f708802924de40bcdddadb` on `feature/f0-foundation`. Current checkpoint is prepublication: review staged task paths/diff, validate canonical/docs/source preservation, commit and push normally to origin, verify exact remote hash and clean worktree, then record publication and complete the bounded goal. No merge/force-push/deployment.
+Implementation/evidence commit `1a04c7a1cb9384c381df5fc0ea00b0f638a29120` was pushed normally to `origin/feature/f0-foundation`; exact remote hash equals local HEAD and the worktree was clean before this final documentation record. Prepublication validation passed: 13 JSON + one JSONL file, 28 Markdown files/142 local targets, 61 requirement identifiers, 23 original/backend files byte-equal to baseline, 24 safe staged paths, no new PNG/local artifacts/common credential signatures and clean whitespace. This record is committed/pushed subsequently; resolve actual final HEAD from Git. No merge/force-push/deployment.
 
 Stop at this packet boundary. A future fresh chat should review current evidence and propose the next bounded task from delivery guidance, with explicit approval before unrelated implementation. Goal continuation/compaction is not a fresh session; occupancy remains unmeasured. Broader teaching workflows, CI, persistent migrations, deployment and other browser/OS/screen-reader verification remain pending.
