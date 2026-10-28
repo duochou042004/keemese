@@ -3,14 +3,14 @@
   "updated_at": "2026-10-28",
   "timezone": "Asia/Ho_Chi_Minh",
   "phase": "C1a tutor-only reusable text library implemented and verified",
-  "status": "c1a_verified_publication_pending",
+  "status": "c1a_complete_published",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "c884f7628bc39315ad31353e46b1391896e39e2c",
-    "working_tree_status": "c1a_changes_before_reviewed_publication",
-    "note": "C1a began at verified clean local/remote c884f76. Publication is pending in this checkpoint; resolve actual HEAD via Git.",
-    "implementation_commit": "1a04c7a1cb9384c381df5fc0ea00b0f638a29120",
+    "commit": "a5a0c1c08a201bb2c738e8cc867d49d62710b0c0",
+    "working_tree_status": "c1a_published_clean_before_final_record",
+    "note": "C1a implementation/evidence commit verified equal to origin with clean worktree. This final documentation record is committed subsequently; resolve latest HEAD through Git.",
+    "implementation_commit": "a5a0c1c08a201bb2c738e8cc867d49d62710b0c0",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
     "default_branch": "develop"
@@ -27,7 +27,7 @@
       "Git merge or force-push",
       "Product work beyond C1a text library; files, questions, grants/assignments and remaining C1 decisions are deferred."
     ],
-    "next_gate": "Execute C1a under current user approval; stop at its verified publication boundary."
+    "next_gate": "C1a complete and published. Next bounded proposal/implementation requires applicable user approval; no further scope inferred."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -56,13 +56,13 @@
     "Published accumulated identity foundation/redesign and approved bilingual handoff as 0771e35; exact remote hash and clean worktree verified.",
     "Bilingual identity UI: Vietnamese default, browser-only preference with storage fallback, typed complete dictionaries/provider, live labels/errors/validation/notices/metadata, preserved input/focus/pending requests; 10/10 browser scenarios, 96 width/language and 12 actual zoom cases, 17/17 API regressions passed; agent screenshot review complete.",
     "Published bilingual UI/evidence as 1a04c7a1cb9384c381df5fc0ea00b0f638a29120 to origin/feature/f0-foundation; exact remote hash and clean worktree verified before this final documentation record.",
-    "C1a: tutor-only reusable text create/list/edit/archive/restore, optimistic concurrency/atomic audit, bilingual draft/stale/pending-save handling; 21 API and 13 browser scenarios pass, 160 total width/language and 20 actual zoom cases, agent screenshot review complete."
+    "C1a: tutor-only reusable text create/list/edit/archive/restore, optimistic concurrency/atomic audit, bilingual draft/stale/pending-save handling; 21 API and 13 browser scenarios pass, 160 total width/language and 20 actual zoom cases, agent screenshot review complete.",
+    "Published C1a implementation/evidence as a5a0c1c08a201bb2c738e8cc867d49d62710b0c0 to origin/feature/f0-foundation; exact remote match and clean worktree verified before final record."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automatic controller remains unimplemented.",
-    "Remaining content folders/tags/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. CI, persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending.",
-    "C1a normal commit/push and exact remote verification pending at this prepublication checkpoint; full C1/A3 remains incomplete."
+    "Remaining content folders/tags/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. CI, persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending."
   ],
   "changed_files": [
     "README.md",
@@ -352,17 +352,22 @@
     {
       "check": "C1a canonical/source/staged publication validation and cleanup",
       "status": "passed_16_JSON_1_JSONL_30_Markdown_160_local_targets_61_requirement_ids_23_unchanged_original_backend_dependency_files_31_safe_staged_paths_clean_whitespace_empty_runtime_inventories"
+    },
+    {
+      "check": "C1a reviewed normal branch publication",
+      "status": "passed_a5a0c1c08a201bb2c738e8cc867d49d62710b0c0_remote_equals_local_clean_worktree_before_final_record"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "c1a-publication",
-    "action": "Review/validate/stage C1a changes, commit and push origin/feature/f0-foundation, verify remote and clean worktree, then stop.",
+    "id": "c1b-folder-proposal",
+    "action": "At the next packet boundary, review/propose folder organization for existing reusable text. Keep file/storage/question/snapshot policies deferred; do not execute further scope without applicable approval.",
     "inputs": [
+      "docs/delivery/plan.md",
       "docs/testing/evidence/c1a-text-library.md"
     ],
-    "acceptance": "Verified normal publication and accurate final report; no next feature expansion."
+    "acceptance": "Concrete bounded proposal and approval, then verified implementation in the chosen session."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
