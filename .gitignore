@@ -17,3 +17,8 @@ Thumbs.db
 # Local UI screenshots (retain source assets and text QA evidence)
 /frontend/e2e/artifacts/**/*.png
 /docs/testing/evidence/**/*.png
+
+# CI helper bytecode and bounded local report/cache outputs
+/tools/ci/__pycache__/
+/.ci-report/
+/.ci-cache/
