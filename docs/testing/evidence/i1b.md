@@ -50,14 +50,14 @@ Machine-readable [48-case viewport results](../../../frontend/e2e/artifacts/qa.j
 
 | Template / scenario | Screenshots |
 |---|---|
-| Login | [Eight widths](../../../frontend/e2e/artifacts/review-login.png), [desktop](../../../frontend/e2e/artifacts/login-1280.png), [keyboard focus](../../../frontend/e2e/artifacts/keyboard-focus.png) |
-| Tutor roster | [Eight widths](../../../frontend/e2e/artifacts/review-list.png), [320px full page](../../../frontend/e2e/artifacts/list-320.png) |
-| Student create | [Eight widths](../../../frontend/e2e/artifacts/review-create.png) |
-| Account detail/reset/deactivate | [Eight widths](../../../frontend/e2e/artifacts/review-detail.png), [short-height confirmation](../../../frontend/e2e/artifacts/short-height-confirmation.png) |
-| Mandatory change | [Eight widths](../../../frontend/e2e/artifacts/review-password.png) |
-| Student account | [Eight widths](../../../frontend/e2e/artifacts/review-account.png) |
-| Empty/error/loading/saved/inactive | [State contact sheet](../../../frontend/e2e/artifacts/review-states.png) |
-| Actual 200% browser zoom, six templates | [Zoom contact sheet](../../../frontend/e2e/artifacts/review-zoom.png) |
+| Login | Eight widths (local generated preview: `../../../frontend/e2e/artifacts/review-login.png`; excluded from Git), desktop (local generated preview: `../../../frontend/e2e/artifacts/login-1280.png`; excluded from Git), keyboard focus (local generated preview: `../../../frontend/e2e/artifacts/keyboard-focus.png`; excluded from Git) |
+| Tutor roster | Eight widths (local generated preview: `../../../frontend/e2e/artifacts/review-list.png`; excluded from Git), 320px full page (local generated preview: `../../../frontend/e2e/artifacts/list-320.png`; excluded from Git) |
+| Student create | Eight widths (local generated preview: `../../../frontend/e2e/artifacts/review-create.png`; excluded from Git) |
+| Account detail/reset/deactivate | Eight widths (local generated preview: `../../../frontend/e2e/artifacts/review-detail.png`; excluded from Git), short-height confirmation (local generated preview: `../../../frontend/e2e/artifacts/short-height-confirmation.png`; excluded from Git) |
+| Mandatory change | Eight widths (local generated preview: `../../../frontend/e2e/artifacts/review-password.png`; excluded from Git) |
+| Student account | Eight widths (local generated preview: `../../../frontend/e2e/artifacts/review-account.png`; excluded from Git) |
+| Empty/error/loading/saved/inactive | State contact sheet (local generated preview: `../../../frontend/e2e/artifacts/review-states.png`; excluded from Git) |
+| Actual 200% browser zoom, six templates | Zoom contact sheet (local generated preview: `../../../frontend/e2e/artifacts/review-zoom.png`; excluded from Git) |
 
 Final screenshot/measurement files are synthetic only (73 PNGs, approximately 6.7 MB); no secret-filled screenshot or trace is intentionally retained. QA console capture contains the expected initial anonymous `/auth/me` 401 resource message, with zero uncaught JavaScript exceptions. Negative scenarios deliberately produce API 400/401/409 and injected network failures; those are test inputs rather than hidden console defects. Node reports a harmless NO_COLOR/FORCE_COLOR warning during the test runner. No unrelated console-cleanliness claim is made for untested future routes.
 

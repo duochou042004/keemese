@@ -14,11 +14,13 @@ Read-only contents token, nonpersisted checkout credentials, standard `ubuntu-24
 
 ## Local checks
 
-- Helper tests: three test methods with classification/result/failure subcases passed; JSON/JSONL/Markdown/61-row validation passed. PyYAML parsed all three jobs; hosted parser/execution remains a separate requirement.
+- Helper tests: four test methods with classification/result/failure subcases passed; JSON/JSONL/Markdown/61-row validation passed. PyYAML parsed all three jobs; hosted parser/execution remains a separate requirement.
 - Locked restores and single-worker no-restore backend builds passed, zero warnings/errors.
 - Strict E2E/config/teardown TypeScript and production frontend build passed. Initial frontend invocation lacked npx on that directory's shell PATH; reran successfully with the existing exact Node installation on PATH. No installation/global change.
-- Real local API/DB/browser execution in progress at first publication checkpoint; final results and hosted evidence follow below.
+- Real local suites passed: 21 API (49s), 3 original DB (12s), 13 browser (45.0s), no skips/retries. Independent container/volume/cleanup-marker inventories empty. Generated qa.json changed synthetic UUIDs only and was restored to the pre-run version. No new visual-design acceptance claimed.
 
 ## Hosted execution
 
 Pending initial reviewed workflow publication. Local passes do not establish hosted proof. This evidence will record actual run URLs, triggering commits/events, results, versions, cache behavior and cleanup, including bounded repairs or blockers.
+
+Initial hosted run [40728784594](https://github.com/duochou042004/keemese/actions/runs/40728784594), push at `34453acb136e3fac2add33ec34bb97fbbf16e5e6`, failed correctly in docs validation (checks 5s; result also failed; verify skipped). Historical ignored PNG links existed locally but not in checkout. Converted those references to explicit local path notes; strengthened validator to reject unversioned targets even when present locally and added an ignored-file regression. No PNGs added. Full hosted rerun follows repair.

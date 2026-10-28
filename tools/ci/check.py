@@ -47,6 +47,7 @@ def validate(root):
     files = subprocess.check_output(['git', 'ls-files', '-z'], cwd=root).decode().split('\0')
     # Include new helpers/docs during local precommit validation too.
     files += subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', '-z'], cwd=root).decode().split('\0')
+    available = {(root / f).resolve() for f in files if f}
     counts = {'json': 0, 'jsonl': 0, 'markdown': 0, 'targets': 0}
     for name in sorted(set(files) - {''}):
         path = root / name
@@ -65,7 +66,8 @@ def validate(root):
                 target = unquote(target.strip('<>').split('#')[0])
                 if not target or re.match(r'[a-zA-Z][a-zA-Z0-9+.-]*:', target):
                     continue
-                assert (path.parent / target).exists(), f'{name}: missing {target}'
+                destination = (path.parent / target).resolve()
+                assert destination.exists() and destination in available, f'{name}: missing or unversioned {target}'
                 counts['targets'] += 1
     requirements = (root / 'docs/product/requirements.md').read_text()
     ids = re.findall(r'^\| (P\d{2})[ |]', requirements, re.M)

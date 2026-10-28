@@ -42,6 +42,10 @@ class Checks(unittest.TestCase):
             bad = root / 'bad.md'
             bad.write_text('[missing](missing.md)')
             with self.assertRaises(AssertionError): validate(root)
+            (root / '.gitignore').write_text('preview.png\n')
+            (root / 'preview.png').write_bytes(b'local-only')
+            bad.write_text('[local-only](preview.png)')
+            with self.assertRaises(AssertionError): validate(root)
             bad.unlink()
             req.write_text('| P01 | only |')
             with self.assertRaises(AssertionError): validate(root)
