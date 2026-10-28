@@ -1,6 +1,6 @@
 import { useLanguage } from '../i18n/Language';
 import { useCallback, useEffect, useRef } from 'react';
-import type { InputHTMLAttributes, ReactNode } from 'react';
+import type { InputHTMLAttributes, TextareaHTMLAttributes, ReactNode } from 'react';
 
 export function Notice({ children, error = false }: { children: ReactNode; error?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -24,6 +24,10 @@ export function Field({ label, hint, ...props }: InputHTMLAttributes<HTMLInputEl
   return <div className="field"><label htmlFor={props.id}>{label}</label>
     <input {...props} ref={ref} onInvalid={event => validation(event.currentTarget)}
       onInput={event => event.currentTarget.setCustomValidity('')} aria-describedby={hint ? `${props.id}-hint` : undefined} />
+    {hint && <p className="hint" id={`${props.id}-hint`}>{hint}</p>}</div>;
+}
+export function TextAreaField({ label, hint, ...props }: TextareaHTMLAttributes<HTMLTextAreaElement> & { label: string; hint?: string }) {
+  return <div className="field"><label htmlFor={props.id}>{label}</label><textarea {...props} aria-describedby={hint ? `${props.id}-hint` : undefined} />
     {hint && <p className="hint" id={`${props.id}-hint`}>{hint}</p>}</div>;
 }
 export function PageHeading({ eyebrow, title, children }: { eyebrow?: string; title: string; children?: ReactNode }) {

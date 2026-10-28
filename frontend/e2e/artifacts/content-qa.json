@@ -1,0 +1,774 @@
+{
+  "rows": [
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "content": 320,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-vi-320.png"
+    },
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 360,
+      "metrics": {
+        "width": 360,
+        "content": 360,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-vi-360.png"
+    },
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "content": 390,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-vi-390.png"
+    },
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "content": 430,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-vi-430.png"
+    },
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "content": 768,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-vi-768.png"
+    },
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 1024,
+      "metrics": {
+        "width": 1024,
+        "content": 1024,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-vi-1024.png"
+    },
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 1280,
+      "metrics": {
+        "width": 1280,
+        "content": 1280,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-vi-1280.png"
+    },
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "content": 1440,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-vi-1440.png"
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "content": 320,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-en-320.png"
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 360,
+      "metrics": {
+        "width": 360,
+        "content": 360,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-en-360.png"
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "content": 390,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-en-390.png"
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "content": 430,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-en-430.png"
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "content": 768,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-en-768.png"
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 1024,
+      "metrics": {
+        "width": 1024,
+        "content": 1024,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-en-1024.png"
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 1280,
+      "metrics": {
+        "width": 1280,
+        "content": 1280,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-en-1280.png"
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "content": 1440,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-library-en-1440.png"
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "content": 320,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-vi-320.png"
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 360,
+      "metrics": {
+        "width": 360,
+        "content": 360,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-vi-360.png"
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "content": 390,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-vi-390.png"
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "content": 430,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-vi-430.png"
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "content": 768,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-vi-768.png"
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 1024,
+      "metrics": {
+        "width": 1024,
+        "content": 1024,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-vi-1024.png"
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 1280,
+      "metrics": {
+        "width": 1280,
+        "content": 1280,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-vi-1280.png"
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "content": 1440,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-vi-1440.png"
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "content": 320,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-en-320.png"
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 360,
+      "metrics": {
+        "width": 360,
+        "content": 360,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-en-360.png"
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "content": 390,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-en-390.png"
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "content": 430,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-en-430.png"
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "content": 768,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-en-768.png"
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 1024,
+      "metrics": {
+        "width": 1024,
+        "content": 1024,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-en-1024.png"
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 1280,
+      "metrics": {
+        "width": 1280,
+        "content": 1280,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-en-1280.png"
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "content": 1440,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-new-en-1440.png"
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "content": 320,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-vi-320.png"
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 360,
+      "metrics": {
+        "width": 360,
+        "content": 360,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-vi-360.png"
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "content": 390,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-vi-390.png"
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "content": 430,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-vi-430.png"
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "content": 768,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-vi-768.png"
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 1024,
+      "metrics": {
+        "width": 1024,
+        "content": 1024,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-vi-1024.png"
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 1280,
+      "metrics": {
+        "width": 1280,
+        "content": 1280,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-vi-1280.png"
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "content": 1440,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-vi-1440.png"
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "content": 320,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-en-320.png"
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 360,
+      "metrics": {
+        "width": 360,
+        "content": 360,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-en-360.png"
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "content": 390,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-en-390.png"
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "content": 430,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-en-430.png"
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "content": 768,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-en-768.png"
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 1024,
+      "metrics": {
+        "width": 1024,
+        "content": 1024,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-en-1024.png"
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 1280,
+      "metrics": {
+        "width": 1280,
+        "content": 1280,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-en-1280.png"
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "content": 1440,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-edit-en-1440.png"
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "content": 320,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-vi-320.png"
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 360,
+      "metrics": {
+        "width": 360,
+        "content": 360,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-vi-360.png"
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "content": 390,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-vi-390.png"
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "content": 430,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-vi-430.png"
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "content": 768,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-vi-768.png"
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 1024,
+      "metrics": {
+        "width": 1024,
+        "content": 1024,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-vi-1024.png"
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 1280,
+      "metrics": {
+        "width": 1280,
+        "content": 1280,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-vi-1280.png"
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "content": 1440,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-vi-1440.png"
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "content": 320,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-en-320.png"
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 360,
+      "metrics": {
+        "width": 360,
+        "content": 360,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-en-360.png"
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "content": 390,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-en-390.png"
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "content": 430,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-en-430.png"
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "content": 768,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-en-768.png"
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 1024,
+      "metrics": {
+        "width": 1024,
+        "content": 1024,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-en-1024.png"
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 1280,
+      "metrics": {
+        "width": 1280,
+        "content": 1280,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-en-1280.png"
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "content": 1440,
+        "small": [],
+        "unlabeled": 0
+      },
+      "file": "e2e/artifacts/content-archived-en-1440.png"
+    }
+  ],
+  "shortHeight": "both-language keyboard cancel passed",
+  "result": "64 geometry/label/target cases passed; screenshot review separate"
+}

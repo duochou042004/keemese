@@ -1,0 +1,61 @@
+{
+  "mechanism": "chrome.tabs.setZoom(2) in disposable profile",
+  "rows": [
+    {
+      "template": "library",
+      "locale": "vi",
+      "width": 640,
+      "dpr": 2,
+      "content": 640
+    },
+    {
+      "template": "library",
+      "locale": "en",
+      "width": 640,
+      "dpr": 2,
+      "content": 640
+    },
+    {
+      "template": "new",
+      "locale": "vi",
+      "width": 640,
+      "dpr": 2,
+      "content": 640
+    },
+    {
+      "template": "new",
+      "locale": "en",
+      "width": 640,
+      "dpr": 2,
+      "content": 640
+    },
+    {
+      "template": "edit",
+      "locale": "vi",
+      "width": 640,
+      "dpr": 2,
+      "content": 640
+    },
+    {
+      "template": "edit",
+      "locale": "en",
+      "width": 640,
+      "dpr": 2,
+      "content": 640
+    },
+    {
+      "template": "archived",
+      "locale": "vi",
+      "width": 640,
+      "dpr": 2,
+      "content": 640
+    },
+    {
+      "template": "archived",
+      "locale": "en",
+      "width": 640,
+      "dpr": 2,
+      "content": 640
+    }
+  ]
+}

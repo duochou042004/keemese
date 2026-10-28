@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-28",
+  "packet": "C1a text library",
+  "status": "agent_review_complete_user_acceptance_separate",
+  "inspected": [
+    "ten bilingual eight-width contact sheets",
+    "content actual-zoom/confirmation/network/stale sheet",
+    "full-size representatives"
+  ],
+  "findings": [
+    "White/navy hierarchy retained",
+    "New tutor navigation wraps without overlap",
+    "Unbroken 199-character archived title wraps",
+    "Authored text is unchanged and script-like text is inert",
+    "Save and archive controls remain distinct and reachable"
+  ],
+  "limitations": [
+    "Chromium/Linux synthetic pilot only",
+    "Agent visual QA is not user aesthetic approval"
+  ],
+  "build_sha256": {
+    "frontend/dist/index.html": "705b40cf8a862f2ae85ad321d9b7bcdd3bca86417c85e5f6dc7a3e6529ad8868",
+    "frontend/dist/assets/index-BMDC2BpV.js": "9390b38d396b29493fcd35c610822073b9a8bc38501d59f9727c1b34e0ee0fff",
+    "frontend/dist/assets/index-C6VT-KcM.css": "b1f63b436185ae8a9438fce9f0987627d1c344129a31d3bc37c2ac4c1e655ee3"
+  }
+}

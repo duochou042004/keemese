@@ -55,3 +55,17 @@ Same-origin JSON under `/api/v1`; UUIDs; noncacheable private responses. All POS
 Tutor DTO: `{id,displayName,username,active,version}`. Student profiles never return account flags, password/hash, contacts, guardian data or private-note fields. Restricted sessions permit only CSRF, auth/me, password and logout; other routes return 403 `password_change_required`. Unknown fields and missing required fields in typed POST payloads return 400. Username trims to 3–64 ASCII letters/digits/dot/underscore/hyphen, normalized case-insensitively; display name trims to 1–200 characters. Passwords allow spaces/Unicode, 12–128 .NET string characters, no composition rule; change rejects the current password. Names/content are preserved after outer trimming. Reset/deactivate require the latest profile version; stale versions return 409 before changes.
 
 Cookies are HttpOnly, SameSite=Lax, nonpersistent, absolute eight hours, no sliding renewal. Secure is mandatory except explicitly isolated loopback Development HTTP. Login allows ten attempts in a rolling 60 seconds per peer IP in this process; five failures lock the account for 15 minutes. Framework Identity hashes/password verification and cookie/antiforgery protection are used; no public registration/setup/recovery route is mapped. Offline bootstrap/recovery are described in the [runbook](../operations/runbook.md#i1a-local-identity-operations).
+
+## Implemented C1a text-library contract — 2026-10-28
+
+All `/content` routes are tutor-only, using the same session/origin/CSRF middleware. Route casing is normalized before access checks to match ASP.NET route matching; lowercase and uppercase denials have real API proof. No source-content endpoint is available to students, including restricted first-login accounts. Responses remain `no-store`.
+
+| Operation | JSON input / response |
+|---|---|
+| `GET /content?archived=false&page=1&pageSize=25` | `{items,nextPage}`; size 1–100, page 1–1,000,000; only these three query keys accepted; archived true/false; order updatedAt descending, ID ascending |
+| `POST /content` | `{title,description,body}` → 201 detail and Location; nullable description/body values become empty text |
+| `GET /content/{id}` | Detail, including body; unknown ID 404 `content_missing` |
+| `POST /content/{id}` | `{title,description,body,version}` → detail; archived content cannot be edited |
+| `POST /content/{id}/archive`, `/restore` | `{version}` → detail; current-version same-state retry is a no-op |
+
+Detail: `{id,title,description,body,archived,version,createdAt,updatedAt}`; list items omit body. Constructor fields must be present; optional description/body may be empty or null. Title trims to 1–200 .NET string characters; description max 2,000 and body max 50,000; description/body otherwise preserved exactly; NUL rejected. Unknown payload fields rejected. No author/student selector or arbitrary metadata accepted. All mutable updates require the current version; a stale or concurrent losing write returns 409 `content_stale`. Archived-edit attempts return 409 `content_archived`. Create/edit/archive/restore save minimal audit metadata atomically with content; no text in audit. Content author has a restrictive FK to a Tutor account, timestamps use TimeProvider and versions are EF concurrency tokens. No delete, folder, attachment, grant, assigned snapshot or student activity operation is implemented. [C1a evidence](../testing/evidence/c1a-text-library.md).

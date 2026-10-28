@@ -4,6 +4,11 @@ export type Student = { id: string; displayName: string; username: string; activ
 export type Profile = Pick<Student, 'id' | 'displayName' | 'username'>;
 
 const messages: Partial<Record<string, MessageKey>> = {
+  invalid_content_title: 'Enter a title of 1–200 characters.',
+  invalid_content_text: 'Use up to 2,000 characters for the description and 50,000 for the teaching text.',
+  content_missing: 'This content could not be found.',
+  content_stale: 'This content has changed. Your draft is kept. Reload the saved content before trying again.',
+  content_archived: 'Restore this content before editing it.',
   invalid_credentials: "The username or password is incorrect, or this account is unavailable.",
   login_throttled: "Too many sign-in attempts. Please wait a minute and try again.",
   invalid_username: "Use 3–64 characters for the username: unaccented letters, numbers, periods, underscores or hyphens.",

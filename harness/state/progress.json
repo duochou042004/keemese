@@ -2,22 +2,22 @@
   "schema_version": 1,
   "updated_at": "2026-10-28",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "Bilingual identity UI implemented and verified",
-  "status": "bilingual_complete_published",
+  "phase": "C1a tutor-only reusable text library implemented and verified",
+  "status": "c1a_verified_publication_pending",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "1a04c7a1cb9384c381df5fc0ea00b0f638a29120",
-    "working_tree_status": "implementation_published_clean_before_final_record",
-    "note": "Bilingual implementation commit verified equal to origin/feature/f0-foundation with clean worktree. This final documentation record is a subsequent commit; resolve latest HEAD via Git.",
+    "commit": "c884f7628bc39315ad31353e46b1391896e39e2c",
+    "working_tree_status": "c1a_changes_before_reviewed_publication",
+    "note": "C1a began at verified clean local/remote c884f76. Publication is pending in this checkpoint; resolve actual HEAD via Git.",
     "implementation_commit": "1a04c7a1cb9384c381df5fc0ea00b0f638a29120",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
     "default_branch": "develop"
   },
   "approval": {
-    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request; user requested source-document organization and goal-mode readiness explanation; user: F0a approved—let’s get moving!; user requested README badge refresh and next-step discussion; user approved F0b in a fresh chat and directed public GitHub repository via installed CLI; user 2026-10-28 requested next task and fresh-conversation handoff using GPT 6.1 Sol with Medium effort; user: Alright, I approve your proposal—let’s go ahead with it. User 2026-10-28: proceed with next planned task right here; I approve. User rejected current visual design, requested UI screenshot PNG exclusions and a proper redesign next discussion using the label Astra Effort Light. User 2026-10-28 accepts bilingual proposal, requests fresh Sol Medium goal-mode execution and commit/push at every reporting checkpoint.",
-    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push. Current follow-up authorizes source-document moves under docs and reference/checkpoint updates; goal-mode readiness explanation only. F0a local skeleton implementation and dependency downloads approved per delivery plan; proceed as one bounded goal in a fresh chat. README presentation and read-only next-step review authorized; explicit GitHub destination/publishing and F0b approvals requested, pending. Explicit F0b fresh-chat approval: pinned PostgreSQL image download, isolated rootless Podman container, synthetic round-trip/rollback tests and cleanup of test-owned resources. User response to publication scope directs public GitHub repository; use authenticated account duochou042004 and project name keemese, review/commit current work, create public remote and push existing branches. Current I1-readiness packet: inspect canonical/files/Git and relevant requirements, prepare concrete proposal and checkpoint only. User explicitly approved the I1 readiness proposal and I1a execution on 2026-10-28: ADR03 identity subset, D05 settings and applicable D06 pilot scope; pinned local dependency restores and synthetic disposable PostgreSQL tests included. Execute I1a only in a fresh chat; I1b and Git publication remain separately gated. User now explicitly approves next planned I1b identity UI packet in the current session; this supersedes the earlier fresh-chat-only execution condition for I1b. Includes exact local Playwright dependency/browser download and synthetic disposable UI host/tests as defined in the proposal. CI and Git publication are not included. Current fresh-chat request explicitly authorizes existing I1b frontend redesign and necessary tests/evidence; no backend business changes or publication. Latest approval: execute docs/delivery/bilingual-ui.md in a fresh GPT-6.1 Sol Medium chat with create_goal; publish accumulated existing work and checkpoint records now and publish task changes at subsequent reporting checkpoints.",
+    "source": "User START PHASE 1 and subsequent explicit H0 approval, 2026-10-27; user GO for proposed follow-up diagnostics here in existing chat; user Okay go ahead for repository/architecture review; user explicit stack and R0 approval followed by fresh-session request; user requested source-document organization and goal-mode readiness explanation; user: F0a approved—let’s get moving!; user requested README badge refresh and next-step discussion; user approved F0b in a fresh chat and directed public GitHub repository via installed CLI; user 2026-10-28 requested next task and fresh-conversation handoff using GPT 6.1 Sol with Medium effort; user: Alright, I approve your proposal—let’s go ahead with it. User 2026-10-28: proceed with next planned task right here; I approve. User rejected current visual design, requested UI screenshot PNG exclusions and a proper redesign next discussion using the label Astra Effort Light. User 2026-10-28 accepts bilingual proposal, requests fresh Sol Medium goal-mode execution and commit/push at every reporting checkpoint. User 2026-10-28 asks what is next and explicitly approves implementation right within this session.",
+    "approved_scope": "Completed Phase 1 documentation plus H0 bounded context-safety pilot in a fresh chat: inspect supported live telemetry and lifecycle interfaces, conduct bounded nonpersistent diagnostic experiments, and document findings. No production automation. H0b: tiny isolated inference exchange, usage inspection, sentinel isolation and bounded interruption; user explicitly chose current chat for coordination. Documentation-only F0 readiness review and concrete approval proposal. ADR01/02 accepted. R0 authorized for fresh session: local Git init master, minimal .gitignore, reviewed baseline staging/commit using existing identity, create develop and feature/f0-foundation; no remote/push. Current follow-up authorizes source-document moves under docs and reference/checkpoint updates; goal-mode readiness explanation only. F0a local skeleton implementation and dependency downloads approved per delivery plan; proceed as one bounded goal in a fresh chat. README presentation and read-only next-step review authorized; explicit GitHub destination/publishing and F0b approvals requested, pending. Explicit F0b fresh-chat approval: pinned PostgreSQL image download, isolated rootless Podman container, synthetic round-trip/rollback tests and cleanup of test-owned resources. User response to publication scope directs public GitHub repository; use authenticated account duochou042004 and project name keemese, review/commit current work, create public remote and push existing branches. Current I1-readiness packet: inspect canonical/files/Git and relevant requirements, prepare concrete proposal and checkpoint only. User explicitly approved the I1 readiness proposal and I1a execution on 2026-10-28: ADR03 identity subset, D05 settings and applicable D06 pilot scope; pinned local dependency restores and synthetic disposable PostgreSQL tests included. Execute I1a only in a fresh chat; I1b and Git publication remain separately gated. User now explicitly approves next planned I1b identity UI packet in the current session; this supersedes the earlier fresh-chat-only execution condition for I1b. Includes exact local Playwright dependency/browser download and synthetic disposable UI host/tests as defined in the proposal. CI and Git publication are not included. Current fresh-chat request explicitly authorizes existing I1b frontend redesign and necessary tests/evidence; no backend business changes or publication. Latest approval: execute docs/delivery/bilingual-ui.md in a fresh GPT-6.1 Sol Medium chat with create_goal; publish accumulated existing work and checkpoint records now and publish task changes at subsequent reporting checkpoints. Latest instruction authorizes next bounded C1a reusable tutor-only plain-text library in this session, with existing synthetic verification and reviewed normal branch publication; see docs/delivery/c1a-text-library.md. Supersedes fresh-chat-only start for this packet.",
     "not_authorized": [
       "hooks or controller scripts",
       "global installations/configuration/model changes",
@@ -25,9 +25,9 @@
       "deployment, access/secrets changes, Git merge or history rewrite",
       "CI implementation",
       "Git merge or force-push",
-      "Product implementation beyond the approved bilingual UI packet"
+      "Product work beyond C1a text library; files, questions, grants/assignments and remaining C1 decisions are deferred."
     ],
-    "next_gate": "Bilingual UI packet complete; future product scope/implementation requires a new approved bounded packet. Existing normal publication policy remains."
+    "next_gate": "Execute C1a under current user approval; stop at its verified publication boundary."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -55,33 +55,42 @@
     "2026-10-28 bounded bilingual discussion: inspected existing frontend and actual Git; proposed Vietnamese default, header selector, browser preference and typed UI dictionaries, including live error/validation translation. No product edits.",
     "Published accumulated identity foundation/redesign and approved bilingual handoff as 0771e35; exact remote hash and clean worktree verified.",
     "Bilingual identity UI: Vietnamese default, browser-only preference with storage fallback, typed complete dictionaries/provider, live labels/errors/validation/notices/metadata, preserved input/focus/pending requests; 10/10 browser scenarios, 96 width/language and 12 actual zoom cases, 17/17 API regressions passed; agent screenshot review complete.",
-    "Published bilingual UI/evidence as 1a04c7a1cb9384c381df5fc0ea00b0f638a29120 to origin/feature/f0-foundation; exact remote hash and clean worktree verified before this final documentation record."
+    "Published bilingual UI/evidence as 1a04c7a1cb9384c381df5fc0ea00b0f638a29120 to origin/feature/f0-foundation; exact remote hash and clean worktree verified before this final documentation record.",
+    "C1a: tutor-only reusable text create/list/edit/archive/restore, optimistic concurrency/atomic audit, bilingual draft/stale/pending-save handling; 21 API and 13 browser scenarios pass, 160 total width/language and 20 actual zoom cases, agent screenshot review complete."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automatic controller remains unimplemented.",
-    "All content/material/question/goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. CI, persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending."
+    "Remaining content folders/tags/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. CI, persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending.",
+    "C1a normal commit/push and exact remote verification pending at this prepublication checkpoint; full C1/A3 remains incomplete."
   ],
   "changed_files": [
     "README.md",
+    "backend/Keemese.Api.Tests/ContentLibraryTests.cs",
+    "backend/Keemese.Api/Content/TextLibrary.cs",
+    "backend/Keemese.Api/Identity/HttpIdentity.cs",
+    "backend/Keemese.Api/Persistence/WorkspaceDb.cs",
+    "backend/Keemese.Api/Program.cs",
     "docs/README.md",
-    "docs/delivery/bilingual-ui.md",
+    "docs/backend/api.md",
+    "docs/decisions/decisions.md",
+    "docs/delivery/c1a-text-library.md",
+    "docs/delivery/plan.md",
     "docs/frontend/design.md",
-    "docs/testing/evidence/bilingual-ui.md",
+    "docs/operations/runbook.md",
+    "docs/security/threat-model.md",
+    "docs/testing/evidence/c1a-text-library.md",
     "docs/testing/strategy.md",
-    "frontend/e2e/artifacts/bilingual-review.json",
-    "frontend/e2e/artifacts/browser-zoom.json",
+    "frontend/e2e/artifacts/c1a-review.json",
+    "frontend/e2e/artifacts/content-qa.json",
+    "frontend/e2e/artifacts/content-zoom.json",
     "frontend/e2e/artifacts/qa.json",
-    "frontend/e2e/identity.spec.ts",
-    "frontend/index.html",
+    "frontend/e2e/library.spec.ts",
     "frontend/src/App.tsx",
     "frontend/src/api/client.ts",
-    "frontend/src/auth/AuthForms.tsx",
     "frontend/src/components/forms.tsx",
-    "frontend/src/i18n/Language.tsx",
+    "frontend/src/content/Library.tsx",
     "frontend/src/i18n/messages.ts",
-    "frontend/src/main.tsx",
-    "frontend/src/students/Students.tsx",
     "frontend/src/styles.css",
     "harness/learning/lessons.jsonl",
     "harness/logs/build-log.md",
@@ -335,18 +344,25 @@
     {
       "check": "Bilingual normal branch commit/push and exact remote verification",
       "status": "passed_1a04c7a1cb9384c381df5fc0ea00b0f638a29120_remote_equals_local_clean_worktree_before_final_documentation_record"
+    },
+    {
+      "check": "C1a final build/typecheck/strict test config, real PostgreSQL API lifecycle/roles/concurrency/rollback and real browser identity/library/bilingual flows, viewport/zoom/keyboard/contrast/visual review",
+      "status": "passed_21_API_48_seconds_13_browser_42.9_seconds_160_width_language_20_actual_zoom_no_skips_retries_after_documented_initial_failures"
+    },
+    {
+      "check": "C1a canonical/source/staged publication validation and cleanup",
+      "status": "passed_16_JSON_1_JSONL_30_Markdown_160_local_targets_61_requirement_ids_23_unchanged_original_backend_dependency_files_31_safe_staged_paths_clean_whitespace_empty_runtime_inventories"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "next-packet-review",
-    "action": "Stop at the completed bilingual packet. In a fresh chat, review current delivery guidance and propose the next bounded task for user approval; no unrelated implementation is authorized.",
+    "id": "c1a-publication",
+    "action": "Review/validate/stage C1a changes, commit and push origin/feature/f0-foundation, verify remote and clean worktree, then stop.",
     "inputs": [
-      "docs/delivery/plan.md",
-      "docs/testing/evidence/bilingual-ui.md"
+      "docs/testing/evidence/c1a-text-library.md"
     ],
-    "acceptance": "Evidence-based next proposal; explicit approval before new implementation."
+    "acceptance": "Verified normal publication and accurate final report; no next feature expansion."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -422,5 +438,6 @@
     "remote": "origin",
     "rule": "Review, commit and push task changes before stopping to report; verify remote hash; no empty commits, merge or force-push."
   },
-  "bilingual_evidence": "docs/testing/evidence/bilingual-ui.md"
+  "bilingual_evidence": "docs/testing/evidence/bilingual-ui.md",
+  "c1a_evidence": "docs/testing/evidence/c1a-text-library.md"
 }

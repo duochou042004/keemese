@@ -1,5 +1,7 @@
 # Verification strategy
 
+C1a update — 2026-10-28: 21/21 API tests and 13/13 built-asset browser scenarios pass, including tutor-only reusable text integrity/access/concurrency, bilingual draft handling and archive/restore. [C1a evidence](evidence/c1a-text-library.md) records 160 total viewport/language and 20 actual zoom cases, fixes and limitations.
+
 Bilingual update — 2026-10-28: 10/10 built-asset Chromium scenarios, 96 template/width/language cases, 12 actual 200% zoom cases and 17/17 API regressions passed. [Bilingual evidence](evidence/bilingual-ui.md) records live switching, storage fallback, focus/validation, request preservation and screenshot review.
 
 I1b status — 2026-10-28: six production-asset Chromium E2E scenarios and the 48-case identity responsive matrix pass with real API/disposable PostgreSQL, plus actual 200% browser zoom, keyboard/focus and computed contrast measurements. API ownership regressions remain 17/17 passing. [I1b evidence](evidence/i1b.md) records an orchestration cleanup defect, its fix and final empty inventories. Broader product/release verification below remains planned; no CI exists yet.

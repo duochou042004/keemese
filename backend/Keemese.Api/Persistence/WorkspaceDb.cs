@@ -1,3 +1,4 @@
+using Keemese.Api.Content;
 using Keemese.Api.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -40,6 +41,7 @@ public sealed class AuditEntry
 
 public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : IdentityDbContext<Account, IdentityRole<Guid>, Guid>(options)
 {
+    public DbSet<TextContent> TextContents => Set<TextContent>();
     public DbSet<StudentProfile> Students => Set<StudentProfile>();
     public DbSet<LoginSession> Sessions => Set<LoginSession>();
     public DbSet<AuditEntry> Audit => Set<AuditEntry>();
@@ -65,6 +67,22 @@ public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : Identit
             {
                 t.HasCheckConstraint("profile_role", "\"Role\" = 'Student'");
                 t.HasCheckConstraint("profile_name", "length(btrim(\"DisplayName\")) BETWEEN 1 AND 200");
+            });
+        });
+        model.Entity<TextContent>(e =>
+        {
+            e.Property(x => x.Title).HasMaxLength(200).IsRequired();
+            e.Property(x => x.Description).HasMaxLength(2000).IsRequired();
+            e.Property(x => x.Body).HasMaxLength(50000).IsRequired();
+            e.Property(x => x.Version).IsConcurrencyToken();
+            e.HasIndex(x => new { x.Archived, x.UpdatedAt, x.Id });
+            e.HasOne<Account>().WithMany().HasForeignKey(x => new { x.AuthorId, x.AuthorRole })
+                .HasPrincipalKey(x => new { x.Id, x.Role }).OnDelete(DeleteBehavior.Restrict);
+            e.ToTable(t =>
+            {
+                t.HasCheckConstraint("content_author_role", "\"AuthorRole\" = 'Tutor'");
+                t.HasCheckConstraint("content_title", "length(btrim(\"Title\")) BETWEEN 1 AND 200");
+                t.HasCheckConstraint("content_version", "\"Version\" > 0");
             });
         });
         model.Entity<LoginSession>().HasOne<Account>().WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Restrict);

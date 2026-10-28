@@ -1,3 +1,4 @@
+using Keemese.Api.Content;
 using System.Net;
 using System.Security.Claims;
 using System.Text.Json;
@@ -49,7 +50,7 @@ public static class HttpIdentity
         builder.Services.AddSingleton(TimeProvider.System);
         builder.Services.AddSingleton<LoginThrottle>();
         builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
-        builder.Services.AddScoped<IdentityService>(); builder.Services.AddScoped<StudentService>();
+        builder.Services.AddScoped<IdentityService>(); builder.Services.AddScoped<StudentService>(); builder.Services.AddScoped<TextLibrary>();
         builder.Services.AddDbContext<WorkspaceDb>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("Workspace")));
         // Local pilot deliberately writes no global key files. Restart invalidates all browser tickets.
         builder.Services.AddDataProtection().AddKeyManagementOptions(o => o.XmlRepository = new PilotKeyRepository())
@@ -125,13 +126,13 @@ public static class HttpIdentity
         app.UseAuthentication();
         app.Use(async (c, next) =>
         {
-            var path = c.Request.Path.Value ?? "";
+            var path = (c.Request.Path.Value ?? "").ToLowerInvariant(); // Match ASP.NET route casing before access checks.
             if (!path.StartsWith("/api/v1/", StringComparison.Ordinal) || path == "/api/v1/health/live") { await next(c); return; }
             var anonymous = path is "/api/v1/auth/csrf" or "/api/v1/auth/login";
             if (!anonymous && c.User.Identity?.IsAuthenticated != true) throw new ApiFault(401, "unauthenticated");
             if (c.User.FindFirstValue("change") == "yes" && path is not ("/api/v1/auth/me" or "/api/v1/auth/password" or "/api/v1/auth/logout" or "/api/v1/auth/csrf"))
                 throw new ApiFault(403, "password_change_required");
-            if (path.StartsWith("/api/v1/students", StringComparison.Ordinal) && !c.User.IsInRole("Tutor")) throw new ApiFault(403, "forbidden");
+            if ((path.StartsWith("/api/v1/students", StringComparison.Ordinal) || c.Request.Path.StartsWithSegments("/api/v1/content")) && !c.User.IsInRole("Tutor")) throw new ApiFault(403, "forbidden");
             if (HttpMethods.IsPost(c.Request.Method))
             {
                 var origin = c.Request.Headers.Origin.ToString();
