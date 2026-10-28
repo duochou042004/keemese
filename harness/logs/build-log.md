@@ -332,3 +332,7 @@ Local 21 API/3 original DB/13 browser passed (49s/12s/45.0s); empty resource inv
 ## 2026-10-28 — CI1 final workflow hosted pass
 
 Published reviewed final workflow/helpers/docs as 9bd3888faf2e69da3868c19be6ad44e8c5460f51 and verified exact origin equality/clean worktree. Hosted full run 40729703478 passed all jobs: five helper methods, 21 API (48s), 3 DB (9s), 13 browser (48.9s), no skips/retries. Verify job 2m59s; NuGet/npm primary cache hits restored ~56/~34 MB. Chromium156/revision1248 downloaded; rootless Podman4.9.3 and empty teardown passed. Final local validation 16 JSON/1 JSONL/32 Markdown/158 targets/61 IDs, whitespace, unchanged product/locks/original source paths, empty runtime inventories/processes passed. This evidence-only publication naturally exercises docs-only mode; result pending before closure.
+
+## 2026-10-28 — CI1 closure and docs-only hosted proof
+
+Evidence-only commit 5323e3f4ecb5a0a940893f872f0d841c7b921487 produced hosted run 40730463730: actual mode docs, checks success7s, verify skipped, stable result success3s, no runtime setup. Repo remains public/default develop (read-only verification). Updated final evidence/canonical state and stop boundary: C1b proposal requires separate approval; no product/deployment continuation. Final reviewed normal branch publication, exact remote equality, clean worktree and last docs workflow are checked after this completion record; actual final hash belongs to Git/final response to avoid a self-referential commit loop. CI1 goal is completed only after those checks.

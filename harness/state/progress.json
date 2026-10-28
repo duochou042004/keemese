@@ -2,14 +2,14 @@
   "schema_version": 1,
   "updated_at": "2026-10-28",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "CI1 implementation and verification",
-  "status": "ci1_final_hosted_full_passed_docs_path_pending",
+  "phase": "CI1 complete; C1b proposal is next",
+  "status": "ci1_implemented_verified_published",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
     "commit": "9bd3888faf2e69da3868c19be6ad44e8c5460f51",
-    "working_tree_status": "clean_verified_before_evidence_only_checkpoint",
-    "note": "Final CI implementation equals origin; hosted full run 40729703478 passed. Evidence/canonical-only records follow; resolve actual HEAD via Git.",
+    "working_tree_status": "clean_origin_match_verified_at_implementation_before_final_evidence_records",
+    "note": "CI implementation tested at 9bd3888; evidence-only 5323e3f hosted docs path passed. Final completion records are subsequent commits; resolve actual HEAD via Git. Application implementation remains a5a0c1c.",
     "implementation_commit": "a5a0c1c08a201bb2c738e8cc867d49d62710b0c0",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
@@ -27,7 +27,7 @@
       "Product work beyond C1a text library; files, questions, grants/assignments and remaining C1 decisions are deferred.",
       "Hosting/storage provisioning or purchases, deployment credentials/admin settings and product scope beyond the bounded CI1 packet; C1b remains proposed."
     ],
-    "next_gate": "Publish this handoff, create a fresh local chat, and execute CI1 there in goal mode; no further CI1 approval required. Deployment/storage/product packets remain separate."
+    "next_gate": "CI1 finished; stop at this bounded packet. Prepare/review a concrete C1b folder proposal in a fresh chat when requested; implementation needs separate approval. No deployment/storage/access authorization inferred."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -60,22 +60,31 @@
     "Published C1a implementation/evidence as a5a0c1c08a201bb2c738e8cc867d49d62710b0c0 to origin/feature/f0-foundation; exact remote match and clean worktree verified before final record.",
     "Recorded user hosting direction (paid Render API/PostgreSQL, R2, frontend candidates/fallback, $40\u2013$100 budget); researched official CI/security/runner and provider constraints. Assessed CI timely and prepared an approved fresh goal-mode CI1 packet; no workflow/product/runtime changes in preparation.",
     "Published approved CI1 execution packet/hosting direction as f5863424d0d21564a415fd01cec6a210915eca09; remote exact match and clean worktree verified before final record. Approved new-thread launch follows publication of this final record.",
-    "CI1 initial hosted full run 40728940993 passed real rootless Podman 4.9.3: 21 API, 3 standalone DB and 13 browser scenarios, strict builds/TypeScript, cleanup and cold cache saves. Initial ignored-preview-link failure repaired with deterministic regression."
+    "CI1 initial hosted full run 40728940993 passed real rootless Podman 4.9.3: 21 API, 3 standalone DB and 13 browser scenarios, strict builds/TypeScript, cleanup and cold cache saves. Initial ignored-preview-link failure repaired with deterministic regression.",
+    "CI1 complete: pinned read-only selective GitHub Actions, five helper regression methods, final full hosted run 40729703478 (21 API/3 DB/13 browser), primary NuGet/npm cache hits, verified cleanup, and docs-only hosted run 40730463730 with successful stable result. No application/lock/source changes."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; D04 provider direction accepted but sizes/region/retention/RPO/RTO/frontend topology unresolved; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automatic controller remains unimplemented.",
-    "Remaining content folders/tags/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. CI, persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending."
+    "Remaining content folders/tags/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. Persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending."
   ],
   "changed_files": [
     ".github/workflows/ci.yml",
     ".gitignore",
-    "tools/ci/check.py",
-    "tools/ci/test_check.py",
+    "README.md",
+    "docs/README.md",
+    "docs/delivery/plan.md",
+    "docs/operations/runbook.md",
     "docs/testing/evidence/ci1.md",
-    "harness/state/progress.json",
+    "docs/testing/evidence/i1b-redesign.md",
+    "docs/testing/evidence/i1b.md",
+    "docs/testing/strategy.md",
+    "harness/learning/lessons.jsonl",
+    "harness/logs/build-log.md",
     "harness/state/handoff.md",
-    "harness/logs/build-log.md"
+    "harness/state/progress.json",
+    "tools/ci/check.py",
+    "tools/ci/test_check.py"
   ],
   "preserved_source_files": [
     "docs/spec/personal_english_tutor_teaching_workspace_spec.md",
@@ -360,18 +369,23 @@
     {
       "check": "CI1 final workflow/helper full hosted run 40729703478",
       "status": "passed_5_helper_methods_21_API_3_DB_13_browser_no_skips_primary_NuGet_npm_cache_hits_empty_cleanup_docs_path_pending"
+    },
+    {
+      "check": "CI1 hosted docs-only run 40730463730 at 5323e3f4ecb5a0a940893f872f0d841c7b921487",
+      "status": "passed_mode_docs_checks_7s_verify_skipped_result_success_3s_no_runtime_setup"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "ci1-efficient-github-actions",
-    "action": "In a fresh local project chat activate create_goal without an invented budget and execute docs/delivery/ci1.md; verify actual hosted/local outcomes, checkpoint, commit/push and report.",
+    "id": "c1b-folder-proposal",
+    "action": "When requested, use a fresh bounded chat to prepare/review the concrete C1b folder-organization proposal for existing native text. Obtain separate approval before product implementation. CI1 is complete; no automatic continuation into C1b.",
     "inputs": [
-      "docs/delivery/ci1.md",
-      "docs/operations/runbook.md"
+      "docs/delivery/plan.md",
+      "docs/delivery/c1a-text-library.md",
+      "docs/product/requirements.md"
     ],
-    "acceptance": "Secure efficient selective/full CI with real DB/browser and hosted evidence; verified normal branch publication; no deployment/product expansion."
+    "acceptance": "Concrete approved scope/ownership/lifecycle/verification boundaries; no folder implementation or deployment before separate approval."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -478,5 +492,10 @@
   },
   "ci1_packet": "docs/delivery/ci1.md",
   "ci1_evidence": "docs/testing/evidence/ci1.md",
-  "ci1_implementation_commit": "9bd3888faf2e69da3868c19be6ad44e8c5460f51"
+  "ci1_implementation_commit": "9bd3888faf2e69da3868c19be6ad44e8c5460f51",
+  "ci1_side_effects": [
+    "Local synthetic API/DB/browser suites reused existing dependencies; generated ignored screenshots remain local and qa.json synthetic UUID changes were restored. No task-owned containers/volumes/test processes/cleanup markers remain.",
+    "Two successful hosted full runs used standard public-repository Ubuntu24 runners; NuGet/npm caches saved then restored (~56/~34 MB); no success artifacts or DB/browser cache. Initial docs failure was repaired without committing PNGs.",
+    "Reviewed normal existing-branch commits/pushes only; no merge, force-push, PR creation, deployment, provider credentials/access/admin changes, persistent DB operation, workstation global setup, subagent or other-chat messaging."
+  ]
 }
