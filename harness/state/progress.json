@@ -3,13 +3,13 @@
   "updated_at": "2026-10-29",
   "timezone": "Asia/Ho_Chi_Minh",
   "phase": "C1d complete; C1e text-copy proposal prepared",
-  "status": "C1e_proposal_ready_for_publication_and_implementation_review",
+  "status": "C1e_proposal_published_verified_awaiting_implementation_approval",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "1a599d877df073ba33571b2e62c40c6da6cf8bdb",
-    "working_tree_status": "documentation_only_C1e_proposal_pending_publication",
-    "note": "Verified launch HEAD equals origin and actual hosted docs40914758300 passed. Final proposal HEAD/publication follows this record; resolve from Git. Application remains80c4520.",
+    "commit": "c8396e49170d0beb33df71b78509d31e6278905d",
+    "working_tree_status": "clean_origin_match_verified_before_final_evidence_record",
+    "note": "C1e proposal c8396e4 verified equal origin/clean with actual hosted docs40915607558 success. Final evidence-only commit follows; resolve current HEAD from Git. Application unchanged80c4520.",
     "implementation_commit": "80c45207899c22db0a834b73e5fd9ba5f8e177df",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
@@ -566,6 +566,6 @@
   "c1e_planning_verification": {
     "local": "passed: 5 helpers, 16 JSON, 1 JSONL, 43 Markdown, 210 targets, 61 requirement rows and whitespace",
     "application": "unchanged; tests/visual QA not rerun",
-    "publication": "pending after this record; final exact SHA/remote/clean worktree/actual hosted docs in closing report"
+    "publication": "passed c8396e49170d0beb33df71b78509d31e6278905d exact origin match/clean and actual hosted docs40915607558: checks6s/result3s, runtime verify skipped. Final evidence-only record publication verified in closing report."
   }
 }
