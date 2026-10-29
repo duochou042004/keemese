@@ -137,3 +137,7 @@ Secure selective GitHub Actions and dependency-free validation helpers are imple
 ## C1b approval/implementation — 2026-10-29
 
 User explicitly approved the next planned work here, superseding the fresh-chat-only start for this packet. [Bounded C1b](c1b-folders.md) adds tutor-defined nested folders and existing native-text assignment/filtering, with empty-only delete, structural concurrency protection and bilingual controls. [Evidence](../testing/evidence/c1b-folders.md) owns checks/publication. Stop after verification and normal publication; files/tags/questions/grants/teaching activity and deployment remain separate. Next propose bounded text-library search (C1c) to make growing sources findable without introducing file/question policy; no implementation is authorized by C1b.
+
+## C1c proposal transition — 2026-10-29
+
+User approves transitioning the next recorded task into a subsequent conversation in goal mode. Launch the bounded [C1c search proposal packet](c1c-search-handoff.md) after publishing canonical handoff records. The successor activates create_goal without an invented budget, prepares/reviews the concrete search scope, validates and publishes documentation, then presents it for implementation approval. No product implementation, new deployment scope or history import is implied.
