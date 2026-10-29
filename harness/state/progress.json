@@ -2,15 +2,15 @@
   "schema_version": 1,
   "updated_at": "2026-10-29",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "C1c approved implementation in current chat",
-  "status": "c1c_local_acceptance_passed_hosted_publication_pending",
+  "phase": "C1c native-text library search complete",
+  "status": "c1c_complete_verified_implementation_published",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "4be3b8a54d7985cee2f53b35f9392b9d491d8e46",
-    "working_tree_status": "approved_C1c_changes_verified_locally_pending_reviewed_publication",
-    "note": "Verified clean origin-equal C1c planning baseline; implementation publication follows this milestone. Resolve final SHA from Git.",
-    "implementation_commit": "8d68b0cbec7d128ff0ade892bc13f7e8fe552c85",
+    "commit": "f605ce420ad307ad6463184a9c360b79b7319116",
+    "working_tree_status": "clean_origin_match_verified_after_C1c_implementation_before_final_evidence_record",
+    "note": "Implementation f605ce4 passed actual hosted full40806989055. Final evidence-only commit follows this record; resolve actual final HEAD/remote/worktree and docs result from Git/Actions/closing report.",
+    "implementation_commit": "f605ce420ad307ad6463184a9c360b79b7319116",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
     "default_branch": "develop"
@@ -24,10 +24,10 @@
       "existing databases/volumes or persistent production migrations",
       "deployment, access/secrets changes, Git merge or history rewrite",
       "Git merge or force-push",
-      "Product work beyond C1b native-text folder organization; files, questions, grants/assignments and remaining C1 decisions are deferred.",
-      "Hosting/storage provisioning or purchases, deployment credentials/admin settings and product scope beyond bounded C1b."
+      "Product work beyond bounded C1c native-text search; tags/files/questions/grants/assignments and remaining C1 decisions are deferred.",
+      "Hosting/storage provisioning or purchases, deployment credentials/admin settings and product scope beyond bounded C1c."
     ],
-    "next_gate": "Complete bounded C1c verification and reviewed normal branch publication; stop at C1c."
+    "next_gate": "C1c complete after final reviewed record publication/hosted docs verification. Further product implementation needs a separate bounded proposal/approval; persistent migration/deployment/access remains separately gated."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -64,7 +64,8 @@
     "CI1 complete: pinned read-only selective GitHub Actions, five helper regression methods, final full hosted run 40729703478 (21 API/3 DB/13 browser), primary NuGet/npm cache hits, verified cleanup, and docs-only hosted run 40730463730 with successful stable result. No application/lock/source changes.",
     "C1b native-text folders: tutor-only nested create/rename/reparent/empty delete, direct assignment/filtering, structural transaction lock/cycle/sibling/version guards and bilingual draft-safe UI. Local26 API/3 DB/16 browser and final hosted run40802256936 pass;32 new geometry and2 actualzoom cases, agent screenshots reviewed, independent cleanup empty. Published implementation8d68b0c with exact origin equality/clean worktree.",
     "C1c planning: independently verified clean c1baa58/origin and successful hosted docs40804127242; reviewed actual library/model/client/authorization, focused source12\u201313/32/51, requirements and L008; prepared concrete native-text search proposal including Unicode/filters/pagination/bilingual/request/security/query-cost/verification scope. No product/DB/browser/performance execution.",
-    "C1c local implementation: NFC/invariant-uppercase literal source search/internal transactional projections, safe q validation and bilingual explicit-submit/draft/filter/page/focus/late-response handling. Revised5 new API groups27.2s and4 browser16.9s; final full31 API50s/3 standalone DB12s/20 browser58.0s pass,80 new geometry/two actual zoom, agent visual review and six1000-row SQL plans under5s pass. Empty independent cleanup. Hosted publication pending."
+    "C1c local implementation: NFC/invariant-uppercase literal source search/internal transactional projections, safe q validation and bilingual explicit-submit/draft/filter/page/focus/late-response handling. Revised5 new API groups27.2s and4 browser16.9s; final full31 API50s/3 standalone DB12s/20 browser58.0s pass,80 new geometry/two actual zoom, agent visual review and six1000-row SQL plans under5s pass. Empty independent cleanup. Hosted publication pending.",
+    "C1c publication: reviewed19 safe staged paths and normal-pushedf605ce420ad307ad6463184a9c360b79b7319116, exact remote/clean-worktree verified. Actual hosted full40806989055 passed31 API48s/3 DB6s/20 browser48.7s, helpers/docs/builds/strict TypeScript/rootless teardown and primary caches. Final completion records published subsequently; no app change after hosted proof."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; D04 provider direction accepted but sizes/region/retention/RPO/RTO/frontend topology unresolved; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
@@ -399,18 +400,22 @@
     {
       "check": "C1c local acceptance/builds/restores/full regressions/SQL plans/visual review/cleanup/docs",
       "status": "passed_31_API_50s_3_DB_12s_20_browser_58s_no_skips_retries_80_new_geometry_2_actual_zoom_6_real_plans_empty_cleanup_16_JSON_1_JSONL_38_Markdown_182_targets_61_rows_5_helpers"
+    },
+    {
+      "check": "C1c actual full hosted40806989055 atf605ce420ad307ad6463184a9c360b79b7319116",
+      "status": "passed_mode_full_checks6s_verify2m31s_result4s_31_API48s_3_DB6s_20_browser48.7s_no_skips_retries_primary_caches_empty_teardown"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "c1c-publication-verification",
-    "action": "Review/stage/publish approved C1c paths, observe actual hosted full CI and repair only within packet, update final evidence/state, publish final records, verify remote equality/clean worktree and stop.",
+    "id": "next-C1-bounded-proposal-review",
+    "action": "Stop at completed C1c. In a fresh requested chat, review remaining C1 priorities and prepare a concrete bounded next proposal before requesting product implementation approval; do not infer further scope from C1c approval.",
     "inputs": [
-      "docs/delivery/c1c-text-search.md",
+      "docs/delivery/plan.md",
       "docs/testing/evidence/c1c-text-search.md"
     ],
-    "acceptance": "Actual full hosted pass for final C1c code and reviewed normal branch publication; no new product packet."
+    "acceptance": "User reviews the next concrete scope; no automatic continuation into tags/files/questions/grants/activity/deployment."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -532,5 +537,11 @@
   ],
   "c1c_handoff": "docs/delivery/c1c-search-handoff.md",
   "c1c_proposal": "docs/delivery/c1c-text-search.md",
-  "c1c_evidence": "docs/testing/evidence/c1c-text-search.md"
+  "c1c_evidence": "docs/testing/evidence/c1c-text-search.md",
+  "c1c_implementation_commit": "f605ce420ad307ad6463184a9c360b79b7319116",
+  "c1c_side_effects": [
+    "Reused pinned dependencies and exact image; locked npm ci replaced project cache and exact local Chromium/FFmpeg was restored. Synthetic screenshots/measurements remain ignored. Tracked synthetic-only qa.json changes verified/restored. Independent local resources/processes/markers/profiles empty.",
+    "Hosted full40806989055 passed on existing workflow with primary NuGet/npm cache hits and no success artifact. No dependency/helper/CI/original-source/global/provider/access/persistent database or migration/deployment/merge/history change.",
+    "Reviewed normal existing-branch commits/pushes only; no new chat, history retrieval/fork, subagent or other-chat message."
+  ]
 }
