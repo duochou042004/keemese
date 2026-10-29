@@ -157,3 +157,7 @@ User requests the next recorded steps here. Completed [C1d proposal](c1d-text-ta
 ## C1d approved implementation — 2026-10-29
 
 User approved [C1d](c1d-text-tags.md) in this session, requested no formal handoff and frontend polish. Native-text tags/catalog/atomic assignments/direct filtering are implemented; [evidence](../testing/evidence/c1d-text-tags.md) owns actual verification and publication. No automatic continuation into files/questions/grants/student activity/deployment. Keep current-state evidence, verify hosted full and normal branch publication, then stop at C1d.
+
+## Approved follow-up conversation — 2026-10-29
+
+User now requests a formal handover into a follow-up conversation in goal mode, superseding the prior no-handoff preference. After publishing/verifying the [handoff](next-c1-goal-handoff.md), create a fresh local project chat whose first action activates a bounded goal for the recorded next task: review remaining C1 priorities and publish one concrete next implementation proposal. No further product implementation is authorized by the transition itself. Source stops writing before successor launch; no history import/fork/delegation or model/global changes.
