@@ -2,14 +2,14 @@
   "schema_version": 1,
   "updated_at": "2026-10-29",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "C1c search proposal approved for new goal-mode chat",
-  "status": "c1c_proposal_handoff_ready_for_publication",
+  "phase": "C1c concrete search proposal prepared; implementation approval pending",
+  "status": "c1c_proposal_ready_implementation_approval_pending",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "6d5b34b0adf33a575e8baa2d54db440f3e459a4d",
-    "working_tree_status": "clean_origin_match_verified_before_transition_documentation",
-    "note": "C1b final record and origin exact match independently verified; transition documentation is published subsequently. Resolve actual HEAD. C1b application implementation remains8d68b0c.",
+    "commit": "c1baa58de1534dd5523ecf5adc3e7635091ea744",
+    "working_tree_status": "clean_origin_match_verified_at_proposal_start_then_documentation_only_changes",
+    "note": "Planning baseline verified independently. Final proposal/publication SHA is resolved from Git; no self-referential commit claim. C1b implementation remains8d68b0c.",
     "implementation_commit": "8d68b0cbec7d128ff0ade892bc13f7e8fe552c85",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
@@ -27,7 +27,7 @@
       "Product work beyond C1b native-text folder organization; files, questions, grants/assignments and remaining C1 decisions are deferred.",
       "Hosting/storage provisioning or purchases, deployment credentials/admin settings and product scope beyond bounded C1b."
     ],
-    "next_gate": "Publish this handoff, create the approved local chat, and execute docs/delivery/c1c-search-handoff.md in goal mode. The resulting concrete C1c implementation proposal requires user approval before product edits."
+    "next_gate": "Finish reviewed documentation publication, exact origin/clean-worktree and hosted docs verification; present docs/delivery/c1c-text-search.md for explicit implementation approval. No product edits until approval."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -62,7 +62,8 @@
     "Published approved CI1 execution packet/hosting direction as f5863424d0d21564a415fd01cec6a210915eca09; remote exact match and clean worktree verified before final record. Approved new-thread launch follows publication of this final record.",
     "CI1 initial hosted full run 40728940993 passed real rootless Podman 4.9.3: 21 API, 3 standalone DB and 13 browser scenarios, strict builds/TypeScript, cleanup and cold cache saves. Initial ignored-preview-link failure repaired with deterministic regression.",
     "CI1 complete: pinned read-only selective GitHub Actions, five helper regression methods, final full hosted run 40729703478 (21 API/3 DB/13 browser), primary NuGet/npm cache hits, verified cleanup, and docs-only hosted run 40730463730 with successful stable result. No application/lock/source changes.",
-    "C1b native-text folders: tutor-only nested create/rename/reparent/empty delete, direct assignment/filtering, structural transaction lock/cycle/sibling/version guards and bilingual draft-safe UI. Local26 API/3 DB/16 browser and final hosted run40802256936 pass;32 new geometry and2 actualzoom cases, agent screenshots reviewed, independent cleanup empty. Published implementation8d68b0c with exact origin equality/clean worktree."
+    "C1b native-text folders: tutor-only nested create/rename/reparent/empty delete, direct assignment/filtering, structural transaction lock/cycle/sibling/version guards and bilingual draft-safe UI. Local26 API/3 DB/16 browser and final hosted run40802256936 pass;32 new geometry and2 actualzoom cases, agent screenshots reviewed, independent cleanup empty. Published implementation8d68b0c with exact origin equality/clean worktree.",
+    "C1c planning: independently verified clean c1baa58/origin and successful hosted docs40804127242; reviewed actual library/model/client/authorization, focused source12\u201313/32/51, requirements and L008; prepared concrete native-text search proposal including Unicode/filters/pagination/bilingual/request/security/query-cost/verification scope. No product/DB/browser/performance execution."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; D04 provider direction accepted but sizes/region/retention/RPO/RTO/frontend topology unresolved; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
@@ -72,7 +73,7 @@
   "changed_files": [
     "docs/README.md",
     "docs/delivery/plan.md",
-    "docs/delivery/c1c-search-handoff.md",
+    "docs/delivery/c1c-text-search.md",
     "harness/state/progress.json",
     "harness/state/handoff.md",
     "harness/logs/build-log.md"
@@ -92,10 +93,10 @@
     "enforcement": "manual_bounded_packet_fallback_only",
     "policy_owner": "docs/agents/context-safety.md",
     "fresh_session_recommended_for_next_packet": true,
-    "current_thread_id": "01a18361-1d61-7330-9236-a935284f078d",
-    "fresh_session_evidence": "User explicitly approves successor creation after current documentation publication. Source chat stops writing before launch; successor must independently verify start/files. No fork/history import or measured occupancy/general isolation guarantee.",
+    "current_thread_id": "01a18566-f8fd-7041-91af-172541eae88c",
+    "fresh_session_evidence": "New chat used for one approved bounded planning goal; no prior chat retrieval/fork/subagent/messaging. Retained-context telemetry remains unavailable; continuation is not a new packet.",
     "isolated_probe": "Live usage events observed: total cumulative across two turns; last latest-request counts; modelContextWindow 258400 has unverified usable-capacity semantics. Does not measure current desktop chat.",
-    "current_packet_start": "User2026-10-29 explicitly approved C1b in the continuing session; supersedes fresh-chat-only start for this packet, not fresh-session/occupancy evidence."
+    "current_packet_start": "User explicitly approved subsequent-chat C1c documentation proposal goal; activated here2026-10-29. Product implementation remains gated; no verified occupancy or automatic rollover."
   },
   "verification": [
     {
@@ -377,17 +378,21 @@
     {
       "check": "C1b final hosted full run40802256936 at8d68b0cbec7d128ff0ade892bc13f7e8fe552c85",
       "status": "passed_all_jobs_26_API_54s_3_DB_9s_16_browser_56.3s_no_skips_primary_caches_empty_cleanup"
+    },
+    {
+      "check": "C1c documentation planning: helper regressions, JSON/JSONL/local Markdown/coverage and whitespace",
+      "status": "passed_5_helper_methods_16_JSON_1_JSONL_36_Markdown_174_targets_61_requirement_rows_at_draft_milestone_final_staged_and_hosted_checks_follow_record"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "c1c-text-search-proposal",
-    "action": "In the approved new local chat call create_goal without an invented budget; execute the bounded docs/delivery/c1c-search-handoff.md proposal/publication objective, then stop for concrete implementation approval.",
+    "id": "c1c-implementation-approval",
+    "action": "Review docs/delivery/c1c-text-search.md with user; implementation remains gated. If approved, execute only its bounded paths/tests/publication in a fresh chat. Do not infer approval from proposal publication or goal completion.",
     "inputs": [
-      "docs/delivery/c1c-search-handoff.md"
+      "docs/delivery/c1c-text-search.md"
     ],
-    "acceptance": "Concrete search/filter/pagination/isolation/bilingual/verification proposal; validated documentation published normally; remote/worktree/hosted docs verified; no product implementation."
+    "acceptance": "Explicit user approval before C1c application edits; current planning goal closes after documentation publication and hosted docs verification."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -417,7 +422,9 @@
     "Normal NuGet/npm caches populated; no global packages/settings deliberately changed."
   ],
   "running_processes": [],
-  "pending_user_input": [],
+  "pending_user_input": [
+    "Approval of the concrete C1c implementation proposal in docs/delivery/c1c-text-search.md."
+  ],
   "f0b_side_effects": [
     "Digest-pinned PostgreSQL image remains in rootless Podman cache.",
     "Normal NuGet cache populated; all test containers removed, no volumes created."
@@ -507,5 +514,6 @@
     "Standard hosted CI full run40802256936 passed with existing NuGet/npm cache hits; no success artifacts or deployment.",
     "Reviewed normal existing-branch publication only; no dependency/CI/original-source/global setup/persistent schema/provider/access/merge/history change, new-chat/subagent or other-chat messaging."
   ],
-  "c1c_handoff": "docs/delivery/c1c-search-handoff.md"
+  "c1c_handoff": "docs/delivery/c1c-search-handoff.md",
+  "c1c_proposal": "docs/delivery/c1c-text-search.md"
 }

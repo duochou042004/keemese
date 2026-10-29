@@ -141,3 +141,7 @@ User explicitly approved the next planned work here, superseding the fresh-chat-
 ## C1c proposal transition — 2026-10-29
 
 User approves transitioning the next recorded task into a subsequent conversation in goal mode. Launch the bounded [C1c search proposal packet](c1c-search-handoff.md) after publishing canonical handoff records. The successor activates create_goal without an invented budget, prepares/reviews the concrete search scope, validates and publishes documentation, then presents it for implementation approval. No product implementation, new deployment scope or history import is implied.
+
+## C1c concrete proposal — 2026-10-29
+
+The [reviewable C1c proposal](c1c-text-search.md) defines invariant-uppercase/NFC literal search across title/description/body, accent-sensitive matching, explicit submission, existing direct-folder/archive filtering and stable pagination, safe tutor-only projections and bounded synthetic verification. Documentation planning/publication is authorized; implementation is pending user approval of that exact scope. Stop after proposal publication and hosted docs verification; the next implementation packet starts only after approval in a fresh bounded chat.
