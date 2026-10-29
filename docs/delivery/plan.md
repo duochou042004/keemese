@@ -149,3 +149,7 @@ The [reviewable C1c proposal](c1c-text-search.md) defines invariant-uppercase/NF
 ## C1c approved execution — 2026-10-29
 
 User approved [C1c](c1c-text-search.md) implementation right here, superseding its fresh-chat-only start for this packet. Implemented literal normalized native-text search and bilingual controls with direct-filter/page/focus/request guards. [Evidence](../testing/evidence/c1c-text-search.md) records real local/hosted outcomes and publication state. Stop after C1c verification/publication; remaining tags/materials/questions/grants/activity and deployment require later bounded proposals/approval.
+
+## Next recorded review: C1d native-text tags — 2026-10-29
+
+User requests the next recorded steps here. Completed [C1d proposal](c1d-text-tags.md): tutor-defined optional reusable tag catalog,0–20 tags per existing source, unused-only deletion, atomic assignments and single-tag/untagged filtering combined with current folder/archive/search. Chosen before files/questions/grants because those need unresolved storage/work/snapshot policy. This is documentation planning/publication; implementation requires approval of the concrete proposal. No application/global/CI/dependency/persistent DB/provider scope inferred. Stop after normal proposal publication and hosted docs verification.
