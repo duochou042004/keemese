@@ -133,3 +133,7 @@ User requests a fresh conversation in goal mode and conditional CI implementatio
 ## CI1 implementation outcome — 2026-10-28
 
 Secure selective GitHub Actions and dependency-free validation helpers are implemented. Real local and hosted rootless PostgreSQL/API/browser proof is recorded in [CI1 evidence](../testing/evidence/ci1.md); final revision/docs-only outcomes belong there. Product behavior, dependency locks and source specifications are preserved. Stop at CI1 after reviewed publication; C1b folder organization remains the next proposal requiring separate approval. No deployment/storage provisioning or full C1/A3 acceptance is inferred.
+
+## C1b approval/implementation — 2026-10-29
+
+User explicitly approved the next planned work here, superseding the fresh-chat-only start for this packet. [Bounded C1b](c1b-folders.md) adds tutor-defined nested folders and existing native-text assignment/filtering, with empty-only delete, structural concurrency protection and bilingual controls. [Evidence](../testing/evidence/c1b-folders.md) owns checks/publication. Stop after verification and normal publication; files/tags/questions/grants/teaching activity and deployment remain separate. Next propose bounded text-library search (C1c) to make growing sources findable without introducing file/question policy; no implementation is authorized by C1b.

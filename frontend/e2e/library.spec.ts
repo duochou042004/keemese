@@ -110,7 +110,8 @@ test('library/editor/archive layouts in both languages at eight widths, keyboard
     }
   }
   await snapshot('library'); await page.getByRole('link', { name: 'New text content', exact: true }).click(); await snapshot('new');
-  await page.getByLabel('Title', { exact: true }).fill('Tài liệu ' + 'x'.repeat(190)); await page.keyboard.press('Tab'); await expect(page.getByLabel('Description (optional)')).toBeFocused();
+  await page.getByLabel('Title', { exact: true }).fill('Tài liệu ' + 'x'.repeat(190)); await page.keyboard.press('Tab'); await expect(page.getByLabel('Folder', { exact: true })).toBeFocused();
+  await page.keyboard.press('Tab'); await expect(page.getByLabel('Description (optional)')).toBeFocused();
   await page.getByLabel('Description (optional)').fill('Một mô tả dài giữ nguyên tiếng Việt khi đổi ngôn ngữ.');
   await page.getByLabel('Teaching text (optional)').fill(body); await page.getByRole('button', { name: 'Create content', exact: true }).click();
   await expect(page.getByRole('status')).toContainText('Content created.'); await snapshot('edit');

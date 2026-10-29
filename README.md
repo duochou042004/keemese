@@ -17,7 +17,7 @@
 | Available now | Verified database foundation | Planned teaching workspace |
 |---|---|---|
 | Identity UI and tutor-created student accounts (I1a/I1b) | Real PostgreSQL identity/isolation tests | Reusable content and student activity |
-| Vietnamese tutor/student account flows | Real database round-trip and rollback checks | Reusable content, lesson plans, assignments and private notes |
+| Bilingual account flows and tutor text folders | Real database round-trip and rollback checks | Reusable content, lesson plans, assignments and private notes |
 | Exact dependency pins, locks and reproducible setup | Test-owned resource cleanup | Teaching workflows follow their own approval gates |
 
 Badges describe the pinned stack, not live CI or deployment status. Current verification evidence is linked above.
@@ -26,7 +26,7 @@ UI screenshots are generated locally by browser verification and excluded from G
 
 ## Current scope
 
-Private single-tutor workspace under development. I1a adds backend identity, tutor-only student provisioning/reset/deactivation, mandatory password rotation and student self-profile isolation. I1b adds Vietnamese login, forced password change, tutor account management and student self-account screens. Teaching workflows remain separately gated. Verification uses synthetic disposable data only. See [I1a backend evidence](docs/testing/evidence/i1a.md) and [I1b browser evidence](docs/testing/evidence/i1b.md) for results and limits.
+Private single-tutor workspace under development. I1a adds backend identity, tutor-only student provisioning/reset/deactivation, mandatory password rotation and student self-profile isolation. I1b adds Vietnamese login, forced password change, tutor account management and student self-account screens. Tutor-only reusable plain text now supports nested folders, assignment/filtering and safe empty-folder deletion; see [C1b evidence](docs/testing/evidence/c1b-folders.md). Teaching activity workflows remain separately gated. Verification uses synthetic disposable data only. See [I1a backend evidence](docs/testing/evidence/i1a.md) and [I1b browser evidence](docs/testing/evidence/i1b.md) for results and limits.
 
 ## Prerequisites
 

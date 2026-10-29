@@ -50,7 +50,7 @@ public static class HttpIdentity
         builder.Services.AddSingleton(TimeProvider.System);
         builder.Services.AddSingleton<LoginThrottle>();
         builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
-        builder.Services.AddScoped<IdentityService>(); builder.Services.AddScoped<StudentService>(); builder.Services.AddScoped<TextLibrary>();
+        builder.Services.AddScoped<IdentityService>(); builder.Services.AddScoped<StudentService>(); builder.Services.AddScoped<TextLibrary>(); builder.Services.AddScoped<ContentFolders>();
         builder.Services.AddDbContext<WorkspaceDb>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("Workspace")));
         // Local pilot deliberately writes no global key files. Restart invalidates all browser tickets.
         builder.Services.AddDataProtection().AddKeyManagementOptions(o => o.XmlRepository = new PilotKeyRepository())

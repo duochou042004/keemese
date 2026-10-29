@@ -4,6 +4,13 @@ export type Student = { id: string; displayName: string; username: string; activ
 export type Profile = Pick<Student, 'id' | 'displayName' | 'username'>;
 
 const messages: Partial<Record<string, MessageKey>> = {
+  invalid_folder_name: 'Enter a folder name of 1–100 characters.',
+  folder_name_exists: 'A folder with this name already exists here.',
+  folder_cycle: 'Choose a parent outside this folder and its descendants.',
+  folder_missing: 'This folder could not be found. Your draft is kept.',
+  folder_stale: 'This folder has changed. Your draft is kept. Reload before trying again.',
+  folder_not_empty: 'Move all child folders and active or archived content before deleting this folder.',
+  folder_limit: 'The library supports up to 1,000 folders.',
   invalid_content_title: 'Enter a title of 1–200 characters.',
   invalid_content_text: 'Use up to 2,000 characters for the description and 50,000 for the teaching text.',
   content_missing: 'This content could not be found.',

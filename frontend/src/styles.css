@@ -125,3 +125,14 @@ textarea { resize: vertical; line-height: 1.6; }
 .content-editor > button { margin-bottom: 24px; }
 
 .archived-text h2 { overflow-wrap: anywhere; }
+
+.folder-panel { border-block: 1px solid var(--line); margin-bottom: 28px; padding-block: 24px; }
+.folder-toolbar { display: flex; align-items: end; flex-wrap: wrap; gap: 20px; }
+.folder-select { min-width: 0; flex: 1 1 240px; margin-bottom: 0; }
+.folder-select select { width: 100%; max-width: 100%; min-height: 44px; padding: 10px; border: 1px solid #8994a5; border-radius: 7px; background: #fff; color: #182234; }
+.folder-select:has(select:disabled) { opacity: .8; }
+.folder-form { max-width: 680px; margin-top: 24px; }
+.folder-form h2 { margin-bottom: 20px; }
+.folder-form .actions { margin-top: 24px; }
+.folder-panel .notice { margin-top: 20px; }
+.content-editor form > .folder-select { margin-bottom: 24px; }

@@ -41,6 +41,7 @@ public sealed class AuditEntry
 
 public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : IdentityDbContext<Account, IdentityRole<Guid>, Guid>(options)
 {
+    public DbSet<ContentFolder> ContentFolders => Set<ContentFolder>();
     public DbSet<TextContent> TextContents => Set<TextContent>();
     public DbSet<StudentProfile> Students => Set<StudentProfile>();
     public DbSet<LoginSession> Sessions => Set<LoginSession>();
@@ -69,6 +70,24 @@ public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : Identit
                 t.HasCheckConstraint("profile_name", "length(btrim(\"DisplayName\")) BETWEEN 1 AND 200");
             });
         });
+        model.Entity<ContentFolder>(e =>
+        {
+            e.Property(x => x.Name).HasMaxLength(100).IsRequired();
+            e.Property(x => x.NormalizedName).IsRequired();
+            e.Property(x => x.Version).IsConcurrencyToken();
+            e.HasIndex(x => x.NormalizedName).IsUnique().HasFilter("\"ParentId\" IS NULL");
+            e.HasIndex(x => new { x.ParentId, x.NormalizedName }).IsUnique().HasFilter("\"ParentId\" IS NOT NULL");
+            e.HasOne<ContentFolder>().WithMany().HasForeignKey(x => x.ParentId).OnDelete(DeleteBehavior.Restrict);
+            e.HasOne<Account>().WithMany().HasForeignKey(x => new { x.AuthorId, x.AuthorRole })
+                .HasPrincipalKey(x => new { x.Id, x.Role }).OnDelete(DeleteBehavior.Restrict);
+            e.ToTable(t =>
+            {
+                t.HasCheckConstraint("folder_author_role", "\"AuthorRole\" = 'Tutor'");
+                t.HasCheckConstraint("folder_name", "length(btrim(\"Name\")) BETWEEN 1 AND 100");
+                t.HasCheckConstraint("folder_version", "\"Version\" > 0");
+                t.HasCheckConstraint("folder_not_self", "\"ParentId\" IS NULL OR \"ParentId\" <> \"Id\"");
+            });
+        });
         model.Entity<TextContent>(e =>
         {
             e.Property(x => x.Title).HasMaxLength(200).IsRequired();
@@ -76,6 +95,8 @@ public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : Identit
             e.Property(x => x.Body).HasMaxLength(50000).IsRequired();
             e.Property(x => x.Version).IsConcurrencyToken();
             e.HasIndex(x => new { x.Archived, x.UpdatedAt, x.Id });
+            e.HasIndex(x => new { x.FolderId, x.Archived, x.UpdatedAt, x.Id });
+            e.HasOne<ContentFolder>().WithMany().HasForeignKey(x => x.FolderId).OnDelete(DeleteBehavior.Restrict);
             e.HasOne<Account>().WithMany().HasForeignKey(x => new { x.AuthorId, x.AuthorRole })
                 .HasPrincipalKey(x => new { x.Id, x.Role }).OnDelete(DeleteBehavior.Restrict);
             e.ToTable(t =>
@@ -90,8 +111,11 @@ public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : Identit
         model.Entity<AuditEntry>().Property(x => x.Action).HasMaxLength(40);
     }
 
-    // Serialize identity writes across API processes/operator commands, inside their transaction.
-    // Small single-tutor pilot: correctness first; revisit contention before deployment.
+    // Serialize folder hierarchy and assignments together inside their transactions.
+    public async Task LockContentAsync() =>
+        await Database.ExecuteSqlRawAsync("SELECT pg_advisory_xact_lock(746351010)");
+
+    // Serialize identity writes across API processes/operator commands in their transaction.
     public async Task LockIdentityAsync() =>
         await Database.ExecuteSqlRawAsync("SELECT pg_advisory_xact_lock(746351009)");
 }

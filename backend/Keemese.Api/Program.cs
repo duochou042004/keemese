@@ -16,5 +16,6 @@ app.UseWorkspaceIdentity();
 app.MapGet("/api/v1/health/live", () => Results.Ok(new { status = "ok" }));
 app.MapWorkspaceIdentity();
 app.MapTextLibrary();
+app.MapContentFolders();
 app.Run();
 public partial class Program { }

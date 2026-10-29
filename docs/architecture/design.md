@@ -86,3 +86,5 @@ sequenceDiagram
 ```
 
 Uploads precede this transaction; attaching a validated file is transactional metadata only. Orphaned uploads need a bounded cleanup policy after D04; do not pretend file store and database share a transaction. Recovery and reconciliation are documented in the [runbook](../operations/runbook.md).
+
+C1b local implementation (2026-10-29): ContentFolder self-parent and TextContent.folderId use restrictive FKs, normalized sibling-name partial unique indexes and EF versions. Folder hierarchy mutations and text assignments share PostgreSQL advisory transaction lock746351010 so inverse moves cannot create cycles and deletion cannot race an assignment. Empty-only folder deletion includes archived content. No cascade, student association or startup migration. [C1b packet](../delivery/c1b-folders.md) and [evidence](../testing/evidence/c1b-folders.md) own boundaries/results; retained schema migration remains future approved work.
