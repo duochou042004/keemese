@@ -1,5 +1,5 @@
 import { FolderPanel, FolderSelect, useFolders } from './Folders';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import { ApiClient, ApiError, aborted, message } from '../api/client';
 import { Field, NavLink, Notice, PageHeading, TextAreaField } from '../components/forms';
@@ -13,28 +13,71 @@ export function ContentLibrary({ api }: { api: ApiClient }) {
   const { t } = useLanguage();
   const folderState = useFolders(api); const [folder, setFolder] = useState('all');
   const [archived, setArchived] = useState(false); const [page, setPage] = useState(1); const [retry, setRetry] = useState(0);
+  const [draftQuery, setDraftQuery] = useState(''); const [query, setQuery] = useState(''); const [invalid, setInvalid] = useState(false);
+  const input = useRef<HTMLInputElement>(null); const composing = useRef(false);
+  const pending = useRef('');
   const [data, setData] = useState<{ items: Summary[]; nextPage: number | null }>();
   const [error, setError] = useState<MessageKey | ''>('');
+  const tuple = JSON.stringify([archived, folder, page, query]);
   useEffect(() => {
-    let active = true; setData(undefined); setError('');
-    void api.request<{ items: Summary[]; nextPage: number | null }>(`/content?archived=${archived}&page=${page}${folder === 'all' ? '' : `&folderId=${folder}`}`)
-      .then(value => { if (active) setData(value); }).catch(e => { if (active && !aborted(e)) setError(message(e)); });
+    let active = true; pending.current = tuple; setData(undefined); setError('');
+    const params = new URLSearchParams({ archived: String(archived), page: String(page) });
+    if (folder !== 'all') params.set('folderId', folder);
+    if (query) params.set('q', query);
+    void api.request<{ items: Summary[]; nextPage: number | null }>(`/content?${params}`)
+      .then(value => { if (active) setData(value); }).catch(e => { if (active && !aborted(e)) setError(message(e)); })
+      .finally(() => { if (active) pending.current = ''; });
     return () => { active = false; };
-  }, [api, archived, page, retry, folder]);
+  }, [api, archived, page, retry, folder, query, tuple]);
+  function resetResults() { setData(undefined); setError(''); }
+  function search(event: FormEvent) {
+    event.preventDefault(); if (composing.current) return;
+    // Match .NET Trim whitespace; JavaScript trim additionally removes BOM, but omits NEL.
+    const trimmed = draftQuery.replace(/^[\u0009-\u000D\u0020\u0085\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]+|[\u0009-\u000D\u0020\u0085\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]+$/gu, '');
+    if (draftQuery.length > 200 || /[\u0000-\u001F\u007F-\u009F]/u.test(trimmed) || [...draftQuery].some(c => { const n = c.codePointAt(0)!; return n >= 0xD800 && n <= 0xDFFF; })) {
+      setInvalid(true); input.current?.focus(); return;
+    }
+    setInvalid(false);
+    if (pending.current === JSON.stringify([archived, folder, 1, trimmed])) return;
+    resetResults(); setQuery(trimmed); setPage(1); setRetry(x => x + 1);
+  }
+  function clear() {
+    setDraftQuery(''); setInvalid(false); input.current?.focus();
+    if (pending.current === JSON.stringify([archived, folder, 1, ''])) return;
+    resetResults(); setQuery(''); setPage(1); setRetry(x => x + 1);
+  }
   return <><div className="heading-row"><PageHeading eyebrow={t('Tutor workspace')} title={t('Content library')}>{t('Create reusable teaching texts. Only you can access this library.')}</PageHeading>
     <NavLink to="/content/new" className="button primary">{t('New text content')}</NavLink></div>
     {folderState.error ? <><Notice error>{t(folderState.error)}</Notice><button className="secondary" onClick={folderState.refresh}>{t('Try again')}</button></> : folderState.folders ?
-      <FolderPanel api={api} folders={folderState.folders} selected={folder} select={id => { setFolder(id); setPage(1); }} changed={() => { folderState.refresh(); setRetry(x => x + 1); }} /> : <p className="muted">{t('Loading folders…')}</p>}
+      <FolderPanel api={api} folders={folderState.folders} selected={folder} select={id => { if (id !== folder || page !== 1) resetResults(); setFolder(id); setPage(1); }} changed={() => { folderState.refresh(); resetResults(); setPage(1); setRetry(x => x + 1); }} /> : <p className="muted">{t('Loading folders…')}</p>}
     <div className="library-filters" role="group" aria-label={t('Content status')}>
-      <button className="secondary" aria-pressed={!archived} onClick={() => { setArchived(false); setPage(1); }}>{t('Active content')}</button>
-      <button className="secondary" aria-pressed={archived} onClick={() => { setArchived(true); setPage(1); }}>{t('Archived content')}</button>
+      <button className="secondary" aria-pressed={!archived} onClick={() => { if (archived || page !== 1) resetResults(); setArchived(false); setPage(1); }}>{t('Active content')}</button>
+      <button className="secondary" aria-pressed={archived} onClick={() => { if (!archived || page !== 1) resetResults(); setArchived(true); setPage(1); }}>{t('Archived content')}</button>
     </div>
-    {error ? <><Notice error>{t(error)}</Notice><button className="secondary" onClick={() => setRetry(x => x + 1)}>{t('Try again')}</button></> : !data ? <Notice>{t('Loading content…')}</Notice> : data.items.length === 0 ?
-      <section className="empty"><h2>{archived ? t('No archived content') : folder !== 'all' ? t('No content in this folder') : t('Your library is empty')}</h2><p>{archived ? t('Archived texts will appear here. You can restore them at any time.') : folder !== 'all' ? t('Choose this folder in the text editor to organize your content here.') : t('Start with a title and add your teaching text when ready.')}</p></section> :
-      <><ul className="content-list" aria-label={t('Content library')}>{data.items.map(item => <li key={item.id}><NavLink to={`/content/${item.id}`}>{item.title}</NavLink>
-        {item.description && <p className="muted">{item.description}</p>}</li>)}</ul>
-      <nav className="pagination" aria-label={t('Pagination')}><button className="secondary" disabled={page === 1} onClick={() => setPage(x => x - 1)}>{t('Previous page')}</button>
-        <span>{t('Page {page}', { page })}</span><button className="secondary" disabled={!data.nextPage} onClick={() => setPage(x => x + 1)}>{t('Next page')}</button></nav></>}
+    <form className="library-search" role="search" onSubmit={search} noValidate>
+      <div className="field"><label htmlFor="content-search">{t('Search content')}</label>
+        <input ref={input} id="content-search" type="text" enterKeyHint="search" maxLength={200} value={draftQuery}
+          aria-describedby={`content-search-hint${invalid ? ' content-search-error' : ''}`} aria-invalid={invalid || undefined}
+          onChange={e => { setDraftQuery(e.target.value); setInvalid(false); }}
+          onCompositionStart={() => { composing.current = true; }} onCompositionEnd={() => { composing.current = false; }}
+          onKeyDown={e => { if (e.key === 'Enter' && (composing.current || e.nativeEvent.isComposing || e.keyCode === 229)) e.preventDefault(); }} />
+        <p id="content-search-hint" className="hint">{t('Search title, description and teaching text. Accents matter.')}</p>
+        {invalid && <p id="content-search-error" role="alert" className="search-validation">{t('Use up to 200 characters without control characters.')}</p>}
+      </div>
+      <div className="actions"><button className="primary" type="submit">{t('Search')}</button>
+        <button className="secondary" type="button" onClick={clear}>{t('Clear search')}</button></div>
+    </form>
+    {query && <p className="applied-query">{t('Results for “{query}”', { query })}</p>}
+    {error ? <><div role="alert" className="notice error">{t(error)}</div><button className="secondary" onClick={() => { resetResults(); setRetry(x => x + 1); }}>{t('Try again')}</button></> : !data ? <Notice>{t('Loading content…')}</Notice> : <>
+      <p className="visually-hidden" role="status">{t('Content results loaded.')}</p>
+      {data.items.length === 0 ? <section className="empty"><h2>{page > 1 ? t('No results on this page') : query ? t('No matching content') : archived ? t('No archived content') : folder !== 'all' ? t('No content in this folder') : t('Your library is empty')}</h2>
+        <p>{page > 1 ? t('Return to the previous page or search again.') : query ? t('Try another search or clear it. Your folder and status filters stay selected.') : archived ? t('Archived texts will appear here. You can restore them at any time.') : folder !== 'all' ? t('Choose this folder in the text editor to organize your content here.') : t('Start with a title and add your teaching text when ready.')}</p></section> :
+        <ul className="content-list" aria-label={t('Content library')}>{data.items.map(item => <li key={item.id}><NavLink to={`/content/${item.id}`}>{item.title}</NavLink>
+          {item.description && <p className="muted">{item.description}</p>}</li>)}</ul>}
+      {(data.items.length > 0 || page > 1) && <nav className="pagination" aria-label={t('Pagination')}><button className="secondary" disabled={page === 1} onClick={() => { resetResults(); setPage(x => x - 1); }}>{t('Previous page')}</button>
+        <span>{t('Page {page}', { page })}</span><button className="secondary" disabled={!data.nextPage} onClick={() => { resetResults(); setPage(x => x + 1); }}>{t('Next page')}</button></nav>}
+    </>}
+
   </>;
 }
 

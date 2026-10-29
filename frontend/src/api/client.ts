@@ -4,6 +4,7 @@ export type Student = { id: string; displayName: string; username: string; activ
 export type Profile = Pick<Student, 'id' | 'displayName' | 'username'>;
 
 const messages: Partial<Record<string, MessageKey>> = {
+  invalid_content_search: 'Use up to 200 characters without control characters.',
   invalid_folder_name: 'Enter a folder name of 1–100 characters.',
   folder_name_exists: 'A folder with this name already exists here.',
   folder_cycle: 'Choose a parent outside this folder and its descendants.',

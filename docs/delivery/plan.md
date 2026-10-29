@@ -145,3 +145,7 @@ User approves transitioning the next recorded task into a subsequent conversatio
 ## C1c concrete proposal — 2026-10-29
 
 The [reviewable C1c proposal](c1c-text-search.md) defines invariant-uppercase/NFC literal search across title/description/body, accent-sensitive matching, explicit submission, existing direct-folder/archive filtering and stable pagination, safe tutor-only projections and bounded synthetic verification. Documentation planning/publication is authorized; implementation is pending user approval of that exact scope. Stop after proposal publication and hosted docs verification; the next implementation packet starts only after approval in a fresh bounded chat.
+
+## C1c approved execution — 2026-10-29
+
+User approved [C1c](c1c-text-search.md) implementation right here, superseding its fresh-chat-only start for this packet. Implemented literal normalized native-text search and bilingual controls with direct-filter/page/focus/request guards. [Evidence](../testing/evidence/c1c-text-search.md) records real local/hosted outcomes and publication state. Stop after C1c verification/publication; remaining tags/materials/questions/grants/activity and deployment require later bounded proposals/approval.

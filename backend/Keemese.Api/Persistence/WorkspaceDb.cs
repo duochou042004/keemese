@@ -93,6 +93,9 @@ public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : Identit
             e.Property(x => x.Title).HasMaxLength(200).IsRequired();
             e.Property(x => x.Description).HasMaxLength(2000).IsRequired();
             e.Property(x => x.Body).HasMaxLength(50000).IsRequired();
+            e.Property(x => x.SearchTitle).UseCollation("C").IsRequired();
+            e.Property(x => x.SearchDescription).UseCollation("C").IsRequired();
+            e.Property(x => x.SearchBody).UseCollation("C").IsRequired();
             e.Property(x => x.Version).IsConcurrencyToken();
             e.HasIndex(x => new { x.Archived, x.UpdatedAt, x.Id });
             e.HasIndex(x => new { x.FolderId, x.Archived, x.UpdatedAt, x.Id });

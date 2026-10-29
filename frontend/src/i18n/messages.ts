@@ -1,4 +1,15 @@
 export const vi = {
+  "Search content": "Tìm nội dung",
+  "Search": "Tìm kiếm",
+  "Clear search": "Xóa tìm kiếm",
+  "Search title, description and teaching text. Accents matter.": "Tìm trong tiêu đề, mô tả và nội dung giảng dạy. Phân biệt dấu tiếng Việt.",
+  "Use up to 200 characters without control characters.": "Nhập tối đa 200 ký tự, không dùng ký tự điều khiển.",
+  "Results for “{query}”": "Kết quả cho “{query}”",
+  "Content results loaded.": "Đã tải kết quả nội dung.",
+  "No matching content": "Không tìm thấy nội dung phù hợp",
+  "No results on this page": "Trang này không có kết quả",
+  "Return to the previous page or search again.": "Quay lại trang trước hoặc tìm kiếm lại.",
+  "Try another search or clear it. Your folder and status filters stay selected.": "Thử từ khóa khác hoặc xóa tìm kiếm. Bộ lọc thư mục và trạng thái được giữ nguyên.",
   "No content in this folder": "Thư mục này chưa có nội dung",
   "Choose this folder in the text editor to organize your content here.": "Chọn thư mục này khi soạn văn bản để sắp xếp nội dung vào đây.",
   "Folder organization": "Sắp xếp thư mục",
@@ -173,6 +184,17 @@ export const vi = {
 } as const;
 export type MessageKey = keyof typeof vi;
 export const en: Record<MessageKey, string> = {
+  "Search content": "Search content",
+  "Search": "Search",
+  "Clear search": "Clear search",
+  "Search title, description and teaching text. Accents matter.": "Search title, description and teaching text. Accents matter.",
+  "Use up to 200 characters without control characters.": "Use up to 200 characters without control characters.",
+  "Results for “{query}”": "Results for “{query}”",
+  "Content results loaded.": "Content results loaded.",
+  "No matching content": "No matching content",
+  "No results on this page": "No results on this page",
+  "Return to the previous page or search again.": "Return to the previous page or search again.",
+  "Try another search or clear it. Your folder and status filters stay selected.": "Try another search or clear it. Your folder and status filters stay selected.",
   "No content in this folder": "No content in this folder",
   "Choose this folder in the text editor to organize your content here.": "Choose this folder in the text editor to organize your content here.",
   "Folder organization": "Folder organization",
