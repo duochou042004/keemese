@@ -2,15 +2,15 @@
   "schema_version": 1,
   "updated_at": "2026-10-29",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "C1d tags implementation approved in this session",
-  "status": "c1d_local_acceptance_passed_publication_hosted_pending",
+  "phase": "C1d native-text tags complete",
+  "status": "c1d_complete_verified_implementation_published",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "712417aad5a9c90adee84352adffa7a5df4d1665",
-    "working_tree_status": "approved_C1d_changes_verified_locally_pending_reviewed_publication",
-    "note": "Clean C1d proposal baseline verified; implementation publication follows this milestone. No formal handoff/new chat requested.",
-    "implementation_commit": "f605ce420ad307ad6463184a9c360b79b7319116",
+    "commit": "80c45207899c22db0a834b73e5fd9ba5f8e177df",
+    "working_tree_status": "clean_origin_match_verified_after_C1d_implementation_before_completion_records",
+    "note": "C1d code80c4520 passed actual hosted full40905900325. Final record-only SHA/remote/clean-worktree/docs run follow this record and are checked in closing report. No formal handoff/new chat.",
+    "implementation_commit": "80c45207899c22db0a834b73e5fd9ba5f8e177df",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
     "default_branch": "develop"
@@ -27,7 +27,7 @@
       "Product work beyond bounded C1d native-text search; tags/files/questions/grants/assignments and remaining C1 decisions are deferred.",
       "Hosting/storage provisioning or purchases, deployment credentials/admin settings and product scope beyond bounded C1d."
     ],
-    "next_gate": "Finish approved C1d acceptance, frontend visual polish and reviewed publication/actual hosted full CI, then stop at C1d."
+    "next_gate": "C1d complete after final record publication/hosted docs check. Stop here; future product capability needs a separate concrete scope, retained-data migration/deployment/access remain gated."
   },
   "completed": [
     "Inspected CLI 0.164.0 help, documented lifecycle interfaces and exposed desktop thread metadata",
@@ -67,7 +67,8 @@
     "C1c local implementation: NFC/invariant-uppercase literal source search/internal transactional projections, safe q validation and bilingual explicit-submit/draft/filter/page/focus/late-response handling. Revised5 new API groups27.2s and4 browser16.9s; final full31 API50s/3 standalone DB12s/20 browser58.0s pass,80 new geometry/two actual zoom, agent visual review and six1000-row SQL plans under5s pass. Empty independent cleanup. Hosted publication pending.",
     "C1c publication: reviewed19 safe staged paths and normal-pushedf605ce420ad307ad6463184a9c360b79b7319116, exact remote/clean-worktree verified. Actual hosted full40806989055 passed31 API48s/3 DB6s/20 browser48.7s, helpers/docs/builds/strict TypeScript/rootless teardown and primary caches. Final completion records published subsequently; no app change after hosted proof.",
     "C1d planning: independently verified clean16eac44/origin and actual hosted docs40807494930 success, inspected focused spec/requirements/architecture/security and actual content/model/folder UI/DI/routes. Proposed optional reusable native-text tags, single-tag filtering, concurrency/compatibility/Unicode/limits/bilingual UX and bounded real acceptance. Five helpers and docs validation pass; product/locks/CI/helpers/original sources unchanged, no app/runtime tests rerun.",
-    "C1d local: catalog/explicit restrictive join/atomic compatible sets/live labels/single-tag filter and bilingual polished controls. Revised6 API groups36.8s; final complete37 API53s/original3 DB12s/24 browser1.3m pass, no skips/retries;96 new geometry/two actualzoom/screenshots reviewed. Final cost-only1/1 and catalog-retry browser1/1 pass; independent cleanup empty. Hosted publication pending."
+    "C1d local: catalog/explicit restrictive join/atomic compatible sets/live labels/single-tag filter and bilingual polished controls. Revised6 API groups36.8s; final complete37 API53s/original3 DB12s/24 browser1.3m pass, no skips/retries;96 new geometry/two actualzoom/screenshots reviewed. Final cost-only1/1 and catalog-retry browser1/1 pass; independent cleanup empty. Hosted publication pending.",
+    "C1d normal publication80c45207899c22db0a834b73e5fd9ba5f8e177df verified origin-equal/clean; actual hosted full40905900325 passed37 API1m12s/3 DB9s/24 browser1.4m, no skips/retries, pinned builds/TypeScript/helpers/docs/rootless teardown and primary caches. Frontend reviewed and current-session completion, no formal handoff/new chat. Final record publication follows."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; D04 provider direction accepted but sizes/region/retention/RPO/RTO/frontend topology unresolved; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
@@ -421,18 +422,22 @@
     {
       "check": "C1d final local build/restore/API/DB/browser/visual/cost/cleanup",
       "status": "passed_37_API53s_3_DB12s_24_browser1.3m_96_new_geometry_2_actual_zoom_5.99_min_new_contrast_cost1_target_browser1_no_skips_retries_empty_cleanup"
+    },
+    {
+      "check": "C1d actual hosted full40905900325 at80c45207899c22db0a834b73e5fd9ba5f8e177df",
+      "status": "passed_checks5s_verify4m13s_result3s_37_API72s_3_DB9s_24_browser1.4m_no_skips_retries_primary_caches_empty_teardown"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "c1d-publication-verification",
-    "action": "Review/stage/publish C1d changes normally, observe actual hosted full CI, then publish completion evidence and verify final docs/remote/clean-worktree. Stop at C1d; no formal handoff/new chat.",
+    "id": "remaining-C1-review-after-C1d",
+    "action": "Stop at completed C1d. On a new user request review remaining C1 capabilities/decisions and prepare a bounded concrete proposal; no automatic product continuation or formal handoff/new chat.",
     "inputs": [
-      "docs/delivery/c1d-text-tags.md",
+      "docs/delivery/plan.md",
       "docs/testing/evidence/c1d-text-tags.md"
     ],
-    "acceptance": "Final code actual full hosted pass plus reviewed normal publication/clean exact remote match."
+    "acceptance": "Further scope concretely reviewed before implementation; existing C1d code and publication preserved."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -562,5 +567,11 @@
     "Reviewed normal existing-branch commits/pushes only; no new chat, history retrieval/fork, subagent or other-chat message."
   ],
   "c1d_proposal": "docs/delivery/c1d-text-tags.md",
-  "c1d_evidence": "docs/testing/evidence/c1d-text-tags.md"
+  "c1d_evidence": "docs/testing/evidence/c1d-text-tags.md",
+  "c1d_implementation_commit": "80c45207899c22db0a834b73e5fd9ba5f8e177df",
+  "c1d_side_effects": [
+    "Existing pinned rootless PostgreSQL image/tools reused; locked npm ci and exact local browser/FFmpeg cache restored. Ignored synthetic screenshots/measurements remain local, tracked synthetic-only qa.json UUID changes verified/restored. Independent containers/volumes/markers/profiles/test processes empty.",
+    "Normal reviewed existing-branch publication plus actual hosted full40905900325 using unchanged workflow/primary caches; no success artifact. No dependency/lock/helper/CI/original-source/global/provider/access/persistent database/migration/deployment/merge/history change.",
+    "No formal handoff, new chat, model change, delegation or other-chat retrieval/messaging. Required canonical current-state/evidence records maintained."
+  ]
 }
