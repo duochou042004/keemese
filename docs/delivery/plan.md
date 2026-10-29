@@ -153,3 +153,7 @@ User approved [C1c](c1c-text-search.md) implementation right here, superseding i
 ## Next recorded review: C1d native-text tags — 2026-10-29
 
 User requests the next recorded steps here. Completed [C1d proposal](c1d-text-tags.md): tutor-defined optional reusable tag catalog,0–20 tags per existing source, unused-only deletion, atomic assignments and single-tag/untagged filtering combined with current folder/archive/search. Chosen before files/questions/grants because those need unresolved storage/work/snapshot policy. This is documentation planning/publication; implementation requires approval of the concrete proposal. No application/global/CI/dependency/persistent DB/provider scope inferred. Stop after normal proposal publication and hosted docs verification.
+
+## C1d approved implementation — 2026-10-29
+
+User approved [C1d](c1d-text-tags.md) in this session, requested no formal handoff and frontend polish. Native-text tags/catalog/atomic assignments/direct filtering are implemented; [evidence](../testing/evidence/c1d-text-tags.md) owns actual verification and publication. No automatic continuation into files/questions/grants/student activity/deployment. Keep current-state evidence, verify hosted full and normal branch publication, then stop at C1d.

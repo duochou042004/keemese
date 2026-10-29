@@ -27,7 +27,7 @@ public sealed class ContentSearchTests(ITestOutputHelper output)
         Assert.Equal(HttpStatusCode.OK, response.StatusCode); Assert.Equal("no-store", response.Headers.CacheControl!.ToString());
         var json = await response.Content.ReadFromJsonAsync<JsonElement>();
         foreach (var item in json.GetProperty("items").EnumerateArray())
-            Assert.Equal(new[] { "archived", "createdAt", "description", "folderId", "id", "title", "updatedAt", "version" }, item.EnumerateObject().Select(x => x.Name).Order().ToArray());
+            Assert.Equal(new[] { "archived", "createdAt", "description", "folderId", "id", "tags", "title", "updatedAt", "version" }, item.EnumerateObject().Select(x => x.Name).Order().ToArray());
         return json.GetProperty("items").EnumerateArray().Select(x => x.GetProperty("id").GetGuid()).ToArray();
     }
     [Fact]

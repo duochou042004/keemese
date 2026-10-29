@@ -22,11 +22,17 @@ public sealed class TextContent
     public DateTimeOffset CreatedAt { get; set; }
     public DateTimeOffset UpdatedAt { get; set; }
 }
-public sealed record TextDraft(string? Title, string? Description, string? Body, Guid? FolderId = null);
-public sealed record EditText(string? Title, string? Description, string? Body, long Version, Guid? FolderId = null);
+public sealed record TextDraft(string? Title, string? Description, string? Body, Guid? FolderId = null, Guid[]? TagIds = null);
+public sealed record EditText(string? Title, string? Description, string? Body, long Version, Guid? FolderId = null, Guid[]? TagIds = null);
 public sealed record ContentVersion(long Version);
-public sealed record TextSummary(Guid Id, string Title, string Description, bool Archived, long Version, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, Guid? FolderId);
-public sealed record TextDetail(Guid Id, string Title, string Description, string Body, bool Archived, long Version, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, Guid? FolderId);
+public sealed record TextSummary(Guid Id, string Title, string Description, bool Archived, long Version, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, Guid? FolderId)
+{
+    public AssignedTag[] Tags { get; init; } = [];
+}
+public sealed record TextDetail(Guid Id, string Title, string Description, string Body, bool Archived, long Version, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt, Guid? FolderId)
+{
+    public AssignedTag[] Tags { get; init; } = [];
+}
 
 public static class TextSearch
 {
@@ -58,7 +64,11 @@ public sealed class TextLibrary(WorkspaceDb db, IdentityService identity, TimePr
         if (description.Length > 2000 || body.Length > 50000 || description.Contains('\0') || body.Contains('\0') || !TextSearch.ValidUnicode(description) || !TextSearch.ValidUnicode(body)) throw new ApiFault(400, "invalid_content_text");
         return (title, description, body);
     }
-    private static TextDetail Detail(TextContent x) => new(x.Id, x.Title, x.Description, x.Body, x.Archived, x.Version, x.CreatedAt, x.UpdatedAt, x.FolderId);
+    private async Task<TextDetail> DetailAsync(TextContent x)
+    {
+        var labels = await ContentTags.LabelsAsync(db, [x.Id]);
+        return new(x.Id, x.Title, x.Description, x.Body, x.Archived, x.Version, x.CreatedAt, x.UpdatedAt, x.FolderId) { Tags = labels.GetValueOrDefault(x.Id, []) };
+    }
     public async Task<TextDetail> CreateAsync(TextDraft draft, Guid actor)
     {
         await using var tx = await db.Database.BeginTransactionAsync(); await db.LockContentAsync();
@@ -66,24 +76,35 @@ public sealed class TextLibrary(WorkspaceDb db, IdentityService identity, TimePr
         var (title, description, body) = Validate(draft.Title, draft.Description, draft.Body);
         var item = new TextContent { AuthorId = actor, FolderId = draft.FolderId, Title = title, Description = description, Body = body, CreatedAt = time.GetUtcNow(), UpdatedAt = time.GetUtcNow() };
         TextSearch.Project(item);
-        db.TextContents.Add(item); identity.Audit("content_create", item.Id, actor);
+        db.TextContents.Add(item);
+        await ContentTags.ReplaceAsync(db, item.Id, draft.TagIds ?? []);
+        identity.Audit("content_create", item.Id, actor);
         await db.SaveChangesAsync(); // Content and audit share EF's atomic SaveChanges transaction.
-        await tx.CommitAsync(); return Detail(item);
+        var detail = await DetailAsync(item); await tx.CommitAsync(); return detail;
     }
     private async Task ValidateFolderAsync(Guid? folder)
     {
         if (folder is Guid id && !await db.ContentFolders.AnyAsync(x => x.Id == id)) throw new ApiFault(404, "folder_missing");
     }
-    public async Task<TextDetail> GetAsync(Guid id) => Detail(await db.TextContents.AsNoTracking().SingleOrDefaultAsync(x => x.Id == id)
-        ?? throw new ApiFault(404, "content_missing"));
-    public async Task<List<TextSummary>> ListAsync(bool archived, int page, int size, bool filterFolder, Guid? folder, string query = "")
+    public async Task<TextDetail> GetAsync(Guid id)
     {
+        await using var tx = await db.Database.BeginTransactionAsync(System.Data.IsolationLevel.RepeatableRead);
+        var item = await db.TextContents.AsNoTracking().SingleOrDefaultAsync(x => x.Id == id) ?? throw new ApiFault(404, "content_missing");
+        var detail = await DetailAsync(item); await tx.CommitAsync(); return detail;
+    }
+    public async Task<List<TextSummary>> ListAsync(bool archived, int page, int size, bool filterFolder, Guid? folder, string query = "", bool filterTag = false, Guid? tag = null)
+    {
+        await using var tx = await db.Database.BeginTransactionAsync(System.Data.IsolationLevel.RepeatableRead);
         var rows = db.TextContents.AsNoTracking().Where(x => x.Archived == archived && (!filterFolder || x.FolderId == folder));
+        if (filterTag) rows = tag is Guid tagId ? rows.Where(x => db.TextContentTags.Any(t => t.TextContentId == x.Id && t.TagId == tagId)) : rows.Where(x => !db.TextContentTags.Any(t => t.TextContentId == x.Id));
         if (query.Length > 0)
             rows = rows.Where(x => x.SearchTitle.IndexOf(query) >= 0 || x.SearchDescription.IndexOf(query) >= 0 || x.SearchBody.IndexOf(query) >= 0);
-        return await rows.OrderByDescending(x => x.UpdatedAt).ThenBy(x => x.Id)
+        var summaries = await rows.OrderByDescending(x => x.UpdatedAt).ThenBy(x => x.Id)
             .Skip((page - 1) * size).Take(size + 1)
             .Select(x => new TextSummary(x.Id, x.Title, x.Description, x.Archived, x.Version, x.CreatedAt, x.UpdatedAt, x.FolderId)).ToListAsync();
+        var labels = await ContentTags.LabelsAsync(db, summaries.Select(x => x.Id).ToArray());
+        var result = summaries.Select(x => x with { Tags = labels.GetValueOrDefault(x.Id, []) }).ToList();
+        await tx.CommitAsync(); return result;
     }
     public async Task<TextDetail> UpdateAsync(Guid id, long version, EditText? draft, bool? archived, Guid actor)
     {
@@ -96,17 +117,18 @@ public sealed class TextLibrary(WorkspaceDb db, IdentityService identity, TimePr
             await ValidateFolderAsync(draft.FolderId); item.FolderId = draft.FolderId;
             (item.Title, item.Description, item.Body) = Validate(draft.Title, draft.Description, draft.Body);
             TextSearch.Project(item);
+            if (draft.TagIds is not null) await ContentTags.ReplaceAsync(db, item.Id, draft.TagIds);
         }
         else
         {
-            if (item.Archived == archived) return Detail(item); // Current-version retry has no duplicate audit.
+            if (item.Archived == archived) return await DetailAsync(item); // Current-version retry has no duplicate audit.
             item.Archived = archived!.Value;
         }
         item.Version++; item.UpdatedAt = time.GetUtcNow();
         identity.Audit(draft is not null ? "content_edit" : archived == true ? "content_archive" : "content_restore", item.Id, actor);
         try { await db.SaveChangesAsync(); }
         catch (DbUpdateConcurrencyException) { throw new ApiFault(409, "content_stale"); }
-        await tx.CommitAsync(); return Detail(item);
+        var detail = await DetailAsync(item); await tx.CommitAsync(); return detail;
     }
 }
 
@@ -117,9 +139,9 @@ public static class ContentRoutes
         var routes = app.MapGroup("/api/v1/content");
         routes.MapGet("", async (HttpContext c, TextLibrary library) =>
         {
-            if (c.Request.Query.Keys.Any(x => x is not ("page" or "pageSize" or "archived" or "folderId" or "q"))) throw new ApiFault(400, "invalid_pagination");
+            if (c.Request.Query.Keys.Any(x => x is not ("page" or "pageSize" or "archived" or "folderId" or "q" or "tagId"))) throw new ApiFault(400, "invalid_pagination");
             foreach (var entry in c.Request.Query)
-                if (entry.Value.Count != 1) throw new ApiFault(400, entry.Key == "q" ? "invalid_content_search" : "invalid_pagination");
+                if (entry.Value.Count != 1) throw new ApiFault(400, entry.Key == "q" ? "invalid_content_search" : entry.Key == "tagId" ? "invalid_tag_filter" : "invalid_pagination");
             var query = TextSearch.Query(c.Request.Query["q"].ToString());
             static int Number(string? value, int fallback, int max) => value is null ? fallback : int.TryParse(value, out var n) && n >= 1 && n <= max ? n : throw new ApiFault(400, "invalid_pagination");
             var page = Number(c.Request.Query["page"], 1, 1000000); var size = Number(c.Request.Query["pageSize"], 25, 100);
@@ -129,7 +151,11 @@ public static class ContentRoutes
             Guid? folder = null;
             if (filterFolder && c.Request.Query["folderId"] != "unfiled")
                 folder = Guid.TryParse(c.Request.Query["folderId"], out var id) ? id : throw new ApiFault(400, "invalid_pagination");
-            var rows = await library.ListAsync(filter == "true", page, size, filterFolder, folder, query);
+            var filterTag = c.Request.Query.ContainsKey("tagId");
+            Guid? tag = null;
+            if (filterTag && c.Request.Query["tagId"] != "untagged")
+                tag = Guid.TryParse(c.Request.Query["tagId"], out var tagId) ? tagId : throw new ApiFault(400, "invalid_tag_filter");
+            var rows = await library.ListAsync(filter == "true", page, size, filterFolder, folder, query, filterTag, tag);
             return Results.Ok(new { items = rows.Take(size), nextPage = rows.Count > size && page < 1000000 ? (int?)(page + 1) : null });
         });
         routes.MapGet("/{id:guid}", async (Guid id, TextLibrary library) => Results.Ok(await library.GetAsync(id)));

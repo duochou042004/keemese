@@ -42,6 +42,8 @@ public sealed class AuditEntry
 public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : IdentityDbContext<Account, IdentityRole<Guid>, Guid>(options)
 {
     public DbSet<ContentFolder> ContentFolders => Set<ContentFolder>();
+    public DbSet<ContentTag> ContentTags => Set<ContentTag>();
+    public DbSet<TextContentTag> TextContentTags => Set<TextContentTag>();
     public DbSet<TextContent> TextContents => Set<TextContent>();
     public DbSet<StudentProfile> Students => Set<StudentProfile>();
     public DbSet<LoginSession> Sessions => Set<LoginSession>();
@@ -87,6 +89,28 @@ public sealed class WorkspaceDb(DbContextOptions<WorkspaceDb> options) : Identit
                 t.HasCheckConstraint("folder_version", "\"Version\" > 0");
                 t.HasCheckConstraint("folder_not_self", "\"ParentId\" IS NULL OR \"ParentId\" <> \"Id\"");
             });
+        });
+        model.Entity<ContentTag>(e =>
+        {
+            e.Property(x => x.Name).HasMaxLength(50).IsRequired();
+            e.Property(x => x.NormalizedName).UseCollation("C").IsRequired();
+            e.HasIndex(x => x.NormalizedName).IsUnique();
+            e.Property(x => x.Version).IsConcurrencyToken();
+            e.HasOne<Account>().WithMany().HasForeignKey(x => new { x.AuthorId, x.AuthorRole })
+                .HasPrincipalKey(x => new { x.Id, x.Role }).OnDelete(DeleteBehavior.Restrict);
+            e.ToTable(t =>
+            {
+                t.HasCheckConstraint("tag_author_role", "\"AuthorRole\" = 'Tutor'");
+                t.HasCheckConstraint("tag_name", "length(btrim(\"Name\")) BETWEEN 1 AND 50");
+                t.HasCheckConstraint("tag_version", "\"Version\" > 0");
+            });
+        });
+        model.Entity<TextContentTag>(e =>
+        {
+            e.HasKey(x => new { x.TextContentId, x.TagId });
+            e.HasIndex(x => new { x.TagId, x.TextContentId });
+            e.HasOne<TextContent>().WithMany().HasForeignKey(x => x.TextContentId).OnDelete(DeleteBehavior.Restrict);
+            e.HasOne(x => x.Tag).WithMany().HasForeignKey(x => x.TagId).OnDelete(DeleteBehavior.Restrict);
         });
         model.Entity<TextContent>(e =>
         {

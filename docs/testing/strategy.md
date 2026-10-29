@@ -61,3 +61,7 @@ C1b update — 2026-10-29: five real API folder test groups and three browser fo
 ## C1c search verification — 2026-10-29
 
 [C1c evidence](evidence/c1c-text-search.md) records five added real API/PostgreSQL groups, four browser scenarios,80 search geometry/language cases and two actual200% zoom cases, SQL parameterization and six bounded1000-row query plans. Retain26 API/3 standalone DB/16 browser baseline cases. Exact passed/failed/full/targeted/hosted outcomes belong to the evidence rather than these planned counts. No production throughput, screen-reader or cross-browser claim.
+
+## C1d tag acceptance — 2026-10-29
+
+[C1d evidence](evidence/c1d-text-tags.md) records six new API/PostgreSQL groups and four browser scenarios,96 additional bilingual geometry cases/two actual200% zoom cases, guarded draft/race/access flows, real relational failure rollback, bounded20,000-link query plans and final local/hosted outcomes. Retain31 API/3 standalone DB/20 browser baseline cases. An empty tag catalog must not introduce a useless keyboard stop; existing library Tab assertions remain unchanged. Counts and planned/failed/passed distinctions belong to the evidence.

@@ -92,3 +92,7 @@ C1b schema note — 2026-10-29: new folders/nullable text folder assignment exis
 ## C1c retained-data release boundary — 2026-10-29
 
 Search adds three internal C-collated normalized text projections in disposable test schema only. Existing retained databases must not be run against the new model until an approved versioned migration/backfill and verification plan populates all source projections. There is no startup migration or deployment operation in C1c. Runtime/Unicode upgrade planning must include fixture checks and any projection rebuild. GET q transits infrastructure: production request-log query redaction remains a release prerequisite; no query logging/telemetry added by this packet. See [C1c](../delivery/c1c-text-search.md).
+
+## C1d retained-data boundary — 2026-10-29
+
+Tags introduce catalog/join tables, explicit restrictive FKs, normalized uniqueness and reverse tag lookup index in disposable test schema only. No startup or retained-data migration ran. Deployment must first approve versioned schema/backfill covering C1b/C1c/C1d; existing sources would start with no tag links. Tag normalization/runtime upgrade policy must preserve uniqueness deliberately. No provider/provisioning/access/key/secret change in this packet. See [C1d](../delivery/c1d-text-tags.md).

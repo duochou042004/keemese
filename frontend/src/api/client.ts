@@ -4,6 +4,15 @@ export type Student = { id: string; displayName: string; username: string; activ
 export type Profile = Pick<Student, 'id' | 'displayName' | 'username'>;
 
 const messages: Partial<Record<string, MessageKey>> = {
+  invalid_tag_name: 'Enter a tag name of 1–50 characters without control characters.',
+  invalid_content_tags: 'Choose up to 20 different tags.',
+  invalid_tag_filter: 'Choose a valid tag filter.',
+  tag_missing: 'This tag could not be found. Your draft is kept.',
+  tag_name_exists: 'A tag with this name already exists.',
+  tag_stale: 'This tag has changed. Your draft is kept. Reload before trying again.',
+  tag_in_use: 'Remove this tag from all active and archived texts before deleting it.',
+  tag_limit: 'The library supports up to 1,000 tags.',
+
   invalid_content_search: 'Use up to 200 characters without control characters.',
   invalid_folder_name: 'Enter a folder name of 1–100 characters.',
   folder_name_exists: 'A folder with this name already exists here.',

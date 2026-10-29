@@ -92,3 +92,7 @@ C1b local implementation (2026-10-29): ContentFolder self-parent and TextContent
 ## C1c source search projections — 2026-10-29
 
 Native text retains original display fields plus three internal NFC/invariant-uppercase C-collated search projections. Content service create/edit updates them in the existing transaction/version/audit boundary; searches are read-only and server-side, without student associations or activity. Extra storage/write work buys explicit bilingual matching semantics; arbitrary substring scans remain unindexed. Existing filter/order B-trees are retained. No search extension/service/cache/dependency added. Retained-data migration/backfill and log redaction before deployment remain separately gated; see [C1c](../delivery/c1c-text-search.md).
+
+## C1d tag metadata — 2026-10-29
+
+Explicit ContentTag/TextContentTag catalog/join, normalized unique key, composite link PK/reverse lookup index and restrictive FKs extend native source organization. Catalog/assignment writes share the existing content transaction lock with atomic audit/version guards; source lifecycle and archived references remain intact. Rename changes live metadata labels, not content bytes/version/history. Paired source/label reads use repeatable snapshots; write responses read their labels under the write transaction. Existing filter/order/search semantics persist, with one label batch per nonempty page. No student/activity connection, external service or migration operation. See [C1d](../delivery/c1d-text-tags.md).
