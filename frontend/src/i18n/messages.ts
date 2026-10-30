@@ -1,4 +1,17 @@
 export const vi = {
+  "Create a copy": "Tạo bản sao",
+  "Save or discard your edits before creating a copy.": "Lưu hoặc bỏ các thay đổi trước khi tạo bản sao.",
+  "New text from a copy": "Nội dung mới từ bản sao",
+  "Nothing is saved until you create the copy.": "Bản sao chỉ được lưu khi bạn chọn tạo bản sao.",
+  "Source: {name}": "Nguồn: {name}",
+  "Create copy": "Tạo bản sao",
+  "Cancel copy": "Hủy bản sao",
+  "Discard this copy draft and return to the source?": "Bỏ bản nháp của bản sao và trở về nội dung nguồn?",
+  "Discard copy": "Bỏ bản sao",
+  "Keep editing": "Tiếp tục chỉnh sửa",
+  "Remove or replace unavailable folders and tags before creating the copy.": "Bỏ hoặc thay thế thư mục và nhãn không còn khả dụng trước khi tạo bản sao.",
+  "The copy may have been saved. Check the library before trying again; retrying may create another copy.": "Bản sao có thể đã được lưu. Hãy kiểm tra thư viện trước khi thử lại; thử lại có thể tạo thêm một bản sao.",
+
   "+{count} more tags": "+{count} nhãn khác",
   "Tags": "Nhãn",
   "Tags (optional)": "Nhãn (không bắt buộc)",
@@ -225,6 +238,19 @@ export const vi = {
 } as const;
 export type MessageKey = keyof typeof vi;
 export const en: Record<MessageKey, string> = {
+  "Create a copy": "Create a copy",
+  "Save or discard your edits before creating a copy.": "Save or discard your edits before creating a copy.",
+  "New text from a copy": "New text from a copy",
+  "Nothing is saved until you create the copy.": "Nothing is saved until you create the copy.",
+  "Source: {name}": "Source: {name}",
+  "Create copy": "Create copy",
+  "Cancel copy": "Cancel copy",
+  "Discard this copy draft and return to the source?": "Discard this copy draft and return to the source?",
+  "Discard copy": "Discard copy",
+  "Keep editing": "Keep editing",
+  "Remove or replace unavailable folders and tags before creating the copy.": "Remove or replace unavailable folders and tags before creating the copy.",
+  "The copy may have been saved. Check the library before trying again; retrying may create another copy.": "The copy may have been saved. Check the library before trying again; retrying may create another copy.",
+
   "+{count} more tags": "+{count} more tags",
   "Tags": "Tags",
   "Tags (optional)": "Tags (optional)",

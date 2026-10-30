@@ -65,3 +65,7 @@ C1b update — 2026-10-29: five real API folder test groups and three browser fo
 ## C1d tag acceptance — 2026-10-29
 
 [C1d evidence](evidence/c1d-text-tags.md) records six new API/PostgreSQL groups and four browser scenarios,96 additional bilingual geometry cases/two actual200% zoom cases, guarded draft/race/access flows, real relational failure rollback, bounded20,000-link query plans and final local/hosted outcomes. Retain31 API/3 standalone DB/20 browser baseline cases. An empty tag catalog must not introduce a useless keyboard stop; existing library Tab assertions remain unchanged. Counts and planned/failed/passed distinctions belong to the evidence.
+
+## C1e copy acceptance — 2026-10-30
+
+[C1e evidence](evidence/c1e-text-copy.md) records eight real API/PostgreSQL-backed browser scenarios added to the retained24,64 new bilingual geometry cases/two actual200% zoom cases, source integrity/payloads, pending/stale/dirty guards, metadata deletion/repair, response ownership, uncertain committed outcomes and real session/student denial. Retained37 API/3 standalone DB remain required locally. Actual hosted classification matters: E2E test-file additions currently select full; frontend-source-only changes select frontend and skip API/standalone DB. Report observed jobs/counts, not the proposed label.

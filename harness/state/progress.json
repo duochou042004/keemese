@@ -2,14 +2,14 @@
   "schema_version": 1,
   "updated_at": "2026-10-30",
   "timezone": "Asia/Ho_Chi_Minh",
-  "phase": "C1e approved; fresh Sol Medium execution",
-  "status": "C1e_approved_fresh_chat_launch_pending",
+  "phase": "C1e final review and publication",
+  "status": "C1e_local_verified_publication_pending",
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "c8396e49170d0beb33df71b78509d31e6278905d",
-    "working_tree_status": "clean_origin_match_verified_before_final_evidence_record",
-    "note": "C1e proposal c8396e4 verified equal origin/clean with actual hosted docs40915607558 success. Final evidence-only commit follows; resolve current HEAD from Git. Application unchanged80c4520.",
+    "commit": "39c79e0854c2b2a7d7ba39817c20770d69e6ca99",
+    "working_tree_status": "C1e_reviewed_changes_pending_commit",
+    "note": "Launch39c79e0 equal origin/clean/hosted docs40988451931 verified. Local C1e proof complete; final implementation SHA follows publication.",
     "implementation_commit": "80c45207899c22db0a834b73e5fd9ba5f8e177df",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
@@ -69,20 +69,29 @@
     "C1d planning: independently verified clean16eac44/origin and actual hosted docs40807494930 success, inspected focused spec/requirements/architecture/security and actual content/model/folder UI/DI/routes. Proposed optional reusable native-text tags, single-tag filtering, concurrency/compatibility/Unicode/limits/bilingual UX and bounded real acceptance. Five helpers and docs validation pass; product/locks/CI/helpers/original sources unchanged, no app/runtime tests rerun.",
     "C1d local: catalog/explicit restrictive join/atomic compatible sets/live labels/single-tag filter and bilingual polished controls. Revised6 API groups36.8s; final complete37 API53s/original3 DB12s/24 browser1.3m pass, no skips/retries;96 new geometry/two actualzoom/screenshots reviewed. Final cost-only1/1 and catalog-retry browser1/1 pass; independent cleanup empty. Hosted publication pending.",
     "C1d normal publication80c45207899c22db0a834b73e5fd9ba5f8e177df verified origin-equal/clean; actual hosted full40905900325 passed37 API1m12s/3 DB9s/24 browser1.4m, no skips/retries, pinned builds/TypeScript/helpers/docs/rootless teardown and primary caches. Frontend reviewed and current-session completion, no formal handoff/new chat. Final record publication follows.",
-    "C1e planning: verified clean launch1a599d8/origin and hosted docs40914758300; assessed copy versus materials/questions/grants, inspected actual APIs/editor/session/client and focused requirements, prepared concrete copy-draft proposal with no new schema/endpoint. Implementation unapproved."
+    "C1e planning: verified clean launch1a599d8/origin and hosted docs40914758300; assessed copy versus materials/questions/grants, inspected actual APIs/editor/session/client and focused requirements, prepared concrete copy-draft proposal with no new schema/endpoint. Implementation unapproved.",
+    "C1e scoped copy route/editor: real local37 API/3 DB/32 browser plus final focused8 extension,64 new geometry/two actual zoom, agent screenshot review; publication/actual hosted pending."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; D04 provider direction accepted but sizes/region/retention/RPO/RTO/frontend topology unresolved; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automatic controller remains unimplemented.",
-    "Remaining content duplication/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. Persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending."
+    "Remaining question duplication/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. Native-text copying is implemented only. Persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending."
   ],
   "changed_files": [
-    "docs/README.md",
+    "docs/delivery/c1e-text-copy.md",
     "docs/delivery/plan.md",
-    "docs/delivery/next-c1-goal-handoff.md",
-    "harness/state/progress.json",
+    "docs/frontend/design.md",
+    "docs/testing/strategy.md",
+    "frontend/src/App.tsx",
+    "frontend/src/content/Library.tsx",
+    "frontend/src/i18n/messages.ts",
+    "frontend/src/styles.css",
+    "harness/learning/lessons.jsonl",
+    "harness/logs/build-log.md",
     "harness/state/handoff.md",
-    "harness/logs/build-log.md"
+    "harness/state/progress.json",
+    "docs/testing/evidence/c1e-text-copy.md",
+    "frontend/e2e/text-copy.spec.ts"
   ],
   "preserved_source_files": [
     "docs/spec/personal_english_tutor_teaching_workspace_spec.md",
@@ -412,17 +421,25 @@
     {
       "check": "Follow-up handoff documentation/helper and preservation validation",
       "status": "passed_5_helpers_16_JSON_1_JSONL_42_Markdown_205_targets_61_rows_whitespace_no_application_tests_rerun_publication_hosted_checks_follow_record"
+    },
+    {
+      "check": "C1e locked builds/restores, local retained API/DB/browser plus final focused extensions and agent visual review",
+      "status": "passed_37_API52s_3_DB12s_32_browser1.4m_focused8_22.1s_64_geometry_2_actual_zoom_no_skips_retries"
+    },
+    {
+      "check": "C1e independent cleanup/preservation/helper/docs validation",
+      "status": "passed_empty_processes_containers_volumes_markers_profiles_37_protected_files_equal_launch_5_helpers_16_JSON_1_JSONL_44_Markdown_216_targets_61_rows_whitespace"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
   "evidence": "harness/logs/build-log.md",
   "next_single_task": {
-    "id": "C1e-approved-implementation",
-    "action": "Execute docs/delivery/c1e-text-copy.md in new GPT-6.1 Sol Medium local chat; verify, publish and stop.",
+    "id": "C1e-final-publication",
+    "action": "Review/stage/commit/normal push C1e; verify actual hosted mode/results and clean exact remote equality; record evidence then stop.",
     "inputs": [
-      "docs/delivery/c1e-text-copy.md"
+      "docs/testing/evidence/c1e-text-copy.md"
     ],
-    "acceptance": "Concrete C1e behavior, real verification, frontend visual review, canonical evidence, exact remote/clean worktree and actual applicable hosted CI."
+    "acceptance": "Reviewed safe publication, actual hosted evidence and final clean local/origin equality."
   },
   "h0_changed_files": [
     "docs/agents/context-safety.md",
@@ -565,5 +582,6 @@
     "local": "passed: 5 helpers, 16 JSON, 1 JSONL, 43 Markdown, 210 targets, 61 requirement rows and whitespace",
     "application": "unchanged; tests/visual QA not rerun",
     "publication": "passed c8396e49170d0beb33df71b78509d31e6278905d exact origin match/clean and actual hosted docs40915607558: checks6s/result3s, runtime verify skipped. Final evidence-only record publication verified in closing report."
-  }
+  },
+  "c1e_evidence": "docs/testing/evidence/c1e-text-copy.md"
 }

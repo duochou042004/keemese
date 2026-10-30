@@ -70,7 +70,7 @@ export function App() {
   else if (!session) content = <Login api={api} signedIn={signedIn} flash={flash} />;
   else if (session.mustChangePassword || path === '/auth/password') content = <ChangePassword api={api} mandatory={session.mustChangePassword} changed={changed} />;
   else if (session.role === 'Tutor' && path === '/content') content = <ContentLibrary api={api} />;
-  else if (session.role === 'Tutor' && (path === '/content/new' || /^\/content\/[a-f0-9-]{36}$/i.test(path))) content = <ContentEditor api={api} id={path === '/content/new' ? undefined : path.split('/')[2]} justCreated={createdContentId === path.split('/')[2]} created={id => { setCreatedContentId(id); navigate(`/content/${id}`, true); }} />;
+  else if (session.role === 'Tutor' && (path === '/content/new' || /^\/content\/[a-f0-9-]{36}(?:\/copy)?$/i.test(path))) content = <ContentEditor key={path} copy={path.endsWith('/copy')} api={api} id={path === '/content/new' ? undefined : path.split('/')[2]} justCreated={createdContentId === path.split('/')[2]} created={id => { setCreatedContentId(id); navigate(`/content/${id}`, true); }} />;
   else if (session.role === 'Tutor' && path === '/students') content = <StudentList api={api} />;
   else if (session.role === 'Tutor' && path === '/students/new') content = <CreateStudent api={api} created={created} />;
   else if (session.role === 'Tutor' && /^\/students\/[a-f0-9-]{36}$/i.test(path)) content = <StudentDetail api={api} id={path.split('/')[2]} flash={createdId === path.split('/')[2] ? "Account created. Share the temporary password with the student privately." : ''} />;

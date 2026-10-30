@@ -165,3 +165,7 @@ User now requests a formal handover into a follow-up conversation in goal mode, 
 ## Next concrete proposal: C1e text copy — 2026-10-29
 
 The bounded follow-up review recommends [C1e copy draft](c1e-text-copy.md): tutor starts an editable new text from saved active/archived text, explicitly saves through existing create API, and keeps source unchanged. Existing folders/search/tags are complete. No new endpoint/schema or storage/question/grant policy is required. Proposal defines exact snapshot/metadata-race/uncertain-save behavior, bilingual polished UI, permitted paths and future real verification. Native-text duplication is an explicit narrow authoring interpretation for approval; no question/template/activity implementation implied. Documentation publication is authorized; C1e implementation is not. Stop for approval, then use a fresh bounded chat under manual context policy.
+
+## C1e approved execution — 2026-10-30
+
+User explicitly accepted [C1e](c1e-text-copy.md) in a fresh chat. Tutor-only saved active/archived text copying is implemented through existing GET/create, with ephemeral editable draft, unchanged source, bilingual guards/metadata repair/uncertain-save handling. [Executed evidence](../testing/evidence/c1e-text-copy.md) owns real checks and publication. This supersedes the proposal's pending-approval statement above. Stop after verified normal publication; broader C1/A3/files/questions/grants/activity/production scope remains deferred.

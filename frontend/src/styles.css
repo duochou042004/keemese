@@ -172,3 +172,7 @@ textarea { resize: vertical; line-height: 1.6; }
 .library-organization > .folder-panel, .library-organization > .tag-panel { min-width: 0; border: 0; padding: 0; margin: 0; }
 .library-organization > section:has(form) { grid-column: 1 / -1; }
 @media (max-width: 900px) { .library-organization { grid-template-columns: minmax(0, 1fr); gap: 24px; } .library-organization > .folder-panel { padding-bottom: 24px; border-bottom: 1px solid var(--line); } }
+
+/* Saved-source context belongs to the copy draft, separate from editable fields. */
+.content-editor .copy-context { margin: -12px 0 28px; padding: 16px 20px; border-left: 3px solid var(--line); background: #f7f9fc; overflow-wrap: anywhere; }
+.content-editor .copy-context p + p { margin-top: 8px; font-size: .875rem; }
