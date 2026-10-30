@@ -31,4 +31,8 @@ Independent final processes/containers/volumes/cleanup markers/zoom profiles are
 
 ## Publication and hosted verification
 
-Pending at local evidence milestone. The unchanged classifier treats E2E test-file changes as `full`, although frontend-source-only changes select `frontend`. Therefore this approved test addition will also execute hosted API/standalone DB suites; do not report a frontend-mode run as full or claim skipped tests ran. Actual SHA/mode/run/results and final clean remote equality will be recorded after publication. CI/helpers and budgets remain unchanged.
+Reviewed14 safe staged text paths, common credential-signature scan, no generated images/QA/secrets and clean staged whitespace. Normal-published implementation `d0e81289be4c67924955a897067954467fb28629` to origin/feature/f0-foundation; exact remote equality and clean worktree verified.
+
+Actual [hosted run40989431166](https://github.com/duochou042004/keemese/actions/runs/40989431166) passed at that SHA. Observed mode **full**, checks6s/verify4m5s/result2s;37 API1m10s/3 standalone DB8s/32 browser1.6m,0 failures/skips/retries. Locked restores/builds/strict TypeScript,5 helpers,16 JSON/1 JSONL/44 Markdown/217 targets/61 rows, real rootless Podman4.9.3 and independent teardown passed. NuGet/npm primary cache hits; no success artifact. This is actual full-mode evidence: the unchanged classifier treats approved E2E test-file changes as full; frontend-source-only mode would skip API/standalone DB. No classifier/helper/CI or budget change.
+
+No product change follows hosted proof. This completion-only documentation record is published normally and checked through actual docs-only CI; resolve its final SHA/run, remote equality and clean worktree in Git/Actions/closing report to avoid a self-referential record loop. Stop after C1e; further product work needs its own bounded approval.
