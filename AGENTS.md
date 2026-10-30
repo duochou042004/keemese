@@ -6,6 +6,8 @@ Build a private teaching workspace for one tutor and tutor-created student accou
 
 Read `harness/state/progress.json` and `harness/state/handoff.md`. Verify their claims against files and Git before acting. Read only the task's relevant documents via `docs/README.md`; search relevant lessons in `harness/learning/lessons.jsonl`. Do not routinely load the bootstrap governance prompt, full product specification, research notes, or previous conversation. For new product planning or conflicting requirements, consult the authoritative specification sections directly.
 
+For cross-device pause/resume, read `docs/delivery/device-handoff.md`; do not depend on old-device memory, paths or caches.
+
 ## Approval and context safety
 
 - Phase 1 is documentation and architecture planning only. Product implementation, hooks/scripts, installations, global configuration/model/window changes, and external writes are not authorized by Phase 1.
@@ -17,6 +19,6 @@ Read `harness/state/progress.json` and `harness/state/handoff.md`. Verify their 
 
 ## Work and verify
 
-Prefer the smallest complete solution. Recheck nested instructions before edits. No application commands exist yet; proposed verification is in `docs/testing/strategy.md`. Documentation checks: validate JSON/JSONL, local Markdown links, requirement coverage and whitespace; run `git diff --check` when Git exists. If Git is absent, report that limitation rather than initializing it silently.
+Prefer the smallest complete solution. Recheck nested instructions before edits. Executable setup/verification commands are in `README.md` and `.github/workflows/ci.yml`; broader proposed verification is in `docs/testing/strategy.md`. Documentation checks: validate JSON/JSONL, local Markdown links, requirement coverage and whitespace; run `git diff --check` when Git exists. If Git is absent, report that limitation rather than initializing it silently.
 
 Update canonical state at material milestones and before stopping. Keep current state in progress, resume instructions in handoff, chronology in build log, and reusable evidence-backed lessons in the lesson ledger. Never store student data, secrets, or transcripts in these records.

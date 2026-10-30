@@ -1,5 +1,7 @@
 # Environment, delivery and recovery proposal
 
+Current pause status — 2026-10-30: user paused after completed C1e. Read the [cross-device handoff](../delivery/device-handoff.md) and canonical checkpoint for completed work, current decision boundaries and next-device prerequisites. Earlier dated entries below are historical and can contain superseded pending/unimplemented labels. No next product packet is approved.
+
 I1a status — 2026-10-28: backend identity/operator behavior is implemented with synthetic disposable PostgreSQL proof. No persistent DB/schema, deployment, startup migration, CI or secrets/access operation was performed. [I1a evidence](../testing/evidence/i1a.md) supersedes historical foundation-only claims for identity.
 
 F0 update (2026-10-27): local skeleton and disposable rootless PostgreSQL test setup are implemented in the [root README](../../README.md), with exact pins and locks. F0b passed on Linux x64/Podman 5.8.6; [evidence](../testing/evidence/f0b.md) records cleanup and limits. The public GitHub repository contains F0a; F0b remains uncommitted. Production database, hosting, migrations and CI below remain proposals.

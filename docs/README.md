@@ -1,6 +1,6 @@
 # Planning baseline
 
-Current execution: F0a and F0b foundation acceptance passed. PostgreSQL proof is isolated in a test-only project; teaching workflows are not authorized. Use the [setup README](../README.md) for executable commands and the canonical checkpoint for current status. The planning documents below retain future proposals.
+Current status — 2026-10-30: **paused by user after completed C1e**. Foundation, identity/bilingual UI, native-text folders/search/tags/copy and CI are implemented; broader teaching workflows remain unapproved. New-device entry: [portable handoff](delivery/device-handoff.md), [paste-ready goal](delivery/resume-goal.md), [pause/reset evidence](testing/evidence/device-pause.md). Use the [setup README](../README.md) for executable commands and canonical state for status. Historical planning entries below are not current approval gates.
 
 Status: Phase 1 proposal, 2026-10-27. Documentation approval does not authorize implementation. The original [product specification](spec/personal_english_tutor_teaching_workspace_spec.md) remains authoritative for product scope. The [bootstrap](agent-governance/Codex_Project_Initialization_and_Agent_Governance.md) remains historical governance; the user's later context-safety amendment is recorded in [context safety](agents/context-safety.md) and takes precedence over its old token targets. Supporting [research](agent-governance/research/Codex_Harness_Research_Notes_VI.md) is preserved, not promoted to authority.
 

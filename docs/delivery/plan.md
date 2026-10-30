@@ -1,5 +1,7 @@
 # Delivery plan and bounded work packets
 
+Current pause status — 2026-10-30: user paused after completed C1e. Read the [cross-device handoff](device-handoff.md) and canonical checkpoint for completed work, current decision boundaries and next-device prerequisites. Earlier dated entries below are historical and can contain superseded pending/unimplemented labels. No next product packet is approved.
+
 Status: product packets remain proposals. H0 was separately approved and its bounded interface pilot completed on 2026-10-27 with limitations; see the [evidence](../../harness/logs/build-log.md). Live enforcement acceptance remains unmet; H0b follow-up also completed with bounded inference/lifecycle evidence; next gate is H0b review. Phase 1 alone authorizes documentation, not execution of packets below. Each packet needs an explicit scope approval and a fresh-session start when telemetry is unavailable. Larger milestones must be split into bounded packets before execution; do not interpret a milestone as an unlimited session.
 
 ## Dependency order

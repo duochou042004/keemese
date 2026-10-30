@@ -10,14 +10,14 @@
 ![Node.js 24.22.1](https://img.shields.io/badge/Node.js-24.22.1-417E38?style=flat-square&logo=nodedotjs&logoColor=white)
 ![npm 11.19.1](https://img.shields.io/badge/npm-11.19.1-CB3837?style=flat-square&logo=npm&logoColor=white)
 
-[Quick start](#prerequisites) · [Local preview](#run-locally) · [Verification](docs/testing/evidence/i1b.md) · [Project docs](docs/README.md) · [Roadmap](docs/delivery/plan.md)
+[New-device handoff](docs/delivery/device-handoff.md) · [Resume goal](docs/delivery/resume-goal.md) · [Quick start](#prerequisites) · [Local preview](#run-locally) · [Current verification](docs/testing/evidence/c1e-text-copy.md) · [Project docs](docs/README.md) · [Roadmap](docs/delivery/plan.md)
 
 ## At a glance
 
 | Available now | Verified database foundation | Planned teaching workspace |
 |---|---|---|
-| Identity UI and tutor-created student accounts (I1a/I1b) | Real PostgreSQL identity/isolation tests | Reusable content and student activity |
-| Bilingual account flows and tutor text folders | Real database round-trip and rollback checks | Reusable content, lesson plans, assignments and private notes |
+| Identity UI and tutor-created student accounts (I1a/I1b) | Real PostgreSQL identity/isolation tests | Materials/questions/grants and student activity |
+| Bilingual account flows; tutor text folders/search/tags/copy | Real database round-trip and rollback checks | Lesson plans, assignments and private notes |
 | Exact dependency pins, locks and reproducible setup | Test-owned resource cleanup | Teaching workflows follow their own approval gates |
 
 Badges describe the pinned stack, not live CI or deployment status. Current verification evidence is linked above.
@@ -26,7 +26,7 @@ UI screenshots are generated locally by browser verification and excluded from G
 
 ## Current scope
 
-Private single-tutor workspace under development. I1a adds backend identity, tutor-only student provisioning/reset/deactivation, mandatory password rotation and student self-profile isolation. I1b adds Vietnamese login, forced password change, tutor account management and student self-account screens. Tutor-only reusable plain text now supports nested folders, assignment/filtering and safe empty-folder deletion; see [C1b evidence](docs/testing/evidence/c1b-folders.md). Teaching activity workflows remain separately gated. Verification uses synthetic disposable data only. See [I1a backend evidence](docs/testing/evidence/i1a.md) and [I1b browser evidence](docs/testing/evidence/i1b.md) for results and limits.
+Private single-tutor workspace under development. I1a adds backend identity, tutor-only student provisioning/reset/deactivation, mandatory password rotation and student self-profile isolation. I1b adds Vietnamese login, forced password change, tutor account management and student self-account screens. Tutor-only reusable plain text now supports nested folders, search, reusable tags, active/archive lifecycle and independent saved-source copies; see [C1e evidence](docs/testing/evidence/c1e-text-copy.md) and [portable handoff](docs/delivery/device-handoff.md). The project is paused by user as of2026-10-30; no next implementation is approved. Teaching activity workflows remain separately gated. Verification uses synthetic disposable data only. See [I1a backend evidence](docs/testing/evidence/i1a.md) and [I1b browser evidence](docs/testing/evidence/i1b.md) for results and limits.
 
 ## Prerequisites
 
@@ -118,7 +118,7 @@ npm run test:e2e
 
 Playwright **1.64.1** is exact/locked. Browser binaries stay in ignored project-local `node_modules/.cache`; `npm ci` replaces that directory, so install the local browser again after a clean install. No browser or OS dependency installation is automatic. Kali was verified using Playwright's Ubuntu24.04 fallback Chromium build; other systems/browsers are unverified.
 
-The thirteen scenarios use built frontend assets and a loopback test host on ports 5173/5080. The opt-in `UiTestHost` test seeds only its own digest-pinned tmpfs PostgreSQL, bridges the real API, and exposes capability-gated test clock/stop controls only in that test process. Normal application startup exposes none of those controls. Teardown waits for explicit post-container-removal acknowledgement, then stops the owned processes. Forced-kill/crash cleanup remains manual; use the exact-owner procedure above.
+The current 32 scenarios (through C1e) use built frontend assets and a loopback test host on ports 5173/5080. The opt-in `UiTestHost` test seeds only its own digest-pinned tmpfs PostgreSQL, bridges the real API, and exposes capability-gated test clock/stop controls only in that test process. Normal application startup exposes none of those controls. Teardown waits for explicit post-container-removal acknowledgement, then stops the owned processes. Forced-kill/crash cleanup remains manual; use the exact-owner procedure above.
 
 Tests cover the two-student account lifecycle, reset/deactivation of open sessions, recovery/error states, stale-user requests, eight widths, short height and actual 200% browser zoom. A tiny unpacked zoom extension is loaded only into a disposable test browser profile, removed with that profile; no user browser is changed. Synthetic screenshots and measurements live under `frontend/e2e/artifacts`; credentials, tokens and traces are not persisted. See [I1b evidence](docs/testing/evidence/i1b.md) for the original checks and [bilingual evidence](docs/testing/evidence/bilingual-ui.md) for current English/Vietnamese switching, storage/focus checks, 96 viewport/language cases and 12 actual zoom cases. The tutor-only text library adds create/edit/archive/restore journeys; see [C1a evidence](docs/testing/evidence/c1a-text-library.md). CI implementation and hosted outcomes are recorded in [CI1 evidence](docs/testing/evidence/ci1.md). Retained-data schema migration and production setup remain pending.
 

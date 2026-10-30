@@ -1,5 +1,7 @@
 # Architecture decisions and open decisions
 
+Current pause status — 2026-10-30: user paused after completed C1e. Read the [cross-device handoff](../delivery/device-handoff.md) and canonical checkpoint for completed work, current decision boundaries and next-device prerequisites. Earlier dated entries below are historical and can contain superseded pending/unimplemented labels. No next product packet is approved.
+
 ADRs were proposed on 2026-10-27. User accepted ADR01/02 and D08 local R0 scope on 2026-10-27; ADR03/04 and other undecided items remain proposed. User owns acceptance. No implementation approval is implied. Preserve superseded decisions with date/reason; do not overwrite history. Requirements map to source sections via [traceability](../product/requirements.md).
 
 ## ADR01 — Modular monolith and PostgreSQL
