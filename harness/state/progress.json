@@ -7,9 +7,9 @@
   "repository": {
     "root": "/home/kali/App_projects/keemese",
     "branch": "feature/f0-foundation",
-    "commit": "136316588499ddb3a4bbda57d81e74ebe141a50e",
-    "working_tree_status": "verified_clean_origin_match_before_pause_packet",
-    "note": "Verified1363165 equals origin/clean and actual docs40989996242 success. Application d0e8128/hosted40989431166 unchanged. Pause/reset documentation publication follows; resolve final HEAD and CI from Git/Actions. Root path is old-device historical, not a prerequisite on next device.",
+    "commit": "ab9d90123e44f8b5e0736ffe1c120626959a8833",
+    "working_tree_status": "clean_exact_origin_match_after_handoff_publication_and_rootless_reset_before_final_record",
+    "note": "Paused handoff ab9d901 equals origin/clean with actual docs41006296935 success. Application d0e8128 unchanged. Current-user Podman reset succeeded/empty storage; actual-outcome completion record publication/final SHA follows closing report. Old root path is historical.",
     "implementation_commit": "d0e81289be4c67924955a897067954467fb28629",
     "remote": "https://github.com/duochou042004/keemese.git",
     "visibility": "public",
@@ -70,12 +70,14 @@
     "C1d local: catalog/explicit restrictive join/atomic compatible sets/live labels/single-tag filter and bilingual polished controls. Revised6 API groups36.8s; final complete37 API53s/original3 DB12s/24 browser1.3m pass, no skips/retries;96 new geometry/two actualzoom/screenshots reviewed. Final cost-only1/1 and catalog-retry browser1/1 pass; independent cleanup empty. Hosted publication pending.",
     "C1d normal publication80c45207899c22db0a834b73e5fd9ba5f8e177df verified origin-equal/clean; actual hosted full40905900325 passed37 API1m12s/3 DB9s/24 browser1.4m, no skips/retries, pinned builds/TypeScript/helpers/docs/rootless teardown and primary caches. Frontend reviewed and current-session completion, no formal handoff/new chat. Final record publication follows.",
     "C1e planning: verified clean launch1a599d8/origin and hosted docs40914758300; assessed copy versus materials/questions/grants, inspected actual APIs/editor/session/client and focused requirements, prepared concrete copy-draft proposal with no new schema/endpoint. Implementation unapproved.",
-    "C1e saved active/archived source copy implemented in permitted frontend paths; local37 API/3 DB/32 browser plus final focused8,64 new geometry/two actual zoom/agent visual review pass. Published d0e8128 exact origin/clean; actual hosted40989431166 full37/3/32 success."
+    "C1e saved active/archived source copy implemented in permitted frontend paths; local37 API/3 DB/32 browser plus final focused8,64 new geometry/two actual zoom/agent visual review pass. Published d0e8128 exact origin/clean; actual hosted40989431166 full37/3/32 success.",
+    "Paused-project cross-device handoff/goal/evidence published ab9d901 with actual docs41006296935 success; then explicit rootless Podman reset exited0 and verified empty resources/cache while software remains installed. No new product work."
   ],
   "incomplete": [
     "Review remaining ADRs and deferred D01-D10 portions; D04 provider direction accepted but sizes/region/retention/RPO/RTO/frontend topology unresolved; deployment key storage/proxy trust/distributed throttling/retention/versioned migration remain future work.",
     "Live retained-context semantics, U/C, threshold/overshoot and interruption/recovery validation; automatic controller remains unimplemented.",
-    "Remaining question duplication/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. Native-text copying is implemented only. Persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending."
+    "Remaining question duplication/materials/questions/grants and goal/plan/teaching workflows and future-route A9/product-wide A10 remain incomplete. Native-text copying is implemented only. Persistent schema/provisioning/deployment and additional browser/OS/screen-reader verification remain pending.",
+    "Project paused. New-device readiness/tool/auth/platform checks and one next proposal await user resumption; global setup and future implementation require separate approval. Current-device Podman cache was explicitly reset, so do not assume cached image."
   ],
   "changed_files": [
     "AGENTS.md",
@@ -89,6 +91,7 @@
     "docs/testing/evidence/c1e-layout-metrics.md",
     "docs/testing/evidence/c1e-text-copy.md",
     "docs/testing/evidence/device-pause.md",
+    "harness/learning/lessons.jsonl",
     "harness/logs/build-log.md",
     "harness/state/handoff.md",
     "harness/state/progress.json"
@@ -441,6 +444,10 @@
     {
       "check": "Cross-device handoff docs, numeric evidence and preservation",
       "status": "passed_5_helpers_16_JSON_1_JSONL_48_Markdown_271_targets_61_rows_whitespace_64_geometry_3_contrast_2_zoom_exactly_preserved_no_application_tests_rerun"
+    },
+    {
+      "check": "Published handoff and current-machine authorized Podman reset",
+      "status": "passed_ab9d901_exact_origin_clean_actual_docs41006296935_success_then_reset_exit0_rootless5.8.6_zero_images_containers_external_containers_pods_volumes_secrets_machines_connections_default_network_only_0B_storage_no_image_repull"
     }
   ],
   "decisions_and_risks": "docs/decisions/decisions.md and docs/delivery/plan.md",
@@ -624,7 +631,32 @@
     "podman_reset": {
       "authorized": true,
       "scope": "Current user rootless store on old device; keep installed program/system configuration.",
-      "status": "pending_after_handoff_publication"
+      "status": "completed_verified",
+      "command": "podman system reset --force",
+      "exit_code": 0,
+      "version_after": "5.8.6",
+      "rootless": true,
+      "containers": 0,
+      "external_containers": 0,
+      "images": 0,
+      "pods": 0,
+      "volumes": 0,
+      "secrets": 0,
+      "machines": 0,
+      "connections": 0,
+      "networks": [
+        "podman (default)"
+      ],
+      "disk_usage": "Images0B / Containers0B / Local Volumes0B",
+      "note": "Installed software/system configuration preserved; other-user/rootful state not claimed. Inventory recreates default metadata; no image re-pull after reset."
+    },
+    "handoff_publication": {
+      "commit": "ab9d90123e44f8b5e0736ffe1c120626959a8833",
+      "run": "41006296935",
+      "mode": "docs",
+      "conclusion": "success",
+      "exact_origin_clean_verified": true,
+      "final_record": "Outcome-only publication/actual docs CI/final ref follows closing report."
     }
   }
 }
