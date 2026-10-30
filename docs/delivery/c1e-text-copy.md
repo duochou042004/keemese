@@ -1,6 +1,6 @@
 # C1e — create an independent text from a saved source
 
-Proposed 2026-10-29, Asia/Ho_Chi_Minh. **Implementation awaits approval.** This planning packet authorizes documentation/publication only. Implement the approved scope in a fresh chat under the [manual context policy](../agents/context-safety.md); do not infer approval from goal completion.
+Proposed 2026-10-29, Asia/Ho_Chi_Minh. **Implementation approved 2026-10-30.** User accepted this proposal and requested a new Sol Medium chat. Implement this bounded scope in that fresh chat under the [manual context policy](../agents/context-safety.md); do not infer approval from goal completion.
 
 ## Selection and requirement boundary
 
@@ -52,3 +52,7 @@ Completion means accepted behavior with recorded evidence and normal branch publ
 ## Planning evidence
 
 Independently verified clean local/origin `1a599d877df073ba33571b2e62c40c6da6cf8bdb` and [actual hosted docs40914758300](https://github.com/duochou042004/keemese/actions/runs/40914758300) success. Read actual TextLibrary transaction/DTO/routes, ContentEditor/Library, App route/session lifecycle and API client timeout behavior, relevant requirements/specification and L005–L009. C1d code `80c45207899c22db0a834b73e5fd9ba5f8e177df` remains unchanged; its recorded 37/3/24 proof is inherited historical evidence, not rerun here. Final proposal publication/hash/hosted docs result follows the canonical checkpoint and is verified in the closing report.
+
+## Approval and execution handoff — 2026-10-30
+
+User: “Proposal approved and accepted. Please proceed as you see fit within a new chat session with the Sol Medium model.” This authorizes the concrete C1e implementation, existing synthetic verification and reviewed normal branch publication above. No repeat approval is needed. Launch local project chat with GPT-6.1 Sol and Medium reasoning, no history import/fork. Read AGENTS/progress/handoff and verify Git/files independently. Source finishes documentation publication and hosted check before launch, then stops writing. Stop successor after C1e evidence/publication; wider scope remains excluded.
